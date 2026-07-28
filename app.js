@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '3.0'; // Bump this when seed products/images change
+const SEED_VERSION = '4.0'; // Bump this when seed products/images change
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -72,7 +72,7 @@ function buildCatalogProducts() {
             "Lavender Embroidered Kurti Set", "Wine Red Silk Velvet 3-Piece Set", "Sunshine Yellow Festive 3-Piece Set",
             "Sky Blue Straight Pant Suit Set", "Olive Green Floral 3-Piece Set", "Rose Gold Zari Weave 3-Piece Suit"
         ], colors: ["Royal Blue", "Deep Maroon", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Crimson Red", "Midnight Black", "Peach Pink", "Teal Blue", "Lavender", "Wine Red", "Sunshine Yellow", "Sky Blue", "Olive Green", "Rose Gold"], imgs: [
-            "https://images.unsplash.com/photo-1583391265517-35bbdba01229?w=600&auto=format&fit=crop&q=80",
+            "https://images.unsplash.com/photo-1601288496920-b6154fe3626a?w=600&auto=format&fit=crop&q=80",
             "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80"
         ]},
         { id: 'half-sarees', prefix: 'HSA', basePrice: 3999, names: [
@@ -92,7 +92,7 @@ function buildCatalogProducts() {
             "Lavender Cotton Drawstring Petticoat", "Teal Blue Heavy Flared Cotton Petticoat", "Wine Red Satin Silk Petticoat",
             "Sky Blue Breathable Cotton Petticoat", "Off-White Canvas Hem Cotton Petticoat", "Peach Satin Saree Underskirt"
         ], colors: ["Pure White", "Scarlet Red", "Royal Blue", "Emerald Green", "Nude Beige", "Midnight Black", "Golden Yellow", "Deep Maroon", "Pastel Pink", "Lavender", "Teal Blue", "Wine Red", "Sky Blue", "Off-White", "Peach Pink"], imgs: [
-            "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=600&auto=format&fit=crop&q=80"
+            "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&auto=format&fit=crop&q=80"
         ]},
         { id: 'peplum-tops', prefix: 'PEP', basePrice: 1199, names: [
             "Yellow Indo-Western Peplum Crop Top", "Royal Blue Flared Peplum Top", "Emerald Green Embroidered Peplum Top",
@@ -269,9 +269,9 @@ const CATEGORY_META = {
     frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&auto=format&fit=crop&q=80" },
     blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?w=800&auto=format&fit=crop&q=80" },
     kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=800&auto=format&fit=crop&q=80" },
-    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Grand Kurti sets with heavy dupattas", img: "https://images.unsplash.com/photo-1583391265517-35bbdba01229?w=800&auto=format&fit=crop&q=80" },
+    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Grand Kurti sets with heavy dupattas", img: "https://images.unsplash.com/photo-1601288496920-b6154fe3626a?w=800&auto=format&fit=crop&q=80" },
     "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&auto=format&fit=crop&q=80" },
-    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80" },
+    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&auto=format&fit=crop&q=80" },
     "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80" },
     "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop&q=80" },
     shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "https://images.unsplash.com/photo-1549064482-6779ba3292fe?w=800&auto=format&fit=crop&q=80" },
@@ -2056,6 +2056,15 @@ searchInput.onkeypress = (e) => {
 };
 
 function triggerSearch(query) {
+    // SECRET: typing #admin in search bar opens admin panel
+    if (query.toLowerCase() === '#admin') {
+        searchInput.value = '';
+        searchWrapper.classList.remove('active');
+        hideLiveDropdown();
+        window.location.hash = '#/admin';
+        return;
+    }
+
     // Perform filtering matching products
     const match = products.filter(p => p.name.toLowerCase().includes(query.toLowerCase()) || p.description.toLowerCase().includes(query.toLowerCase()));
     
