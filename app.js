@@ -2340,19 +2340,8 @@ function bindVisitorForm() {
         visForm.dataset.bound = "true";
         visForm.onsubmit = (e) => {
             e.preventDefault();
-            const name = document.getElementById('vis-name').value.trim();
-            const phone = document.getElementById('vis-phone').value.trim();
-            const email = document.getElementById('vis-email').value.trim();
-            const category = document.getElementById('vis-category').value;
-            const message = document.getElementById('vis-message').value.trim();
-
-            const text = `*SB FASHIONS - VISITOR APPLICATION & INQUIRY*\n\n` +
-                         `👤 *Name:* ${name}\n` +
-                         `📱 *Mobile / WhatsApp:* ${phone}\n` +
-                         `📧 *Email:* ${email || 'N/A'}\n` +
-                         `🛍️ *Category:* ${category}\n` +
-                         `💬 *Message:* ${message}\n\n` +
-                         `Submitted from SB Fashions Official Website.`;
+            const text = `*SB FASHIONS - CONTACT INQUIRY*\n\n` +
+                         `Hello Sowbhagya, I am interested in SB Fashions products and would like to know more!`;
 
             const waUrl = `https://wa.me/917989646049?text=${encodeURIComponent(text)}`;
             showToast("Application submitted! Opening WhatsApp (7989646049)...", "success");
