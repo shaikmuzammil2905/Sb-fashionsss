@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB Fashions | Premium International Fashion Brand</title>
+    <meta name="description" content="Discover world-class premium fashion. Shop Sarees, Frocks, Blouses, Kurtis, and Kidswear at SB Fashions. Curated by Sowbhagya. Mahaboob Nagar.">
+    <meta name="keywords" content="SB Fashions, Sowbhagya, Sarees, Kurtis, Designer Blouses, Premium Fashion Mahaboob Nagar">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- ==========================================
+      1. PREMIUM LOGO LOADING SCREEN
+    ========================================== -->
+    <div id="loading-screen">
+        <div class="loader-v-badge">
+            <span class="loader-v-emblem">V</span>
+        </div>
+        <div class="loader-logo">SB <span>FASHIONS</span></div>
+        <div class="loader-spinner-container">
+            <div class="loader-spinner"></div>
+            <div class="loader-spinner-inner"></div>
+        </div>
+        <div class="loader-sub">Curated Elegance by Sowbhagya</div>
+    </div>
+
+    <!-- ==========================================
+      2. STICKY HEADER & NAV SYSTEM
+    ========================================== -->
+    <header id="main-header">
+        <div class="top-bar">
+            <div class="top-bar-slider">
+                ⚡ FESTIVAL SEASON SALE IS LIVE: USE CODE "SBFEST20" FOR 20% OFF! • FREE SHIPPING ON ORDERS OVER ₹1999! • COD AVAILABLE ACROSS INDIA!
+            </div>
+        </div>
+        
+        <div class="container navbar">
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle nav-action-btn" id="mobile-drawer-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="#/home" class="logo-container" id="brand-logo-link">
+                <img src="image.png" alt="SB Fashions Logo" class="logo-img" onerror="this.src='https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=100&auto=format&fit=crop&q=60'">
+                <div class="logo-text">SB <span>Fashions</span></div>
+            </a>
+
+            <!-- Navigation Links with Mega Menu -->
+            <nav class="nav-links" id="main-nav-menu">
+                <div class="nav-item">
+                    <a href="#/home" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#/category/women" class="nav-link">Women</a>
+                    <!-- Mega Menu for Women's Category -->
+                    <div class="mega-menu">
+                        <div>
+                            <h4 class="mega-title">Sarees & Traditional</h4>
+                            <ul class="mega-list">
+                                <li><a href="#/category/sarees">Sarees</a></li>
+                                <li><a href="#/category/half-sarees">Half Sarees</a></li>
+                                <li><a href="#/category/lehenga-blouse">Lehenga & Blouse</a></li>
+                                <li><a href="#/category/lehenga-fabric">Lehenga Fabric</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="mega-title">Kurtis & Sets</h4>
+                            <ul class="mega-list">
+                                <li><a href="#/category/kurti">Kurtis</a></li>
+                                <li><a href="#/category/3-piece-sets">3 Piece Sets</a></li>
+                                <li><a href="#/category/peplum-tops">Peplum Tops</a></li>
+                                <li><a href="#/category/dress-material">Dress Material</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="mega-title">Blouses & Innerwear</h4>
+                            <ul class="mega-list">
+                                <li><a href="#/category/blouses">Ready Blouses</a></li>
+                                <li><a href="#/category/maggam-work-blouse-pieces">Maggam Work Pieces</a></li>
+                                <li><a href="#/category/computer-work-blouse-pieces">Computer Work Pieces</a></li>
+                                <li><a href="#/category/shapewear">Shapewear</a></li>
+                                <li><a href="#/category/petticoats">Petticoats</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="mega-title">Fabrics & Accessories</h4>
+                            <ul class="mega-list">
+                                <li><a href="#/category/dupatta">Dupatta</a></li>
+                                <li><a href="#/category/chunni">Chunni</a></li>
+                                <li><a href="#/category/cut-piece-fabric">Cut Piece Fabric</a></li>
+                                <li><a href="#/category/lace-hangings">Lace & Hangings</a></li>
+                                <li><a href="#/category/nighty">Nighty</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#/category/kids" class="nav-link">Kids</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#/category/retail-collection" class="nav-link">Retail Collection</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#/tracking" class="nav-link">Track Order</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#/contact" class="nav-link">Contact Us</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#/admin" class="nav-link" style="color:var(--color-secondary-dark);font-weight:700;"><i data-lucide="shield-check" style="display:inline;vertical-align:middle;margin-right:4px;width:16px;"></i>Admin</a>
+                </div>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <div class="search-container-header" id="header-search-wrapper">
+                    <input type="text" placeholder="Search premium fashion..." class="search-input-header" id="header-search-input" autocomplete="off">
+                    <button class="nav-action-btn" id="header-search-toggle" title="Search">
+                        <i data-lucide="search"></i>
+                    </button>
+                    <!-- Live search dropdown -->
+                    <div class="search-live-dropdown" id="search-live-dropdown"></div>
+                </div>
+                
+                <a href="#/dashboard/wishlist" class="nav-action-btn" title="Wishlist">
+                    <i data-lucide="heart"></i>
+                    <span class="badge-count" id="wishlist-badge-count">0</span>
+                </a>
+                
+                <a href="#/cart" class="nav-action-btn" id="header-cart-btn" title="Cart">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="badge-count" id="cart-badge-count">0</span>
+                </a>
+
+                <div class="nav-item">
+                    <button class="nav-action-btn" id="profile-menu-toggle" title="My Account">
+                        <i data-lucide="user"></i>
+                    </button>
+                    <!-- Small profile dropdown -->
+                    <div class="mega-menu" style="width: 200px; right: 0; left: auto; transform: translateY(10px); padding: 15px; grid-template-columns: 1fr;" id="profile-dropdown-menu">
+                        <ul class="mega-list" style="margin-bottom: 0;">
+                            <li><a href="#/dashboard/profile"><i data-lucide="layout-dashboard" style="display:inline-block;width:14px;margin-right:8px;vertical-align:-2px;"></i>Dashboard</a></li>
+                            <li><a href="#/dashboard/orders"><i data-lucide="shopping-cart" style="display:inline-block;width:14px;margin-right:8px;vertical-align:-2px;"></i>Orders</a></li>
+                            <li><hr style="border:none;border-top:1px solid var(--color-border);margin:8px 0;"></li>
+                            <li><a href="#/auth/login" id="profile-login-logout-btn"><i data-lucide="log-in" style="display:inline-block;width:14px;margin-right:8px;vertical-align:-2px;"></i>Sign In</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div id="mobile-nav-drawer" style="position:fixed;top:0;left:-300px;width:280px;height:100vh;background:var(--color-bg-surface);z-index:9999;transition:left var(--transition-normal);padding:30px;box-shadow:var(--shadow-lg);overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;">
+            <div class="logo-text" style="font-size:1.2rem;">SB <span>Fashions</span></div>
+            <button id="mobile-drawer-close" style="font-size:1.5rem;"><i data-lucide="x"></i></button>
+        </div>
+        <ul style="display:flex;flex-direction:column;gap:15px;text-transform:uppercase;font-weight:600;font-size:0.9rem;">
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/category/women">Women's Collection</a></li>
+            <li><a href="#/category/sarees" style="padding-left:15px;font-size:0.8rem;color:var(--color-text-muted);">Sarees</a></li>
+            <li><a href="#/category/kurti" style="padding-left:15px;font-size:0.8rem;color:var(--color-text-muted);">Kurtis</a></li>
+            <li><a href="#/category/blouses" style="padding-left:15px;font-size:0.8rem;color:var(--color-text-muted);">Blouses</a></li>
+            <li><a href="#/category/kids">Kids Collection</a></li>
+            <li><a href="#/category/retail-collection">Retail Collection</a></li>
+            <li><a href="#/tracking">Track Order</a></li>
+            <li><a href="#/contact">Contact Us</a></li>
+            <li><a href="#/admin" style="color:var(--color-secondary-dark);"><i data-lucide="shield-check" style="display:inline;vertical-align:middle;margin-right:4px;width:14px;"></i>Admin Panel</a></li>
+        </ul>
+    </div>
+    <div id="mobile-drawer-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;opacity:0;visibility:hidden;transition:all var(--transition-normal);"></div>
+
+
+    <!-- ==========================================
+      3. DYNAMIC CONTENT CONTAINER (SPA VIEWS)
+    ========================================== -->
+    <main>
+
+        <!-- --- A. HOME VIEW --- -->
+        <section id="view-home" class="view-section active">
+            <!-- Full Width Hero Banner Slider -->
+            <div class="hero-slider-container">
+                <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&auto=format&fit=crop&q=80');">
+                    <div class="hero-content">
+                        <div class="hero-subtitle">New Arrivals 2026</div>
+                        <h1 class="hero-title">Elevate Your Traditional Elegance</h1>
+                        <p class="hero-desc">Discover luxurious Banarasi Sarees, Maggam Work Blouses, and custom traditional wear curated by Sowbhagya.</p>
+                        <div class="hero-btns">
+                            <a href="#/category/sarees" class="btn btn-gold">Explore Sarees</a>
+                            <a href="#/category/women" class="btn btn-secondary">Shop Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&fit=crop&q=80');">
+                    <div class="hero-content">
+                        <div class="hero-subtitle">Summer Edit</div>
+                        <h1 class="hero-title">Premium Fashion & Exquisite Crafts</h1>
+                        <p class="hero-desc">Indulge in handpicked designer items, computer-worked blouses, and comfortable retail wear designed to wow.</p>
+                        <div class="hero-btns">
+                            <a href="#/category/blouses" class="btn btn-gold">Explore Blouses</a>
+                            <a href="#/category/kids" class="btn btn-secondary">Kids Section</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=1600&auto=format&fit=crop&q=80');">
+                    <div class="hero-content">
+                        <div class="hero-subtitle">Little Stars Collection</div>
+                        <h1 class="hero-title">Adorable Kids Ethnic Wear</h1>
+                        <p class="hero-desc">Dress your little ones in vibrant silk Pattu Langas, festive Lehenga sets, and traditional costumes crafted with love by Sowbhagya.</p>
+                        <div class="hero-btns">
+                            <a href="#/category/kids" class="btn btn-gold">Shop Kids Wear</a>
+                            <a href="#/category/women" class="btn btn-secondary">Women's Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="slider-arrow slider-prev" id="hero-slider-prev"><i data-lucide="chevron-left"></i></button>
+                <button class="slider-arrow slider-next" id="hero-slider-next"><i data-lucide="chevron-right"></i></button>
+                <div class="slider-dots" id="hero-slider-dots"></div>
+            </div>
+
+            <!-- Animated Features Bar -->
+            <div class="features-animated-bar">
+                <div class="container features-animated-grid">
+                    <div class="feature-item-card">
+                        <div class="feature-icon-box"><i data-lucide="truck"></i></div>
+                        <div class="feature-info">
+                            <h4>All-India Delivery</h4>
+                            <p>Free Express Shipping Over ₹1,999</p>
+                        </div>
+                    </div>
+                    <div class="feature-item-card">
+                        <div class="feature-icon-box"><i data-lucide="award"></i></div>
+                        <div class="feature-info">
+                            <h4>100% Pure Silk</h4>
+                            <p>Authentic Kanchipuram & Maggam</p>
+                        </div>
+                    </div>
+                    <div class="feature-item-card">
+                        <div class="feature-icon-box"><i data-lucide="message-square"></i></div>
+                        <div class="feature-info">
+                            <h4>WhatsApp Direct</h4>
+                            <p>Contact Sowbhagya: 7989646049</p>
+                        </div>
+                    </div>
+                    <div class="feature-item-card">
+                        <div class="feature-icon-box"><i data-lucide="scissors"></i></div>
+                        <div class="feature-info">
+                            <h4>Custom Fitting</h4>
+                            <p>Tailored Maggam & Blouse Work</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Festival Offers Banner with Countdown -->
+            <div class="festival-banner">
+                <div class="container festival-content">
+                    <span class="festival-badge">LIMITED TIME FESTIVAL OFFER</span>
+                    <h2 class="festival-title">Grand Sowbhagya Utsav Sale</h2>
+                    <p class="festival-subtitle">Get up to 40% Off on Premium Bridal Sarees & Maggam Work Pieces. Ends In:</p>
+                    
+                    <div class="countdown-container">
+                        <div class="countdown-box">
+                            <span class="countdown-num" id="timer-days">03</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="countdown-num" id="timer-hours">14</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="countdown-num" id="timer-mins">52</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="countdown-num" id="timer-secs">08</span>
+                            <span class="countdown-label">Secs</span>
+                        </div>
+                    </div>
+
+                    <a href="#/category/maggam-work-blouse-pieces" class="btn btn-gold">Claim Festival Discount</a>
+                </div>
+            </div>
+
+            <!-- Shop By Category Slider -->
+            <div class="container" style="padding:80px 0;">
+                <div class="section-title-wrapper">
+                    <span class="section-pretitle">Curated Segments</span>
+                    <h2 class="section-title">Shop by Category</h2>
+                </div>
+                <div class="category-slider" id="home-category-slider">
+                    <!-- Javascript will populate this beautifully -->
+                </div>
+            </div>
+
+            <!-- Trending Collections Section -->
+            <div class="container" style="padding-bottom:80px;">
+                <div class="section-title-wrapper">
+                    <span class="section-pretitle">Top Rated Choice</span>
+                    <h2 class="section-title">Trending Arrivals</h2>
+                </div>
+                <div class="product-grid" id="home-trending-products">
+                    <!-- Seeding via javascript -->
+                </div>
+            </div>
+
+            <!-- Large Premium Promo Banners -->
+            <div class="container">
+                <div class="promo-grid">
+                    <div class="promo-banner" style="background-image: url('https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=800&auto=format&fit=crop&q=80');">
+                        <div class="promo-content">
+                            <span class="promo-subtitle">Crafted Perfection</span>
+                            <h3 class="promo-title">Maggam Work Blouses</h3>
+                            <p class="promo-desc">Detailed bridal hand embroidery work on premium silk blouse pieces.</p>
+                            <a href="#/category/maggam-work-blouse-pieces" class="btn btn-secondary">Explore Artisan Pieces</a>
+                        </div>
+                    </div>
+                    <div class="promo-banner" style="background-image: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=80');">
+                        <div class="promo-content">
+                            <span class="promo-subtitle">Everyday Luxury</span>
+                            <h3 class="promo-title">Retail Fashion Kurti Sets</h3>
+                            <p class="promo-desc">Comfortable, elegant and stylish dress materials and 3-piece Kurtis.</p>
+                            <a href="#/category/3-piece-sets" class="btn btn-secondary">Shop Everyday Wear</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Sellers Carousel -->
+            <div class="container" style="padding-bottom:80px;">
+                <div class="section-title-wrapper">
+                    <span class="section-pretitle">Highly Demanded</span>
+                    <h2 class="section-title">Best Sellers</h2>
+                </div>
+                <div class="product-grid" id="home-bestseller-products">
+                    <!-- Javascript seeding -->
+                </div>
+            </div>
+
+            <!-- Animated Statistics Grid -->
+            <div style="background-color:var(--color-primary); color:var(--color-bg-surface); padding:60px 0; margin-bottom:80px;">
+                <div class="container" style="display:grid; grid-template-columns:repeat(4,1fr); text-align:center; gap:20px;">
+                    <div>
+                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-orders" class="count-up-stat" data-val="12500">0</span>
+                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Orders Delivered</span>
+                    </div>
+                    <div>
+                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-designs" class="count-up-stat" data-val="450">0</span>
+                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Exclusive Designs</span>
+                    </div>
+                    <div>
+                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-customers" class="count-up-stat" data-val="9800">0</span>
+                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Happy Customers</span>
+                    </div>
+                    <div>
+                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-rating" class="count-up-stat" data-val="4.9" data-decimals="1">0</span>
+                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Customer Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Reviews (Animated Testimonial Slider) -->
+            <div class="testimonials-section">
+                <div class="container">
+                    <div class="section-title-wrapper">
+                        <span class="section-pretitle">Testimonials</span>
+                        <h2 class="section-title">Customer Feedback</h2>
+                    </div>
+                    <div class="testimonials-slider" id="home-testimonial-slider">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Feed Gallery Mock -->
+            <div class="container" style="padding:80px 0;">
+                <div class="section-title-wrapper">
+                    <span class="section-pretitle">Social Stream</span>
+                    <h2 class="section-title">Follow Us @SBFashions</h2>
+                </div>
+                <div class="instagram-grid" id="home-instagram-grid">
+                    <!-- Seeded with high quality image items -->
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription Form -->
+            <div class="container">
+                <div class="newsletter-section">
+                    <div class="newsletter-wrapper">
+                        <h2 class="newsletter-title">Subscribe to the Club</h2>
+                        <p class="newsletter-desc">Sign up to receive early notifications about festival sales, designer uploads, and exclusive offers.</p>
+                        <form class="newsletter-form" id="newsletter-subscription-form">
+                            <input type="email" placeholder="Enter your email address" class="newsletter-input" required id="newsletter-email-val">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Location details and Google Maps -->
+            <div class="container">
+                <div class="store-details-section">
+                    <div class="store-info-pane">
+                        <h2 class="store-title">Visit Our Boutique</h2>
+                        <div class="store-detail-row">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Mahaboob Nagar, Pan Chaurasta, Telangana, India</p>
+                            </div>
+                        </div>
+                        <div class="store-detail-row">
+                            <i data-lucide="phone"></i>
+                            <div>
+                                <h4>Call Sowbhagya (Owner)</h4>
+                                <p>7989646049 (Primary) <br> 7989646049 (Alternative)</p>
+                            </div>
+                        </div>
+                        <div class="store-detail-row">
+                            <i data-lucide="mail"></i>
+                            <div>
+                                <h4>Business Email</h4>
+                                <p>kpsowbhagya279@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="store-detail-row">
+                            <i data-lucide="clock"></i>
+                            <div>
+                                <h4>Boutique Timing</h4>
+                                <p>Mon - Sat: 10:00 AM - 9:00 PM <br> Sunday: 11:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-map-pane">
+                        <!-- Google Maps Embed Code for Mahaboob Nagar Pan Chaurasta -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.78651817412!2d77.97341867590807!3d16.73693282098679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba2a20b0805177%3A0xe96df586d634dbd3!2sPan%20Chaurasta%2C%20Mahbubnagar%2C%20Telangana%20509001!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- B. CATEGORY VIEW --- -->
+        <section id="view-category" class="view-section">
+            <div class="container">
+                <!-- Category Banner -->
+                <div class="category-page-header" id="category-page-banner" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&auto=format&fit=crop&q=80');">
+                    <div class="category-header-content">
+                        <h1 class="category-header-title" id="category-page-title">Sarees</h1>
+                        <p id="category-page-subtitle" style="font-size: 0.95rem; color: rgba(255,255,255,0.8); margin-top: 10px;">Elegant, heavy work, traditional wedding Sarees</p>
+                    </div>
+                </div>
+
+                <!-- Mobile filter toggle button -->
+                <div class="mobile-filter-toggle-bar">
+                    <button class="btn btn-secondary" id="btn-mobile-filter-toggle" style="padding:10px 20px;font-size:0.85rem;">
+                        <i data-lucide="sliders-horizontal" style="display:inline;width:14px;vertical-align:-2px;margin-right:6px;"></i>Filters
+                    </button>
+                </div>
+
+                <div class="category-layout">
+                    <!-- Left Sidebar Filters -->
+                    <aside class="filter-sidebar" id="category-filter-sidebar">
+                        <div class="filter-title" style="display:flex;justify-content:space-between;align-items:center;">
+                            <span>Filters</span>
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <button style="font-size: 0.75rem; text-decoration: underline; color: var(--color-secondary-dark);" id="btn-clear-filters">Reset All</button>
+                                <button id="btn-mobile-filter-close" style="font-size:1.2rem;display:none;" title="Close Filters"><i data-lucide="x" style="width:16px;"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-group-title">Price Range</h4>
+                            <div class="price-range-inputs">
+                                <input type="number" id="price-filter-min" placeholder="Min" value="0">
+                                <span>-</span>
+                                <input type="number" id="price-filter-max" placeholder="Max" value="15000">
+                            </div>
+                        </div>
+
+                        <!-- Availability Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-group-title">Stock Status</h4>
+                            <ul class="filter-list">
+                                <li>
+                                    <label class="filter-checkbox-label">
+                                        <input type="checkbox" id="stock-filter-instock">
+                                        In Stock Only
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Sizes Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-group-title">Select Sizes</h4>
+                            <ul class="filter-list">
+                                <li><label class="filter-checkbox-label"><input type="checkbox" name="filter-size" value="S"> S</label></li>
+                                <li><label class="filter-checkbox-label"><input type="checkbox" name="filter-size" value="M"> M</label></li>
+                                <li><label class="filter-checkbox-label"><input type="checkbox" name="filter-size" value="L"> L</label></li>
+                                <li><label class="filter-checkbox-label"><input type="checkbox" name="filter-size" value="XL"> XL</label></li>
+                                <li><label class="filter-checkbox-label"><input type="checkbox" name="filter-size" value="XXL"> XXL</label></li>
+                                <li><label class="filter-checkbox-label"><input type="checkbox" name="filter-size" value="Free Size"> Free Size</label></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Right Product Listing Area -->
+                    <div>
+                        <!-- Toolbar for sorting -->
+                        <div class="listing-toolbar">
+                            <div class="listing-count">
+                                Showing <span id="category-listing-count">0</span> products
+                            </div>
+                            <div class="listing-sort">
+                                <label for="sort-select" style="font-size:0.85rem;margin-right:10px;font-weight:600;">Sort By:</label>
+                                <select id="sort-select">
+                                    <option value="newest">Newest Arrivals</option>
+                                    <option value="popular">Popularity</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="discount">Discount Percent</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Grid -->
+                        <div class="product-grid" id="category-product-grid">
+                            <!-- Populated dynamically -->
+                        </div>
+
+                        <!-- Empty state if no products -->
+                        <div class="empty-state hidden" id="category-empty-state">
+                            <i data-lucide="package-search"></i>
+                            <h3>No Products Found</h3>
+                            <p>Try modifying your price limits or selected filters to find items.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- C. PRODUCT DETAIL VIEW --- -->
+        <section id="view-product" class="view-section">
+            <div class="container">
+                <!-- Breadcrumbs -->
+                <div style="font-size:0.85rem; margin-bottom:30px; color:var(--color-text-muted);">
+                    <a href="#/home">Home</a> &nbsp;/&nbsp; 
+                    <a href="#/category/women" id="detail-breadcrumb-cat">Women</a> &nbsp;/&nbsp; 
+                    <span id="detail-breadcrumb-name" style="color:var(--color-primary);font-weight:600;">Traditional Banarasi Saree</span>
+                </div>
+
+                <!-- Product Content Grid -->
+                <div class="product-detail-grid">
+                    <!-- Media Gallery Area -->
+                    <div class="detail-gallery">
+                        <div class="main-img-container" id="detail-image-zoom-area">
+                            <img src="" alt="SBF Product Detail" id="detail-main-image">
+                        </div>
+                        <div class="thumbnail-strip" id="detail-thumbnails-row">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Right Specs Information Pane -->
+                    <div class="product-detail-info">
+                        <span class="detail-cat" id="detail-product-cat">Saree</span>
+                        <h1 class="detail-title" id="detail-product-title">Designer Kanchipuram Silk Saree</h1>
+                        
+                        <div class="detail-meta-row">
+                            <div class="product-card-rating" style="margin-bottom:0;">
+                                <i data-lucide="star" style="fill:var(--color-warning);width:16px;"></i>
+                                <span id="detail-rating-score">4.8</span> &nbsp;
+                                <span id="detail-reviews-count">(42 Reviews)</span>
+                            </div>
+                            <div class="detail-sku" id="detail-product-sku">SKU: SBF-SAR-001</div>
+                            <span class="stock-status-badge in-stock" id="detail-stock-badge">In Stock</span>
+                        </div>
+
+                        <div class="detail-price-row">
+                            <span class="detail-price-current" id="detail-price-current">₹5,499</span>
+                            <span class="detail-price-old" id="detail-price-old">₹8,999</span>
+                            <span class="detail-price-discount" id="detail-price-discount">38% OFF</span>
+                        </div>
+
+                        <p class="detail-desc" id="detail-product-desc">
+                            Indulge in classic pure silk traditional sarees. Perfect for wedding seasons and festivals. Heavy hand-crafted embroidery patterns with premium zari borders.
+                        </p>
+
+                        <!-- Special Offers Box -->
+                        <div class="offers-promo-box">
+                            <h4>Special Benefits & Offers</h4>
+                            <ul>
+                                <li><i data-lucide="percent" style="width:14px;"></i> Save ₹500 extra using coupon <strong>SBFEST20</strong></li>
+                                <li><i data-lucide="truck" style="width:14px;"></i> Free shipping to Mahaboob Nagar and all over India</li>
+                                <li><i data-lucide="repeat" style="width:14px;"></i> Easy 7-day hassle-free exchange & return policy</li>
+                            </ul>
+                        </div>
+
+                        <!-- Size Selector -->
+                        <div class="product-attribute-select" id="detail-size-section">
+                            <div class="attr-title">Select Size</div>
+                            <div class="size-selector-row" id="detail-sizes-row">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Color Selector -->
+                        <div class="product-attribute-select" id="detail-color-section">
+                            <div class="attr-title">Select Color</div>
+                            <div class="color-selector-row" id="detail-colors-row">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Quantity and Actions -->
+                        <div class="purchase-controls">
+                            <div class="quantity-selector">
+                                <button class="qty-btn" id="btn-qty-minus"><i data-lucide="minus" style="width:16px;"></i></button>
+                                <input type="number" value="1" min="1" max="10" class="qty-input" id="detail-qty-val" readonly>
+                                <button class="qty-btn" id="btn-qty-plus"><i data-lucide="plus" style="width:16px;"></i></button>
+                            </div>
+                            <button class="btn btn-primary btn-detail-add-cart" id="btn-detail-add-to-cart">
+                                <i data-lucide="shopping-bag" style="margin-right:8px;width:18px;"></i>Add To Cart
+                            </button>
+                            <button class="btn btn-gold" style="height:50px;padding:0 25px;" id="btn-detail-buy-now">
+                                Buy Now
+                            </button>
+                            <button class="wishlist-btn-card" style="position:static;width:50px;height:50px;" id="btn-detail-wishlist" title="Add to Wishlist">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+
+                        <div style="font-size:0.85rem; border-top:1px solid var(--color-border); padding-top:20px; color:var(--color-text-muted); display:flex; gap:30px;">
+                            <span><i data-lucide="package" style="vertical-align:-3px;width:14px;margin-right:5px;"></i> COD Available</span>
+                            <span><i data-lucide="shield-check" style="vertical-align:-3px;width:14px;margin-right:5px;"></i> 100% Original</span>
+                            <span><i data-lucide="share-2" style="vertical-align:-3px;width:14px;margin-right:5px;cursor:pointer;" id="btn-share-product"></i> Share Item</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product details accordions / tabs -->
+                <div class="detail-tabs">
+                    <div class="tabs-nav">
+                        <div class="tab-nav-item active" data-target="tab-specs">Specifications</div>
+                        <div class="tab-nav-item" data-target="tab-care">Material & Care</div>
+                        <div class="tab-nav-item" data-target="tab-delivery">Delivery & Returns</div>
+                        <div class="tab-nav-item" data-target="tab-reviews">Reviews (<span id="detail-reviews-tab-count">0</span>)</div>
+                        <div class="tab-nav-item" data-target="tab-qa">Q&A</div>
+                    </div>
+
+                    <!-- Spec Tab -->
+                    <div class="tab-pane active" id="tab-specs">
+                        <table class="specs-table">
+                            <tr>
+                                <td>Material Fabric</td>
+                                <td id="spec-fabric">Pure Kora Silk</td>
+                            </tr>
+                            <tr>
+                                <td>Work Style</td>
+                                <td id="spec-work">Maggam Hand Embroidery Zari Work</td>
+                            </tr>
+                            <tr>
+                                <td>Pattern Color</td>
+                                <td id="spec-color">Imperial Crimson / Classic Gold</td>
+                            </tr>
+                            <tr>
+                                <td>Occasion</td>
+                                <td id="spec-occasion">Bridal Wear, Festival</td>
+                            </tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td id="spec-weight">850 grams</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Care Tab -->
+                    <div class="tab-pane" id="tab-care">
+                        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8;">
+                            • Dry clean only is highly recommended for silk material with Maggam work.<br>
+                            • Wrap in a muslin cloth to maintain gold zari shine.<br>
+                            • Avoid spraying perfumes directly on the fabric.<br>
+                            • Iron only on low heat on the reverse side.
+                        </p>
+                    </div>
+
+                    <!-- Delivery Tab -->
+                    <div class="tab-pane" id="tab-delivery">
+                        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8;">
+                            <strong>Delivery Details:</strong> Standard free delivery will reach your address in 3-5 working days. Fast express shipping (next-day delivery) is available for local orders in Mahaboob Nagar.<br><br>
+                            <strong>Hassle-Free Returns:</strong> We offer a 7-day exchange or refund if the product is undamaged, with tags intact. Hand-woven customized products (like Maggam custom sizes) are eligible for alterations only.
+                        </p>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-pane" id="tab-reviews">
+                        <div style="display:grid; grid-template-columns:1fr 2fr; gap:30px; margin-bottom:30px;">
+                            <div style="background-color:var(--color-bg-alt); padding:25px; border-radius:var(--radius-md); text-align:center;">
+                                <span style="font-size:3rem; font-weight:700; display:block;" id="reviews-avg-score">4.8</span>
+                                <div class="product-card-rating" style="justify-content:center; margin-bottom:10px;">
+                                    <i data-lucide="star" style="fill:var(--color-warning);width:16px;"></i>
+                                    <i data-lucide="star" style="fill:var(--color-warning);width:16px;"></i>
+                                    <i data-lucide="star" style="fill:var(--color-warning);width:16px;"></i>
+                                    <i data-lucide="star" style="fill:var(--color-warning);width:16px;"></i>
+                                    <i data-lucide="star" style="fill:var(--color-warning);width:16px;"></i>
+                                </div>
+                                <span style="font-size:0.8rem; color:var(--color-text-muted);">Based on <span id="reviews-total-num">42</span> Ratings</span>
+                            </div>
+                            
+                            <!-- Add Review Form -->
+                            <div style="background-color:var(--color-bg-surface); padding:20px; border:1px solid var(--color-border); border-radius:var(--radius-md);">
+                                <h4 style="margin-bottom:12px;text-transform:uppercase;font-size:0.85rem;letter-spacing:1px;">Write a Review</h4>
+                                <form id="product-review-form" style="display:flex; flex-direction:column; gap:10px;">
+                                    <div style="display:flex;gap:15px;align-items:center;">
+                                        <span style="font-size:0.85rem;">Your Rating:</span>
+                                        <div id="review-stars-selector" style="color:var(--color-text-muted); cursor:pointer; font-size:1.2rem;display:flex;gap:5px;">
+                                            <i data-lucide="star" class="star-rating-select" data-val="1"></i>
+                                            <i data-lucide="star" class="star-rating-select" data-val="2"></i>
+                                            <i data-lucide="star" class="star-rating-select" data-val="3"></i>
+                                            <i data-lucide="star" class="star-rating-select" data-val="4"></i>
+                                            <i data-lucide="star" class="star-rating-select" data-val="5"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" placeholder="Your Name" class="input-field" required id="review-author-name" style="padding:8px 12px;font-size:0.85rem;">
+                                    <textarea placeholder="Write review comments here..." class="input-field" rows="3" required id="review-text-content" style="padding:8px 12px;font-size:0.85rem;"></textarea>
+                                    <button type="submit" class="btn btn-primary" style="align-self:flex-start; padding:8px 20px; font-size:0.75rem;">Submit Review</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div id="detail-reviews-list-container" style="display:flex; flex-direction:column; gap:20px;">
+                            <!-- Seeded Reviews -->
+                        </div>
+                    </div>
+
+                    <!-- Q&A Tab -->
+                    <div class="tab-pane" id="tab-qa">
+                        <div style="margin-bottom:30px; background-color:var(--color-bg-alt); padding:20px; border-radius:var(--radius-md);">
+                            <h4 style="margin-bottom:12px;font-size:0.85rem;text-transform:uppercase;">Ask a Question</h4>
+                            <form id="product-qa-form" style="display:flex; gap:15px;">
+                                <input type="text" placeholder="Have a query about fabric weight, customizations, color shades?" class="input-field" required id="qa-input-text" style="flex-grow:1;padding:8px 15px;font-size:0.85rem;">
+                                <button type="submit" class="btn btn-primary" style="padding:0 25px;font-size:0.75rem;">Ask Us</button>
+                            </form>
+                        </div>
+                        <div id="detail-qa-list" style="display:flex; flex-direction:column; gap:15px;">
+                            <!-- Seeded Q&As -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Cross Sells -->
+                <div style="margin-top:80px;">
+                    <div class="section-title-wrapper" style="margin-bottom:35px;">
+                        <span class="section-pretitle">Complete the Look</span>
+                        <h2 class="section-title" style="font-size:1.8rem;">Frequently Bought Together</h2>
+                    </div>
+                    <div class="product-grid" id="detail-related-products">
+                        <!-- Populated dynamic cross-sells -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- D. MY CART VIEW --- -->
+        <section id="view-cart" class="view-section">
+            <div class="container">
+                <div class="section-title-wrapper" style="margin-bottom:35px; text-align:left;">
+                    <h1 class="section-title" style="font-size:2.2rem; padding-bottom:10px;">Shopping Bag</h1>
+                </div>
+
+                <div class="cart-layout" id="cart-items-layout">
+                    <!-- Left: Cart items table -->
+                    <div>
+                        <div class="cart-table-card">
+                            <div class="cart-title-row" style="display:grid; grid-template-columns:80px 2fr 1fr 1fr 40px; font-weight:700; font-size:0.8rem; text-transform:uppercase; color:var(--color-text-muted); letter-spacing:1px;">
+                                <span>Image</span>
+                                <span>Product Details</span>
+                                <span>Price</span>
+                                <span>Quantity</span>
+                                <span>Action</span>
+                            </div>
+                            
+                            <div id="cart-items-list-container">
+                                <!-- Populated dynamically by javascript -->
+                            </div>
+                        </div>
+
+                        <!-- Special related products cross-selling at footer of cart -->
+                        <div style="margin-top:50px;">
+                            <h3 style="font-family:var(--font-serif); margin-bottom:20px; font-size:1.3rem;">Customers Also Bought</h3>
+                            <div class="product-grid" style="grid-template-columns:repeat(3, 1fr);" id="cart-cross-sells">
+                                <!-- dynamic card additions -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Summary panel -->
+                    <aside>
+                        <div class="cart-summary-card">
+                            <h3 style="font-family:var(--font-serif); margin-bottom:20px; border-bottom:1px solid var(--color-border); padding-bottom:10px; font-size:1.3rem;">Summary</h3>
+                            
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="cart-summary-subtotal">₹0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Applied Coupon Discount</span>
+                                <span id="cart-summary-coupon" style="color:var(--color-danger);">-₹0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping Cost</span>
+                                <span id="cart-summary-shipping">₹0</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Grand Total</span>
+                                <span id="cart-summary-total">₹0</span>
+                            </div>
+
+                            <!-- Coupon form -->
+                            <div class="coupon-form">
+                                <input type="text" placeholder="Promo / Coupon Code" class="coupon-input" id="cart-coupon-input-val">
+                                <button type="button" class="coupon-btn" id="btn-apply-coupon">Apply</button>
+                            </div>
+                            <div id="coupon-message-pane" style="font-size:0.8rem; margin-top:-15px; margin-bottom:15px; font-weight:600;"></div>
+
+                            <!-- Benefits list -->
+                            <div style="background-color:var(--color-bg-alt); padding:15px; border-radius:var(--radius-md); margin-bottom:25px; font-size:0.8rem; border:1px solid var(--color-border);">
+                                <h4 style="text-transform:uppercase; margin-bottom:8px; font-size:0.75rem; letter-spacing:0.5px;">Premium Shopping Benefits</h4>
+                                <ul style="display:flex; flex-direction:column; gap:6px; color:var(--color-text-muted);">
+                                    <li><i data-lucide="check" style="width:12px;color:var(--color-success);vertical-align:middle;margin-right:6px;"></i> Free Alterations for boutique sizing</li>
+                                    <li><i data-lucide="check" style="width:12px;color:var(--color-success);vertical-align:middle;margin-right:6px;"></i> Sanitized Premium Packaging</li>
+                                    <li><i data-lucide="check" style="width:12px;color:var(--color-success);vertical-align:middle;margin-right:6px;"></i> Hand-delivered local shipping</li>
+                                </ul>
+                            </div>
+
+                            <a href="#/checkout" class="btn btn-primary" style="width:100%; height:50px;">Proceed To Checkout</a>
+                            <a href="#/category/women" class="btn btn-secondary" style="width:100%; height:50px; margin-top:10px;">Continue Shopping</a>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Empty state if cart is zero -->
+                <div class="empty-state hidden" id="cart-empty-state">
+                    <i data-lucide="shopping-bag" style="width:64px;height:64px;"></i>
+                    <h3>Your Cart is Empty</h3>
+                    <p>Looks like you haven't added any luxury fashion items to your shopping bag yet.</p>
+                    <a href="#/category/women" class="btn btn-gold" style="margin-top:20px;">Explore Collections</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- E. CHECKOUT VIEW --- -->
+        <section id="view-checkout" class="view-section">
+            <div class="container">
+                <div class="section-title-wrapper" style="margin-bottom:35px; text-align:left;">
+                    <h1 class="section-title" style="font-size:2.2rem; padding-bottom:10px;">Checkout</h1>
+                </div>
+
+                <form id="checkout-main-form" class="checkout-layout">
+                    <!-- Left Customer Details -->
+                    <div>
+                        <div class="checkout-section-card">
+                            <h3 class="checkout-subtitle">Contact Information</h3>
+                            <div class="form-grid">
+                                <div class="form-input-wrapper">
+                                    <label for="check-email">Email Address</label>
+                                    <input type="email" id="check-email" class="input-field" placeholder="example@gmail.com" required>
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="check-phone">Mobile Phone Number</label>
+                                    <input type="tel" id="check-phone" class="input-field" placeholder="7989646049" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkout-section-card">
+                            <h3 class="checkout-subtitle">Shipping Address</h3>
+                            <div class="form-grid">
+                                <div class="form-input-wrapper">
+                                    <label for="check-firstname">First Name</label>
+                                    <input type="text" id="check-firstname" class="input-field" placeholder="John" required>
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="check-lastname">Last Name</label>
+                                    <input type="text" id="check-lastname" class="input-field" placeholder="Doe" required>
+                                </div>
+                                <div class="form-input-wrapper form-group-full">
+                                    <label for="check-street">Street Address / House No.</label>
+                                    <input type="text" id="check-street" class="input-field" placeholder="Door No, Street Name, Near Landmark" required>
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="check-city">City</label>
+                                    <input type="text" id="check-city" class="input-field" placeholder="Mahaboob Nagar" required>
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="check-state">State</label>
+                                    <input type="text" id="check-state" class="input-field" placeholder="Telangana" required>
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="check-pincode">Pincode</label>
+                                    <input type="text" id="check-pincode" class="input-field" placeholder="509001" required>
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="check-country">Country</label>
+                                    <input type="text" id="check-country" class="input-field" value="India" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkout-section-card">
+                            <h3 class="checkout-subtitle">Payment Method</h3>
+                            <div class="payment-method-options">
+                                <label class="payment-option-label active" id="label-pay-cod">
+                                    <input type="radio" name="payment-method" value="COD" checked>
+                                    <div>
+                                        <strong>Cash On Delivery (COD)</strong>
+                                        <p style="font-size:0.8rem; color:var(--color-text-muted); margin-top:4px;">Pay securely in cash when your designer parcel is delivered.</p>
+                                    </div>
+                                </label>
+                                <label class="payment-option-label" id="label-pay-online">
+                                    <input type="radio" name="payment-method" value="ONLINE">
+                                    <div>
+                                        <strong>Card / UPI Payments (Mock)</strong>
+                                        <p style="font-size:0.8rem; color:var(--color-text-muted); margin-top:4px;">Secure instant online payments. (Simulated integration)</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Order review summary -->
+                    <aside>
+                        <div class="cart-summary-card">
+                            <h3 style="font-family:var(--font-serif); margin-bottom:20px; border-bottom:1px solid var(--color-border); padding-bottom:10px; font-size:1.3rem;">Order Summary</h3>
+                            
+                            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px; max-height:220px; overflow-y:auto;" id="checkout-summary-items-list">
+                                <!-- Summary Items loaded via javascript -->
+                            </div>
+
+                            <div class="summary-row" style="border-top:1px solid var(--color-border); padding-top:15px;">
+                                <span>Cart Subtotal</span>
+                                <span id="checkout-sum-subtotal">₹0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Coupon Code Applied</span>
+                                <span id="checkout-sum-discount" style="color:var(--color-danger);">-₹0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Fee</span>
+                                <span id="checkout-sum-shipping">₹0</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Grand Total</span>
+                                <span id="checkout-sum-total">₹0</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold" style="width:100%; height:50px; margin-top:15px;" id="btn-submit-order">
+                                Confirm & Place Order
+                            </button>
+                        </div>
+                    </aside>
+                </form>
+            </div>
+        </section>
+
+        <!-- --- F. ORDER SUCCESS VIEW --- -->
+        <section id="view-order-success" class="view-section">
+            <div class="container">
+                <div class="success-card">
+                    <div class="success-icon-container">
+                        <i data-lucide="check-circle-2"></i>
+                    </div>
+                    <h2 class="success-title">Thank You For Your Order!</h2>
+                    <p style="color:var(--color-text-muted); margin-bottom:25px; font-size:0.95rem;">
+                        Your order has been successfully placed. We've sent a verification email to your registered inbox.
+                    </p>
+                    <span class="success-order-id">Order Reference: <strong id="success-order-id-label">SBF-178491823</strong></span>
+                    
+                    <div style="background-color:var(--color-bg-alt); padding:20px; border-radius:var(--radius-md); border:1px solid var(--color-border); text-align:left; margin-bottom:30px;">
+                        <h4 style="text-transform:uppercase; font-size:0.8rem; margin-bottom:10px;">Next Steps:</h4>
+                        <p style="font-size:0.85rem; color:var(--color-text-muted); line-height:1.6;">
+                            1. Sowbhagya will pack the products inside our premium brand cover.<br>
+                            2. You will receive a tracking link with stages from Packed to Shipped.<br>
+                            3. Tap below to tracking page to check progress.
+                        </p>
+                    </div>
+
+                    <div style="display:flex; gap:15px; justify-content:center;">
+                        <a href="#/tracking" class="btn btn-gold" id="success-track-btn">Track Order Details</a>
+                        <button class="btn btn-secondary" onclick="window.print()" style="color:var(--color-primary);border-color:var(--color-primary);">Print Invoice</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- G. TRACKING SYSTEM VIEW --- -->
+        <section id="view-tracking" class="view-section">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-pretitle">Logistics Status</span>
+                    <h2 class="section-title">Order Tracking System</h2>
+                </div>
+
+                <div class="tracking-wrapper">
+                    <div class="tracking-search-bar">
+                        <input type="text" placeholder="Enter your Order Reference ID (e.g. SBF-10001)" id="tracking-search-id-val">
+                        <button class="btn btn-primary" id="btn-search-tracking" style="border-radius:var(--radius-md);">Search Status</button>
+                    </div>
+
+                    <div class="hidden" id="tracking-details-pane">
+                        <div class="tracking-info-header">
+                            <div>
+                                <h3 style="font-family:var(--font-serif); font-size:1.3rem;">Order Status</h3>
+                                <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:5px;">Order ID: <strong id="track-order-id-label">SBF-10001</strong></p>
+                            </div>
+                            <div style="text-align:right;">
+                                <h3 style="font-family:var(--font-serif); font-size:1.3rem;">Estimated Delivery</h3>
+                                <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:5px;" id="track-delivery-est">2-3 working days</p>
+                            </div>
+                        </div>
+
+                        <!-- Progress timeline bar -->
+                        <div class="tracking-timeline">
+                            <div class="timeline-bar-progress" id="track-timeline-progress-bar" style="width: 0%;"></div>
+                            
+                            <div class="timeline-step" id="step-pending">
+                                <div class="step-dot"><i data-lucide="clock" style="width:16px;"></i></div>
+                                <span class="step-label">Pending</span>
+                            </div>
+                            <div class="timeline-step" id="step-packed">
+                                <div class="step-dot"><i data-lucide="package" style="width:16px;"></i></div>
+                                <span class="step-label">Packed</span>
+                            </div>
+                            <div class="timeline-step" id="step-shipped">
+                                <div class="step-dot"><i data-lucide="truck" style="width:16px;"></i></div>
+                                <span class="step-label">Shipped</span>
+                            </div>
+                            <div class="timeline-step" id="step-delivery">
+                                <div class="step-dot"><i data-lucide="bike" style="width:16px;"></i></div>
+                                <span class="step-label">Out for Delivery</span>
+                            </div>
+                            <div class="timeline-step" id="step-completed">
+                                <div class="step-dot"><i data-lucide="check-circle" style="width:16px;"></i></div>
+                                <span class="step-label">Delivered</span>
+                            </div>
+                        </div>
+
+                        <!-- Extra Logistics specs -->
+                        <div style="background-color:var(--color-bg-alt); padding:20px; border-radius:var(--radius-md); border:1px solid var(--color-border); margin-bottom:30px;">
+                            <table class="specs-table">
+                                <tr>
+                                    <td>Current Location</td>
+                                    <td id="track-current-loc">Mahaboob Nagar Hub, Pan Chaurasta</td>
+                                </tr>
+                                <tr>
+                                    <td>Delivery Address</td>
+                                    <td id="track-shipping-address">John Doe, 509001, Telangana</td>
+                                </tr>
+                                <tr>
+                                    <td>Tracking Link URL</td>
+                                    <td><a href="#" id="track-logistic-url" target="_blank" style="color:var(--color-secondary-dark); text-decoration:underline;">Open Logistics Partner Link</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Empty state if search returns null -->
+                    <div class="empty-state" id="tracking-empty-state">
+                        <i data-lucide="search"></i>
+                        <h3>Enter an Order Reference ID</h3>
+                        <p>Search using the order number generated during checkout to view current shipment details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- H. CUSTOMER DASHBOARD VIEW --- -->
+        <section id="view-dashboard" class="view-section">
+            <div class="container">
+                <div class="section-title-wrapper" style="margin-bottom:35px; text-align:left;">
+                    <h1 class="section-title" style="font-size:2.2rem; padding-bottom:10px;">My Account</h1>
+                </div>
+
+                <div class="dashboard-layout">
+                    <!-- Left Sidebar Menu -->
+                    <aside class="dashboard-menu">
+                        <a href="#/dashboard/profile" class="dashboard-menu-link active" data-tab="dash-tab-profile">
+                            <i data-lucide="user" style="width:16px;"></i> Profile Details
+                        </a>
+                        <a href="#/dashboard/orders" class="dashboard-menu-link" data-tab="dash-tab-orders">
+                            <i data-lucide="shopping-cart" style="width:16px;"></i> Order History
+                        </a>
+                        <a href="#/dashboard/wishlist" class="dashboard-menu-link" data-tab="dash-tab-wishlist">
+                            <i data-lucide="heart" style="width:16px;"></i> Wishlist
+                        </a>
+                        <a href="#/dashboard/addresses" class="dashboard-menu-link" data-tab="dash-tab-addresses">
+                            <i data-lucide="map-pin" style="width:16px;"></i> Saved Addresses
+                        </a>
+                        <hr style="border:none;border-top:1px solid var(--color-border);margin:15px 0;">
+                        <button class="dashboard-menu-link" style="width:100%;text-align:left;color:var(--color-danger);" id="btn-customer-logout">
+                            <i data-lucide="log-out" style="width:16px;"></i> Sign Out
+                        </button>
+                    </aside>
+
+                    <!-- Right panel dynamically toggled -->
+                    <div class="dashboard-content-panel">
+                        <!-- Profile Sub-Tab -->
+                        <div class="dash-tab-content active" id="dash-tab-profile">
+                            <h3 style="font-family:var(--font-serif); margin-bottom:25px; font-size:1.3rem;">Personal Information</h3>
+                            <form id="customer-profile-edit-form" class="form-grid">
+                                <div class="form-input-wrapper">
+                                    <label for="profile-name">Full Name</label>
+                                    <input type="text" id="profile-name" class="input-field" value="John Doe">
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="profile-email">Email Address</label>
+                                    <input type="email" id="profile-email" class="input-field" value="example@gmail.com" readonly>
+                                </div>
+                                <div class="form-input-wrapper">
+                                    <label for="profile-phone">Mobile Phone</label>
+                                    <input type="tel" id="profile-phone" class="input-field" value="7989646049">
+                                </div>
+                                <div class="form-group-full" style="margin-top:20px;">
+                                    <button type="submit" class="btn btn-gold">Update Profile</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Orders Sub-Tab -->
+                        <div class="dash-tab-content hidden" id="dash-tab-orders">
+                            <h3 style="font-family:var(--font-serif); margin-bottom:25px; font-size:1.3rem;">Recent Orders</h3>
+                            <div style="overflow-x:auto;">
+                                <table class="orders-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Date Placed</th>
+                                            <th>Grand Total</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="customer-orders-list-rows">
+                                        <!-- Javascript records -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Wishlist Sub-Tab -->
+                        <div class="dash-tab-content hidden" id="dash-tab-wishlist">
+                            <h3 style="font-family:var(--font-serif); margin-bottom:25px; font-size:1.3rem;">My Wishlist</h3>
+                            <div class="product-grid" style="grid-template-columns:repeat(2, 1fr);" id="customer-wishlist-grid">
+                                <!-- items -->
+                            </div>
+                            <div class="empty-state hidden" id="wishlist-empty-pane">
+                                <i data-lucide="heart" style="color:var(--color-text-muted);"></i>
+                                <h3>Your wishlist is empty</h3>
+                                <p>Save products from pages to view them here.</p>
+                            </div>
+                        </div>
+
+                        <!-- Addresses Sub-Tab -->
+                        <div class="dash-tab-content hidden" id="dash-tab-addresses">
+                            <h3 style="font-family:var(--font-serif); margin-bottom:20px; font-size:1.3rem;">Saved Address</h3>
+                            <div style="border:1px solid var(--color-border); padding:20px; border-radius:var(--radius-md); background-color:var(--color-bg-alt);">
+                                <h4 style="margin-bottom:10px;">Primary Delivery Location</h4>
+                                <p id="dashboard-address-preview-text" style="font-size:0.9rem; color:var(--color-text-muted);">
+                                    John Doe, Door No 4, Pan Chaurasta, Mahaboob Nagar, Telangana - 509001. Tel: 7989646049
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- I. ADMIN PANEL VIEW (Dark Obsidian UI) --- -->
+        <section id="view-admin" class="view-section" style="padding:40px 0; background-color:#111111;">
+            <div class="container">
+                <div class="admin-layout">
+                    <!-- Left Admin Sidebar -->
+                    <aside class="admin-sidebar">
+                        <div style="text-align:center; margin-bottom:30px; border-bottom:1px solid #2d2d2d; padding-bottom:20px;">
+                            <span style="font-family:var(--font-serif); font-size:1.1rem; color:var(--color-secondary); font-weight:700; letter-spacing:1px; display:block;">SB FASHIONS ADMIN</span>
+                            <span style="font-size:0.7rem; text-transform:uppercase; color:#888;">Panel Controller</span>
+                        </div>
+                        <a href="#/admin/dashboard" class="admin-menu-link active" data-section="admin-dash-panel">
+                            <i data-lucide="line-chart" style="width:16px;"></i> Dashboard Analytics
+                        </a>
+                        <a href="#/admin/products" class="admin-menu-link" data-section="admin-products-panel">
+                            <i data-lucide="package" style="width:16px;"></i> Product CRUD
+                        </a>
+                        <a href="#/admin/orders" class="admin-menu-link" data-section="admin-orders-panel">
+                            <i data-lucide="truck" style="width:16px;"></i> Manage Orders
+                        </a>
+                        <a href="#/admin/banners" class="admin-menu-link" data-section="admin-banners-panel">
+                            <i data-lucide="image" style="width:16px;"></i> Banner Controller
+                        </a>
+                        <hr style="border:none;border-top:1px solid #2d2d2d;margin:15px 0;">
+                        <button class="admin-menu-link" style="width:100%;text-align:left;color:#ff5555;" id="btn-admin-logout">
+                            <i data-lucide="log-out" style="width:16px;"></i> Exit Admin Panel
+                        </button>
+                    </aside>
+
+                    <!-- Right Admin Content Panel -->
+                    <div class="admin-content">
+                        <!-- Dashboard Panel -->
+                        <div class="admin-panel-sub-section" id="admin-dash-panel">
+                            <h2 class="admin-section-title">Analytics Dashboard</h2>
+                            
+                            <!-- KPI Metrics -->
+                            <div class="analytics-grid">
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Total Revenue</span>
+                                    <div class="analytics-value" id="admin-revenue-label">₹54,990</div>
+                                </div>
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Orders Placed</span>
+                                    <div class="analytics-value" id="admin-orders-label">12</div>
+                                </div>
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Total Products</span>
+                                    <div class="analytics-value" id="admin-products-label">10</div>
+                                </div>
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Site Visitors</span>
+                                    <div class="analytics-value">1,420</div>
+                                </div>
+                            </div>
+
+                            <!-- SVG Charts Mock -->
+                            <div class="admin-charts-row">
+                                <div class="chart-box">
+                                    <h4 style="margin-bottom:15px;color:#aaa;font-size:0.85rem;text-transform:uppercase;">Sales Report Graph (Weekly)</h4>
+                                    <!-- Simple mock SVG Graph -->
+                                    <svg viewBox="0 0 500 200" style="width:100%; height:80%;">
+                                        <polyline fill="none" stroke="var(--color-secondary)" stroke-width="3" points="20,180 80,150 140,160 200,90 260,110 320,60 380,80 440,30 480,20"/>
+                                        <g stroke="#333" stroke-width="1">
+                                            <line x1="20" y1="180" x2="480" y2="180"/>
+                                            <line x1="20" y1="20" x2="20" y2="180"/>
+                                        </g>
+                                        <circle cx="440" cy="30" r="4" fill="#fff"/>
+                                        <circle cx="480" cy="20" r="4" fill="#fff"/>
+                                    </svg>
+                                </div>
+                                <div class="chart-box">
+                                    <h4 style="margin-bottom:15px;color:#aaa;font-size:0.85rem;text-transform:uppercase;">Category Demands</h4>
+                                    <!-- Pie Chart Mock -->
+                                    <svg viewBox="0 0 200 200" style="width:100%; height:80%;">
+                                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="var(--color-secondary)" stroke-width="40" stroke-dasharray="250 500"/>
+                                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#a88d65" stroke-width="40" stroke-dasharray="150 500" stroke-dashoffset="-250"/>
+                                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#222222" stroke-width="40" stroke-dasharray="100 500" stroke-dashoffset="-400"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- List of Recent orders -->
+                            <div style="background-color:#222; border:1px solid #333; padding:20px; border-radius:var(--radius-md);">
+                                <h3 style="font-family:var(--font-serif); margin-bottom:15px; font-size:1.1rem; color:var(--color-secondary);">Recent Placed Orders</h3>
+                                <div style="overflow-x:auto;">
+                                    <table class="admin-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Order ID</th>
+                                                <th>Customer</th>
+                                                <th>Total Value</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="admin-recent-orders-list">
+                                            <!-- Dynamic values -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product CRUD Panel -->
+                        <div class="admin-panel-sub-section hidden" id="admin-products-panel">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
+                                <h2 class="admin-section-title" style="margin-bottom:0;">Product Catalog Management</h2>
+                                <div style="display:flex; gap:10px;">
+                                    <button class="btn btn-secondary" id="btn-admin-bulk-upload" style="background-color:#222;color:#fff;border-color:#333;padding:8px 16px;font-size:0.75rem;">Bulk Mock Seed</button>
+                                    <button class="btn btn-gold" id="btn-admin-add-product" style="padding:8px 16px;font-size:0.75rem;"><i data-lucide="plus" style="display:inline;width:14px;vertical-align:-2px;margin-right:5px;"></i>Add New Product</button>
+                                </div>
+                            </div>
+
+                            <div style="background-color:#222; border:1px solid #333; border-radius:var(--radius-md); padding:20px; overflow-x:auto;">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>SKU</th>
+                                            <th>Product Title</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Stock Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-catalog-products-list">
+                                        <!-- Seeded catalog -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Orders Panel -->
+                        <div class="admin-panel-sub-section hidden" id="admin-orders-panel">
+                            <h2 class="admin-section-title">Manage Customer Orders</h2>
+                            <div style="background-color:#222; border:1px solid #333; border-radius:var(--radius-md); padding:20px; overflow-x:auto;">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Order Reference ID</th>
+                                            <th>Billing Name</th>
+                                            <th>Mobile</th>
+                                            <th>Grand Total</th>
+                                            <th>Status Details</th>
+                                            <th>Tracking Ref</th>
+                                            <th>Update State</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-orders-management-list">
+                                        <!-- orders CRUD -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Banners Config Panel -->
+                        <div class="admin-panel-sub-section hidden" id="admin-banners-panel">
+                            <h2 class="admin-section-title">Website Content Management</h2>
+                            <div style="background-color:#222; border:1px solid #333; border-radius:var(--radius-md); padding:25px; margin-bottom:20px;">
+                                <h3 style="margin-bottom:15px;font-size:1rem;color:var(--color-secondary);">Headline Announcements</h3>
+                                <div class="form-input-wrapper" style="margin-bottom:15px;">
+                                    <label>Header Top Alert Text</label>
+                                    <input type="text" class="input-field" id="admin-banner-announcement-val" style="background:#111;color:#fff;border-color:#333;" value="⚡ FESTIVAL SEASON SALE IS LIVE: USE CODE &quot;SBFEST20&quot; FOR 20% OFF!">
+                                </div>
+                                <button class="btn btn-gold" id="btn-save-announcement" style="padding:8px 20px;font-size:0.75rem;">Save Banner</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- J. AUTH VIEW (Sign In / Register) --- -->
+        <section id="view-auth" class="view-section">
+            <div class="container">
+                <div class="success-card" style="max-width:450px; padding:40px 30px;">
+                    <h2 class="success-title" style="margin-bottom:25px;" id="auth-title-label">Sign In</h2>
+                    
+                    <form id="auth-main-form" style="display:flex; flex-direction:column; gap:15px; text-align:left;">
+                        <div class="form-input-wrapper">
+                            <label for="auth-email-input">Email Address</label>
+                            <input type="email" id="auth-email-input" class="input-field" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label for="auth-password-input">Password</label>
+                            <input type="password" id="auth-password-input" class="input-field" placeholder="••••••••" required>
+                        </div>
+                        <div style="font-size:0.8rem; text-align:right;">
+                            <a href="#/auth/register" id="auth-toggle-link" style="color:var(--color-secondary-dark);font-weight:600;">Don't have an account? Sign Up</a>
+                        </div>
+                        <button type="submit" class="btn btn-gold" style="width:100%; height:45px; margin-top:10px;">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- K. CONTACT & POLICY PAGES --- -->
+        <section id="view-contact" class="view-section">
+            <div class="container" style="max-width:800px; margin:0 auto;">
+                <div class="section-title-wrapper">
+                    <span class="section-pretitle">Get In Touch</span>
+                    <h2 class="section-title">Contact Us</h2>
+                </div>
+                <div style="background-color:var(--color-bg-surface); padding:40px; border-radius:var(--radius-lg); border:1px solid var(--color-border); box-shadow:var(--shadow-sm); margin-bottom:40px;">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-bottom:30px;">
+                        <div>
+                            <h4 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; color:var(--color-secondary-dark);">Boutique Owner</h4>
+                            <p style="font-weight:600; font-size:1.1rem; color:var(--color-primary);">Sowbhagya</p>
+                        </div>
+                        <div>
+                            <h4 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; color:var(--color-secondary-dark);">Store Name</h4>
+                            <p style="font-weight:600; font-size:1.1rem; color:var(--color-primary);">SB Fashions</p>
+                        </div>
+                        <div>
+                            <h4 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; color:var(--color-secondary-dark);">Primary Mobile & WhatsApp</h4>
+                            <p style="font-size:1rem; color:var(--color-primary); font-weight:700;">7989646049</p>
+                        </div>
+                        <div>
+                            <h4 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; color:var(--color-secondary-dark);">Boutique Email</h4>
+                            <p style="font-size:1rem; color:var(--color-primary);">kpsowbhagya279@gmail.com</p>
+                        </div>
+                    </div>
+                    <div style="border-top:1px solid var(--color-border); padding-top:30px;">
+                        <h4 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; color:var(--color-secondary-dark);">Store Location</h4>
+                        <p style="font-size:0.95rem; color:var(--color-text-muted);">Mahaboob Nagar, Pan Chaurasta, Telangana - 509001, India.</p>
+                    </div>
+                </div>
+
+                <!-- Visitor Application & Order Inquiry Form -->
+                <div style="background-color:var(--color-bg-surface); padding:40px; border-radius:var(--radius-lg); border:1px solid var(--color-border); box-shadow:var(--shadow-md); margin-bottom:50px;" id="visitor-application-box">
+                    <h3 style="font-family:var(--font-serif); font-size:1.5rem; margin-bottom:12px; color:var(--color-primary); text-align:center;">Visitor Application & Order Inquiry</h3>
+                    <p style="text-align:center; color:var(--color-text-muted); font-size:0.9rem; margin-bottom:30px;">Submit your details below to directly connect with Sowbhagya via WhatsApp (7989646049).</p>
+                    <form id="visitor-application-form" style="display:flex; flex-direction:column; gap:20px;">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                            <div class="form-input-wrapper">
+                                <label for="vis-name">Your Full Name *</label>
+                                <input type="text" id="vis-name" class="input-field" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-input-wrapper">
+                                <label for="vis-phone">Mobile / WhatsApp Number *</label>
+                                <input type="tel" id="vis-phone" class="input-field" placeholder="e.g. 7989646049" required>
+                            </div>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                            <div class="form-input-wrapper">
+                                <label for="vis-email">Email Address</label>
+                                <input type="email" id="vis-email" class="input-field" placeholder="name@example.com">
+                            </div>
+                            <div class="form-input-wrapper">
+                                <label for="vis-category">Product Category of Interest *</label>
+                                <select id="vis-category" class="input-field" required style="background:var(--color-bg-base); color:var(--color-text-main);">
+                                    <option value="Sarees">Sarees (Bridal, Banarasi, Kanchipuram)</option>
+                                    <option value="Maggam Work Blouses">Maggam Work Blouse Pieces</option>
+                                    <option value="Frocks & Anarkalis">Frocks & Anarkalis</option>
+                                    <option value="3 Piece Kurti Sets">3 Piece Kurti Sets</option>
+                                    <option value="Half Sarees">Half Sarees</option>
+                                    <option value="Petticoats & Shapewear">Petticoats & Shapewear</option>
+                                    <option value="Kids Wear">Kids Ethnic Collection</option>
+                                    <option value="Retail Collection">Retail Collection</option>
+                                    <option value="Custom Stitching">Custom Stitching & Tailoring</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label for="vis-message">Specific Requirements / Preferred Colors / Sizes / Inquiry Details *</label>
+                            <textarea id="vis-message" class="input-field" rows="4" placeholder="Describe the item, color preference, size, or custom stitching measurements..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold" style="height:52px; font-size:1rem; font-weight:700; width:100%; display:flex; justify-content:center; align-items:center; gap:10px;">
+                            <i data-lucide="send" style="width:20px;"></i> Submit Details directly to WhatsApp (7989646049)
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- L. FAQS & LAWS VIEWS --- -->
+        <section id="view-faq" class="view-section">
+            <div class="container" style="max-width:800px; margin:0 auto;">
+                <div class="section-title-wrapper">
+                    <span class="section-pretitle">Clarifications</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:20px;" id="faq-accordions-pane">
+                    <!-- Javascript populates -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+      4. FOOTER & POLICIES INFORMATION
+    ========================================== -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">SB <span>Fashions</span></div>
+                <p class="footer-about-text">SB Fashions brings premium design traditional clothing including Banarasi sarees, custom Maggam blouses, Frocks and kids wear collections.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com" class="social-link" target="_blank"><i data-lucide="instagram"></i></a>
+                    <a href="https://facebook.com" class="social-link" target="_blank"><i data-lucide="facebook"></i></a>
+                    <a href="https://wa.me/917989646049?text=Hello%20Sowbhagya!%20I%20am%20interested%20in%20SB%20Fashions." class="social-link social-link-wa" target="_blank"><i data-lucide="message-circle"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="footer-col-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#/home">Home Page</a></li>
+                    <li><a href="#/category/women">Women's Collection</a></li>
+                    <li><a href="#/category/kids">Kids Wear</a></li>
+                    <li><a href="#/tracking">Track Order</a></li>
+                    <li><a href="#/admin">Admin Panel</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-col-title">Policies</h4>
+                <ul class="footer-links">
+                    <li><a href="#/faq">FAQs</a></li>
+                    <li><a href="#/about">About Us</a></li>
+                    <li><a href="#/policy/privacy">Privacy Policy</a></li>
+                    <li><a href="#/policy/terms">Terms & Conditions</a></li>
+                    <li><a href="#/policy/returns">Returns & Exchange</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-col-title">Contact Boutique</h4>
+                <div class="footer-contact-row">
+                    <i data-lucide="map-pin"></i>
+                    <span>Mahaboob Nagar, Pan Chaurasta, Telangana</span>
+                </div>
+                <div class="footer-contact-row">
+                    <i data-lucide="phone"></i>
+                    <span>7989646049 / 7989646049</span>
+                </div>
+                <div class="footer-contact-row">
+                    <i data-lucide="mail"></i>
+                    <span>kpsowbhagya279@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <span>© 2026 SB Fashions. All Rights Reserved. Designed for premium styling. Owner: Sowbhagya.</span>
+            <span>Payments COD / MOCK UPI</span>
+        </div>
+    </footer>
+
+
+    <!-- ==========================================
+      5. FLOATING WIDGETS (WHATSAPP, CALL, TOP)
+    ========================================== -->
+    <div class="floating-actions-container">
+        <!-- WhatsApp Call button linking to owner's number -->
+        <a href="https://wa.me/917989646049?text=Hello%20Sowbhagya,%20I%20am%20interested%20in%20SB%20Fashions%20collection." class="float-btn float-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <i data-lucide="message-circle"></i>
+        </a>
+        <a href="tel:7989646049" class="float-btn float-call" title="Call Boutique Owner">
+            <i data-lucide="phone-call"></i>
+        </a>
+        <button class="float-btn float-top" id="btn-back-to-top" title="Back to Top">
+            <i data-lucide="chevron-up"></i>
+        </button>
+    </div>
+
+
+    <!-- ==========================================
+      6. TOAST NOTIFICATIONS DRAWER
+    ========================================== -->
+    <div id="toast-container"></div>
+
+
+    <!-- ==========================================
+      7. ADMIN ACTION MODALS
+    ========================================== -->
+    <div class="modal-overlay" id="admin-product-modal-overlay">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h3 id="admin-modal-title" style="color:var(--color-secondary);">Add New Product</h3>
+                <button style="color:#fff;" id="btn-close-product-modal"><i data-lucide="x"></i></button>
+            </div>
+            <form id="admin-product-crud-form">
+                <div class="modal-body" style="display:flex; flex-direction:column; gap:15px;">
+                    <input type="hidden" id="admin-field-index" value="">
+                    
+                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                        <div class="form-input-wrapper">
+                            <label style="color:#aaa;">Product SKU</label>
+                            <input type="text" class="input-field" id="admin-field-sku" placeholder="SBF-SAR-011" style="background:#111;color:#fff;border-color:#333;" required>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label style="color:#aaa;">Product Category</label>
+                            <select class="input-field" id="admin-field-category" style="background:#111;color:#fff;border-color:#333;" required>
+                                <option value="sarees">Sarees</option>
+                                <option value="frocks">Frocks</option>
+                                <option value="blouses">Blouses</option>
+                                <option value="kurti">Kurti</option>
+                                <option value="3-piece-sets">3 Piece Sets</option>
+                                <option value="half-sarees">Half Sarees</option>
+                                <option value="petticoats">Petticoats</option>
+                                <option value="peplum-tops">Peplum Tops</option>
+                                <option value="lehenga-blouse">Lehenga & Blouse</option>
+                                <option value="shapewear">Shapewear</option>
+                                <option value="maggam-work-blouse-pieces">Maggam Work Blouse Pieces</option>
+                                <option value="computer-work-blouse-pieces">Computer Work Blouse Pieces</option>
+                                <option value="dupatta">Dupatta</option>
+                                <option value="chunni">Chunni</option>
+                                <option value="cut-piece-fabric">Cut Piece Fabric</option>
+                                <option value="dress-material">Dress Material</option>
+                                <option value="lehenga-fabric">Lehenga Fabric</option>
+                                <option value="nighty">Nighty</option>
+                                <option value="lace-hangings">Lace & Hangings</option>
+                                <option value="kids">Kids</option>
+                                <option value="retail-collection">Retail Collection</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-input-wrapper">
+                        <label style="color:#aaa;">Product Title</label>
+                        <input type="text" class="input-field" id="admin-field-title" placeholder="Designer Silk Saree" style="background:#111;color:#fff;border-color:#333;" required>
+                    </div>
+
+                    <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr;">
+                        <div class="form-input-wrapper">
+                            <label style="color:#aaa;">Regular Price (₹)</label>
+                            <input type="number" class="input-field" id="admin-field-price-old" placeholder="8999" style="background:#111;color:#fff;border-color:#333;" required>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label style="color:#aaa;">Offer Price (₹)</label>
+                            <input type="number" class="input-field" id="admin-field-price-new" placeholder="5499" style="background:#111;color:#fff;border-color:#333;" required>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label style="color:#aaa;">Stock Quantity</label>
+                            <input type="number" class="input-field" id="admin-field-stock" placeholder="15" style="background:#111;color:#fff;border-color:#333;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-input-wrapper">
+                        <label style="color:#aaa;">Product Image Link URL</label>
+                        <input type="url" class="input-field" id="admin-field-image" placeholder="https://images.unsplash.com/..." style="background:#111;color:#fff;border-color:#333;" required>
+                    </div>
+
+                    <div class="form-input-wrapper">
+                        <label style="color:#aaa;">Product Description</label>
+                        <textarea class="input-field" id="admin-field-desc" rows="3" placeholder="Describe the fabrics, weaves, stitching borders..." style="background:#111;color:#fff;border-color:#333;" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-product-modal" style="color:#fff;border-color:#333;background:#333;">Cancel</button>
+                    <button type="submit" class="btn btn-gold" id="btn-save-product-action">Save Product Details</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
