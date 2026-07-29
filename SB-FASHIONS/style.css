@@ -2679,18 +2679,79 @@ footer {
     padding: 4px;
   }
   .nav-actions {
-    gap: 6px;
+    gap: 8px;
     flex-shrink: 0;
+    margin-left: auto;
   }
   .nav-action-btn {
-    padding: 4px;
+    padding: 5px;
   }
   .nav-action-btn svg, .nav-action-btn i {
-    width: 19px;
-    height: 19px;
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .search-container-header.active {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 10px;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 1005;
   }
   .search-container-header.active .search-input-header {
-    width: 110px;
+    width: 160px;
+    opacity: 1;
+  }
+
+  /* Product Detail View Mobile Fixes (User Request & Screenshot) */
+  .product-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+    margin-bottom: 40px !important;
+  }
+  .detail-gallery {
+    gap: 12px !important;
+  }
+  .main-img-container {
+    height: 320px !important;
+    max-height: 55vh !important;
+    aspect-ratio: auto !important;
+    width: 100% !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .main-img-container img {
+    object-fit: contain !important;
+    background-color: var(--color-bg-alt) !important;
+  }
+  .thumb-box {
+    width: 65px !important;
+    height: 80px !important;
+  }
+  .detail-title {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+  }
+  .detail-meta-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px 12px !important;
+    font-size: 0.82rem !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 12px !important;
+  }
+  .stock-status-badge {
+    padding: 3px 8px !important;
+    font-size: 0.70rem !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
   }
   .hero-slider-container {
     height: 75vh;
