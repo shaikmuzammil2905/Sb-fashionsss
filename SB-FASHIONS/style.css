@@ -4140,3 +4140,40 @@ footer {
     box-sizing: border-box !important;
   }
 }
+
+/* Animated Statistics Bar Grid Centered Alignment (image copy 28.png fix) */
+.stats-bar-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+@media (max-width: 768px) {
+  .stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 25px 15px !important;
+  }
+}
+.stat-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.stat-num {
+  font-family: var(--font-serif);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  text-align: center !important;
+}
+.stat-lbl {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  text-align: center !important;
+}

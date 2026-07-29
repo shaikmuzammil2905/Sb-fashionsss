@@ -369,6 +369,28 @@ function switchView(targetViewId) {
         activeView.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Sync active state on Mobile Bottom Navbar
+    document.querySelectorAll('.mobile-nav-item').forEach(item => item.classList.remove('active'));
+    if (targetViewId === 'home') {
+        const el = document.getElementById('mob-nav-home');
+        if (el) el.classList.add('active');
+    } else if (targetViewId === 'category') {
+        const el = document.getElementById('mob-nav-categories');
+        if (el) el.classList.add('active');
+    } else if (targetViewId === 'cart') {
+        const el = document.getElementById('mob-nav-cart');
+        if (el) el.classList.add('active');
+    } else if (targetViewId === 'dashboard') {
+        const hash = window.location.hash || '';
+        if (hash.includes('wishlist')) {
+            const el = document.getElementById('mob-nav-wishlist');
+            if (el) el.classList.add('active');
+        } else {
+            const el = document.getElementById('mob-nav-profile');
+            if (el) el.classList.add('active');
+        }
+    }
     
     // Close mobile drawers if active
     closeMobileDrawer();
@@ -785,9 +807,55 @@ function createProductCardElement(p) {
 }
 
 
+// Mobile Nav Drawer Toggle & Close logic
+function closeMobileDrawer() {
+    const drawer = document.getElementById('mobile-nav-drawer');
+    const overlay = document.getElementById('mobile-drawer-overlay');
+    if (drawer) drawer.style.left = '-300px';
+    if (overlay) {
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+    }
+}
+
+function initMobileDrawerEvents() {
+    const toggleBtn = document.getElementById('mobile-drawer-toggle');
+    const closeBtn = document.getElementById('mobile-drawer-close');
+    const overlay = document.getElementById('mobile-drawer-overlay');
+    const drawer = document.getElementById('mobile-nav-drawer');
+
+    if (toggleBtn) {
+        toggleBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (drawer) drawer.style.left = '0';
+            if (overlay) {
+                overlay.style.opacity = '1';
+                overlay.style.visibility = 'visible';
+            }
+        };
+    }
+
+    if (closeBtn) closeBtn.onclick = closeMobileDrawer;
+    if (overlay) overlay.onclick = closeMobileDrawer;
+
+    if (drawer) {
+        drawer.querySelectorAll('a').forEach(a => {
+            a.onclick = closeMobileDrawer;
+        });
+    }
+}
+window.addEventListener('DOMContentLoaded', initMobileDrawerEvents);
+window.addEventListener('load', initMobileDrawerEvents);
+
+
 // --- 6. CATEGORY VIEW CONTROLLER ---
 function renderCategoryPage(categoryKey) {
-    const meta = CATEGORY_META[categoryKey] || { title: "Exclusive Wardrobe", subtitle: "Curated styles by SB Fashions", img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200" };
+    const keyClean = (categoryKey || 'women').toLowerCase();
+    const meta = CATEGORY_META[keyClean] || {
+        title: keyClean.replace(/-/g, ' ').toUpperCase(),
+        subtitle: "Exclusive curated collection by SB Fashions",
+        img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200"
+    };
     
     document.getElementById('category-page-title').textContent = meta.title;
     document.getElementById('category-page-subtitle').textContent = meta.subtitle;
@@ -799,18 +867,22 @@ function renderCategoryPage(categoryKey) {
     const stockChk = document.getElementById('stock-filter-instock');
     const sortSelect = document.getElementById('sort-select');
     
+    if (minInput) minInput.value = 0;
+    if (maxInput) maxInput.value = 50000;
+    if (stockChk) stockChk.checked = false;
+    
     function applyFilters() {
-        const minVal = parseInt(minInput.value) || 0;
-        const maxVal = parseInt(maxInput.value) || 99999;
-        const onlyStock = stockChk.checked;
-        const selectedSort = sortSelect.value;
+        const minVal = parseInt(minInput?.value) || 0;
+        const maxVal = parseInt(maxInput?.value) || 999999;
+        const onlyStock = stockChk?.checked || false;
+        const selectedSort = sortSelect?.value || 'newest';
         
         // Filter by category
         let list = products.filter(p => {
-            if (categoryKey === 'women') {
+            if (keyClean === 'women' || keyClean === 'all' || keyClean === 'women-collection') {
                 return p.category !== 'kids'; // broad women collection
             }
-            return p.category === categoryKey;
+            return p.category.toLowerCase() === keyClean || p.category.toLowerCase().includes(keyClean);
         });
         
         // Filter by price
