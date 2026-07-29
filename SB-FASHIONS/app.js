@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '5.0'; // Bump this when seed products/images change
+const SEED_VERSION = '6.0'; // Bump this when seed products/images change
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -199,7 +199,7 @@ function buildCatalogProducts() {
             "Retail Designer Dupatta Collection", "Retail Computer Worked Blouse Pieces", "Retail Peplum Fusion Tops",
             "Retail Traditional Half Saree Set", "Retail Bridal Lehenga Fabric", "Retail Silk Cut Piece Roll"
         ], colors: ["Multicolor / Retail", "Royal Blue", "Emerald Green", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
-            "image copy 11.png"
+            "image copy 61.png"
         ]}
     ];
 
@@ -265,7 +265,7 @@ const CATEGORY_META = {
     "lace-hangings": { title: "Lace & Hangings", subtitle: "Maggam designer borders and hangings accessories", img: "image copy 57.png" },
     women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 31.png" },
     kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 58.png" },
-    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 11.png" }
+    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 61.png" }
 };
 
 // Seed test reviews
