@@ -523,26 +523,61 @@ let heroIndex = 0;
 let heroInterval = null;
 
 function renderHomeContents() {
-    // Announcement Bar
-    document.querySelector('.top-bar-slider').textContent = announcement + " • OWNER: SOWBHAGYA • TEL: 7989646049";
+    // Announcement Bar (Phone number removed per image copy 22)
+    document.querySelector('.top-bar-slider').textContent = announcement;
 
-    // Setup Category Circle items
+    // Setup Category Circle items (18 categories + View All matching image copy 20.png)
     const catSlider = document.getElementById('home-category-slider');
-    catSlider.innerHTML = '';
-    
-    Object.keys(CATEGORY_META).forEach(key => {
-        const cat = CATEGORY_META[key];
-        const card = document.createElement('a');
-        card.href = `#/category/${key}`;
-        card.className = "category-card";
-        card.innerHTML = `
-            <div class="category-circle">
-                <img src="${cat.img}" alt="${cat.title}">
+    if (catSlider) {
+        catSlider.innerHTML = '';
+        
+        const homeCategories = [
+            { key: 'sarees', label: 'Sarees' },
+            { key: 'frocks', label: 'Frocks' },
+            { key: 'blouses', label: 'Blouses' },
+            { key: 'kurti', label: 'Kurtis' },
+            { key: '3-piece-sets', label: '3 Piece Sets' },
+            { key: 'half-sarees', label: 'Half Sarees' },
+            { key: 'petticoats', label: 'Petticoats' },
+            { key: 'peplum-tops', label: 'Peplum Tops' },
+            { key: 'lehenga-blouse', label: 'Lehenga & Blouse' },
+            { key: 'shapewear', label: 'Shapewear' },
+            { key: 'maggam-work-blouse-pieces', label: 'Maggam Work Blouse Pieces' },
+            { key: 'computer-work-blouse-pieces', label: 'Computer Work Blouse Pieces' },
+            { key: 'dupatta', label: 'Dupattas' },
+            { key: 'chunni', label: 'Chunnis' },
+            { key: 'cut-piece-fabric', label: 'Cut Piece Fabrics' },
+            { key: 'dress-material', label: 'Dress Materials' },
+            { key: 'lehenga-fabric', label: 'Lehenga Fabrics' },
+            { key: 'nighty', label: 'Nighties' }
+        ];
+
+        homeCategories.forEach(item => {
+            const cat = CATEGORY_META[item.key] || { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300' };
+            const card = document.createElement('a');
+            card.href = `#/category/${item.key}`;
+            card.className = "category-card";
+            card.innerHTML = `
+                <div class="category-circle">
+                    <img src="${cat.img}" alt="${item.label}">
+                </div>
+                <span>${item.label}</span>
+            `;
+            catSlider.appendChild(card);
+        });
+
+        // 19th Card: View All Categories
+        const viewAllCard = document.createElement('a');
+        viewAllCard.href = `#/category/women`;
+        viewAllCard.className = "category-card";
+        viewAllCard.innerHTML = `
+            <div class="category-viewall-card">
+                <i data-lucide="layout-grid"></i>
             </div>
-            <span>${key.replace(/-/g, ' ')}</span>
+            <span style="color:var(--color-pink-main);font-weight:700;">View All Categories &gt;</span>
         `;
-        catSlider.appendChild(card);
-    });
+        catSlider.appendChild(viewAllCard);
+    }
 
     // Setup Hero banners autoplay
     const slides = document.querySelectorAll('.hero-slide');
@@ -678,81 +713,38 @@ function createProductCardElement(p) {
     const card = document.createElement('div');
     card.className = "product-card";
     
-    const discPercent = Math.round(((p.priceOld - p.price) / p.priceOld) * 100);
-    const isNew = p.id > 20; // products with id > 20 are "New Arrivals"
-    
-    // Build badge pair (sale left, new right)
-    let badgesHtml = '';
-    if (discPercent > 0 || isNew) {
-        const saleB = discPercent > 0 ? `<span class="product-badge sale">-${discPercent}% OFF</span>` : '<span></span>';
-        const newB  = isNew ? `<span class="product-badge new-arrival">NEW</span>` : '<span></span>';
-        badgesHtml = `<div class="product-badge-pair">${saleB}${newB}</div>`;
-    }
-    
+    const discPercent = p.priceOld ? Math.round(((p.priceOld - p.price) / p.priceOld) * 100) : 0;
     const isWish = wishlist.includes(p.id) ? 'active' : '';
     
-    // Color palette mapping for product cards
-    const CARD_COLOR_MAP = {
-        'Crimson Red / Metallic Gold': ['#8b0000','#c8960c'],
-        'Crimson Red': ['#dc143c'],
-        'Royal Blue': ['#1a3a8c'],
-        'Emerald Green': ['#1a6b3c'],
-        'Pastel Pink': ['#e8a0b4'],
-        'Maroon & Golden Yellow': ['#800000','#d4a017'],
-        'Maroon / Blue': ['#800000','#1a3a8c'],
-        'Deep Maroon': ['#6b0020'],
-        'Ruby Red': ['#c01040'],
-        'Mustard Gold': ['#c8960c'],
-        'Peach Pink': ['#e8a080'],
-        'Blue & Maroon Floral': ['#1a3a8c','#800000'],
-        'Bright Yellow': ['#d4b800'],
-        'Metallic Gold': ['#c8960c'],
-        'White': ['#c8c5c0'],
-        'Nude Beige': ['#c8a882'],
-        'Multicolor': ['#e8204a','#9b27af','#1976d2'],
-        'Ocean Blue': ['#006080'],
-        'Cream / Indigo Blue': ['#c8b898','#2e3880'],
-        'Golden Embroidered Red': ['#c8281a','#c8960c'],
-        'Midnight Black': ['#222222'],
-        'Red': ['#c01010'],
-        'Maroon & Gold': ['#800000','#c8960c']
-    };
-    const cardColors = CARD_COLOR_MAP[p.color] || ['#c5a880'];
-    const cardBg = cardColors.length > 1
-        ? `linear-gradient(135deg, ${cardColors[0]}25 0%, ${cardColors[1]}25 100%)`
-        : `linear-gradient(160deg, ${cardColors[0]}18 0%, ${cardColors[0]}0a 100%)`;
-    const dotGradient = cardColors.length > 1
-        ? `linear-gradient(90deg, ${cardColors[0]}, ${cardColors[1]})`
-        : cardColors[0];
-
     card.innerHTML = `
-        <div class="product-card-media" style="background:${cardBg}">
-            ${badgesHtml}
-            <button class="wishlist-btn-card ${isWish}" data-id="${p.id}"><i data-lucide="heart" style="width:18px;"></i></button>
+        <div class="product-card-media">
+            <span class="product-badge new-arrival">NEW</span>
+            <button class="wishlist-btn-card ${isWish}" data-id="${p.id}" title="Add to Wishlist">
+                <i data-lucide="heart" style="width:16px;"></i>
+            </button>
             <a href="#/product/${p.id}" style="display:block;width:100%;height:100%;">
                 <img src="${p.image}" alt="${p.name}" class="product-card-img"
                     onerror="this.src='${CATEGORY_META[p.category]?.img || 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600'}';">
             </a>
-            <div class="product-color-bar" style="background:${dotGradient};"></div>
         </div>
         <div class="product-card-info">
-            <span class="product-card-cat">${p.category.replace(/-/g, ' ')}</span>
             <a href="#/product/${p.id}"><h3 class="product-card-title-multi">${p.name}</h3></a>
-            <div class="product-card-color-row">
-                <span class="card-color-dot" style="background:${dotGradient};" title="${p.color || ''}"></span>
-                <span class="product-color-name">${p.color || ''}</span>
-            </div>
             <div class="product-card-rating">
-                <i data-lucide="star" style="fill:var(--color-warning);width:12px;"></i>
-                <span>${p.rating} (${p.reviewsCount})</span>
+                <i data-lucide="star" style="fill:#f59e0b;stroke:none;width:12px;height:12px;"></i>
+                <i data-lucide="star" style="fill:#f59e0b;stroke:none;width:12px;height:12px;"></i>
+                <i data-lucide="star" style="fill:#f59e0b;stroke:none;width:12px;height:12px;"></i>
+                <i data-lucide="star" style="fill:#f59e0b;stroke:none;width:12px;height:12px;"></i>
+                <i data-lucide="star" style="fill:#f59e0b;stroke:none;width:12px;height:12px;"></i>
+                <span style="margin-left:2px;color:#777;font-size:0.75rem;">(${p.reviewsCount})</span>
             </div>
             <div class="product-card-price-row">
-                <span class="price-current">₹${p.price.toLocaleString()}</span>
                 ${p.priceOld ? `<span class="price-old">₹${p.priceOld.toLocaleString()}</span>` : ''}
+                <span class="price-current">₹${p.price.toLocaleString()}</span>
+                ${discPercent > 0 ? `<span class="price-discount-pill">${discPercent}% OFF</span>` : ''}
             </div>
-            <div class="product-card-actions">
-                <button class="btn btn-primary btn-card-buy add-to-cart-direct" data-id="${p.id}">Add to Cart</button>
-            </div>
+            <button class="btn-card-addtocart add-to-cart-direct" data-id="${p.id}">
+                <i data-lucide="shopping-bag"></i> Add to Cart
+            </button>
         </div>
     `;
     return card;
@@ -1049,13 +1041,6 @@ function renderProductDetailPage(prodId) {
         navigator.clipboard.writeText(window.location.href);
         showToast("Product link copied to clipboard!", "success");
     };
-
-    // WhatsApp floating button — pre-fill with product details
-    const waBtn = document.querySelector('.float-whatsapp');
-    if (waBtn) {
-        const waMsg = encodeURIComponent(`Hello Sowbhagya! I'm interested in:\n*${p.name}*\nSKU: ${p.sku}\nPrice: ₹${p.price.toLocaleString()}\n\nCan you share more details?`);
-        waBtn.href = `https://wa.me/917989646049?text=${waMsg}`;
-    }
 
     lucide.createIcons();
 }
@@ -2340,14 +2325,8 @@ function bindVisitorForm() {
         visForm.dataset.bound = "true";
         visForm.onsubmit = (e) => {
             e.preventDefault();
-            const text = `*SB FASHIONS - CONTACT INQUIRY*\n\n` +
-                         `Hello Sowbhagya, I am interested in SB Fashions products and would like to know more!`;
-
-            const waUrl = `https://wa.me/917989646049?text=${encodeURIComponent(text)}`;
-            showToast("Application submitted! Opening WhatsApp (7989646049)...", "success");
-            setTimeout(() => {
-                window.open(waUrl, '_blank');
-            }, 600);
+            showToast("Inquiry submitted successfully! Thank you for contacting SB Fashions.", "success");
+            visForm.reset();
         };
     }
 }
