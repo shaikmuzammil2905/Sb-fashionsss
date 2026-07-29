@@ -604,26 +604,30 @@ function renderHomeContents() {
         catSlider.appendChild(viewAllCard);
     }
 
-    // Setup Hero banners autoplay
+    // Setup Hero banners autoplay (3 slides)
     const slides = document.querySelectorAll('.hero-slide');
     const dotsContainer = document.getElementById('hero-slider-dots');
-    dotsContainer.innerHTML = '';
-    
-    slides.forEach((_, idx) => {
-        const dot = document.createElement('button');
-        dot.className = `slider-dot ${idx === 0 ? 'active' : ''}`;
-        dot.addEventListener('click', () => {
-            heroIndex = idx;
-            updateHeroSlider();
+    if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, idx) => {
+            const dot = document.createElement('span');
+            dot.className = `hero-dot ${idx === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => {
+                heroIndex = idx;
+                updateHeroSlider();
+            });
+            dotsContainer.appendChild(dot);
         });
-        dotsContainer.appendChild(dot);
-    });
+    }
 
     if (heroInterval) clearInterval(heroInterval);
     heroInterval = setInterval(() => {
-        heroIndex = (heroIndex + 1) % slides.length;
-        updateHeroSlider();
-    }, 6000);
+        const slidesList = document.querySelectorAll('.hero-slide');
+        if (slidesList.length > 0) {
+            heroIndex = (heroIndex + 1) % slidesList.length;
+            updateHeroSlider();
+        }
+    }, 5000);
 
     // Seeding trending section
     const trendingGrid = document.getElementById('home-trending-products');
@@ -739,14 +743,14 @@ function triggerStatisticsCountUp() {
 
 function updateHeroSlider() {
     const slides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.slider-dot');
+    const dots = document.querySelectorAll('.hero-dot');
     
     slides.forEach((slide, idx) => {
         slide.classList.remove('active');
-        dots[idx].classList.remove('active');
+        if (dots[idx]) dots[idx].classList.remove('active');
         if (idx === heroIndex) {
             slide.classList.add('active');
-            dots[idx].classList.add('active');
+            if (dots[idx]) dots[idx].classList.add('active');
         }
     });
 }
