@@ -342,22 +342,22 @@
 
             <!-- Animated Statistics Grid -->
             <div style="background-color:var(--color-primary); color:var(--color-bg-surface); padding:60px 0; margin-bottom:80px;">
-                <div class="container" style="display:grid; grid-template-columns:repeat(4,1fr); text-align:center; gap:20px;">
+                <div class="container stats-bar-grid">
                     <div>
-                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-orders" class="count-up-stat" data-val="12500">0</span>
-                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Orders Delivered</span>
+                        <span style="color:var(--color-secondary); display:block;" id="stat-orders" class="count-up-stat stat-num" data-val="12500">0</span>
+                        <span class="stat-lbl">Orders Delivered</span>
                     </div>
                     <div>
-                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-designs" class="count-up-stat" data-val="450">0</span>
-                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Exclusive Designs</span>
+                        <span style="color:var(--color-secondary); display:block;" id="stat-designs" class="count-up-stat stat-num" data-val="450">0</span>
+                        <span class="stat-lbl">Exclusive Designs</span>
                     </div>
                     <div>
-                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-customers" class="count-up-stat" data-val="9800">0</span>
-                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Happy Customers</span>
+                        <span style="color:var(--color-secondary); display:block;" id="stat-customers" class="count-up-stat stat-num" data-val="9800">0</span>
+                        <span class="stat-lbl">Happy Customers</span>
                     </div>
                     <div>
-                        <span style="font-size:3rem; font-weight:700; color:var(--color-secondary); display:block;" id="stat-rating" class="count-up-stat" data-val="4.9" data-decimals="1">0</span>
-                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-text-muted);">Customer Rating</span>
+                        <span style="color:var(--color-secondary); display:block;" id="stat-rating" class="count-up-stat stat-num" data-val="4.9" data-decimals="1">0</span>
+                        <span class="stat-lbl">Customer Rating</span>
                     </div>
                 </div>
             </div>
@@ -1381,8 +1381,8 @@
                     <span class="section-pretitle">Get In Touch</span>
                     <h2 class="section-title">Contact Us</h2>
                 </div>
-                <div style="background-color:var(--color-bg-surface); padding:40px; border-radius:var(--radius-lg); border:1px solid var(--color-border); box-shadow:var(--shadow-sm); margin-bottom:40px;">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-bottom:30px;">
+                <div class="contact-card-box">
+                    <div class="contact-info-grid">
                         <div>
                             <h4 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; color:var(--color-secondary-dark);">Boutique Owner</h4>
                             <p style="font-weight:600; font-size:1.1rem; color:var(--color-primary);">Sowbhagya</p>
@@ -1397,7 +1397,7 @@
                         </div>
                         <div>
                             <h4 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; color:var(--color-secondary-dark);">Boutique Email</h4>
-                            <p style="font-size:1rem; color:var(--color-primary);">kpsowbhagya279@gmail.com</p>
+                            <p style="font-size:1rem; color:var(--color-primary);" class="email-text">kpsowbhagya279@gmail.com</p>
                         </div>
                     </div>
                     <div style="border-top:1px solid var(--color-border); padding-top:30px;">
