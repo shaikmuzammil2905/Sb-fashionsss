@@ -3599,11 +3599,6 @@ footer {
   display: flex;
   align-items: center;
 }
-.logo-butterfly-icon {
-  font-size: 1.2rem;
-  margin-left: 4px;
-  animation: float 3s ease-in-out infinite;
-}
 
 /* 2. HERO PINK BANNER (image copy 20.png) */
 .hero-pink-banner {
@@ -3836,14 +3831,6 @@ footer {
 }
 .promo-b2g1-btn:hover {
   transform: scale(1.05);
-}
-.promo-butterfly-art {
-  font-size: 4rem;
-  position: absolute;
-  right: 15px;
-  bottom: -10px;
-  opacity: 0.25;
-  transform: rotate(-15deg);
 }
 
 /* 5. NEW ARRIVALS & PRODUCT CARD REDESIGN (image copy 20.png) */

@@ -526,7 +526,7 @@ function renderHomeContents() {
     // Announcement Bar (Phone number removed per image copy 22)
     document.querySelector('.top-bar-slider').textContent = announcement;
 
-    // Setup Category Circle items (18 categories + View All matching image copy 20.png)
+    // Setup Category Circle items (21 categories + View All matching requirements)
     const catSlider = document.getElementById('home-category-slider');
     if (catSlider) {
         catSlider.innerHTML = '';
@@ -549,7 +549,10 @@ function renderHomeContents() {
             { key: 'cut-piece-fabric', label: 'Cut Piece Fabrics' },
             { key: 'dress-material', label: 'Dress Materials' },
             { key: 'lehenga-fabric', label: 'Lehenga Fabrics' },
-            { key: 'nighty', label: 'Nighties' }
+            { key: 'nighty', label: 'Nighties' },
+            { key: 'lace-hangings', label: 'Lace & Hangings' },
+            { key: 'kids', label: 'Kids Collection' },
+            { key: 'retail-collection', label: 'Retail Collection' }
         ];
 
         homeCategories.forEach(item => {
@@ -566,7 +569,7 @@ function renderHomeContents() {
             catSlider.appendChild(card);
         });
 
-        // 19th Card: View All Categories
+        // 22nd Card: View All Categories
         const viewAllCard = document.createElement('a');
         viewAllCard.href = `#/category/women`;
         viewAllCard.className = "category-card";
@@ -679,6 +682,37 @@ function renderHomeContents() {
     });
 
     lucide.createIcons();
+}
+
+// Typing mode count-up animation for trusted numbers & statistics
+function triggerStatisticsCountUp() {
+    const stats = document.querySelectorAll('.count-up-stat');
+    stats.forEach(el => {
+        const targetVal = parseFloat(el.getAttribute('data-val') || '0');
+        const decimals = parseInt(el.getAttribute('data-decimals') || '0');
+        const prefix = el.getAttribute('data-prefix') || '';
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1800; // ms
+        const startTime = performance.now();
+
+        function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const current = targetVal * easeProgress;
+
+            if (decimals > 0) {
+                el.textContent = `${prefix}${current.toFixed(decimals)}${suffix}`;
+            } else {
+                el.textContent = `${prefix}${Math.floor(current).toLocaleString()}${suffix}`;
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        }
+        requestAnimationFrame(step);
+    });
 }
 
 function updateHeroSlider() {
