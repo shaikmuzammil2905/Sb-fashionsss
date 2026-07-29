@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '4.0'; // Bump this when seed products/images change
+const SEED_VERSION = '5.0'; // Bump this when seed products/images change
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -16,7 +16,7 @@ const STATE_KEYS = {
     ANNOUNCEMENT: 'sbf_announcement'
 };
 
-// Master catalog builder ensuring AT LEAST 15 distinct products per category (315 items total)
+// Master catalog builder ensuring AT LEAST 15 distinct products per category
 function buildCatalogProducts() {
     const categories = [
         { id: 'sarees', prefix: 'SAR', basePrice: 4999, names: [
@@ -26,11 +26,7 @@ function buildCatalogProducts() {
             "Teal Green Gadwal Silk Saree", "Marigold Yellow Paithani Saree", "Maroon Bridal Zardosi Saree",
             "Sky Blue Soft Linen Saree", "Rose Gold Tussar Silk Saree", "Emerald Gold Jacquard Silk Saree"
         ], colors: ["Crimson Red / Gold", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Gold", "Midnight Black", "Peach Pink", "Wine Red", "Lavender", "Teal Green", "Marigold Yellow", "Deep Maroon", "Sky Blue", "Rose Gold", "Emerald Gold"], imgs: [
-            "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=600&auto=format&fit=crop&q=80"
+            "image copy 39.png"
         ]},
         { id: 'frocks', prefix: 'FRO', basePrice: 2499, names: [
             "Crimson Red Embroidered Anarkali Frock", "Emerald Green Georgette Gown Frock", "Pastel Pink Flared Party Frock",
@@ -39,10 +35,7 @@ function buildCatalogProducts() {
             "Teal Blue Mirror Work Frock", "Sunshine Yellow Summer Frock", "Maroon Velvet Festival Frock",
             "Sky Blue Georgette Tiered Frock", "Rose Pink Indo-Western Frock", "Olive Green Belted Maxi Frock"
         ], colors: ["Crimson Red", "Emerald Green", "Pastel Pink", "Royal Blue", "Mustard Yellow", "Midnight Black", "Peach Pink", "Wine Maroon", "Lavender", "Teal Blue", "Sunshine Yellow", "Deep Maroon", "Sky Blue", "Rose Pink", "Olive Green"], imgs: [
-            "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1539008885868-47620f2d263b?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1583391265517-35bbdba01229?w=600&auto=format&fit=crop&q=80"
+            "image copy 40.png"
         ]},
         { id: 'blouses', prefix: 'BLU', basePrice: 1299, names: [
             "Golden Brocade Readymade Saree Blouse", "Black Velvet Designer Saree Blouse", "Crimson Red Padded Stitched Blouse",
@@ -51,9 +44,9 @@ function buildCatalogProducts() {
             "Wine Red Heavy Sequence Stitched Blouse", "Navy Blue Elbow Sleeve Silk Blouse", "Peach Organza Puff Sleeve Blouse",
             "Bottle Green Dori Back Silk Blouse", "Off-White Sleeveless Brocade Blouse", "Rose Pink Kundan Neckline Stitched Blouse"
         ], colors: ["Metallic Gold", "Midnight Black", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Deep Maroon", "Metallic Silver", "Wine Red", "Navy Blue", "Peach Pink", "Bottle Green", "Off-White", "Rose Pink"], imgs: [
-            "https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1605497746444-ac9dbd53a474?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=600&auto=format&fit=crop&q=80"
+            "image copy 40.png",
+            "image copy 47.png",
+            "image copy 48.png"
         ]},
         { id: 'kurti', prefix: 'KUR', basePrice: 899, names: [
             "Yellow Cotton A-Line Kurti Tunic", "Royal Blue Printed Georgette Kurti", "Emerald Green Straight Cut Kurti",
@@ -62,18 +55,7 @@ function buildCatalogProducts() {
             "Teal Blue Flared Tunic Kurti", "Coral Orange Cotton Kurti", "Olive Green Belted Kurti",
             "Sky Blue Soft Rayon Kurti", "Rose Gold Sequence Kurti", "White Handloom Khadi Kurti"
         ], colors: ["Bright Yellow", "Royal Blue", "Emerald Green", "Pastel Pink", "Crimson Red", "Midnight Black", "Mustard Gold", "Wine Red", "Lavender", "Teal Blue", "Coral Orange", "Olive Green", "Sky Blue", "Rose Gold", "Pure White"], imgs: [
-            "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1583391265517-35bbdba01229?w=600&auto=format&fit=crop&q=80"
-        ]},
-        { id: '3-piece-sets', prefix: '3PC', basePrice: 2499, names: [
-            "Royal Blue Georgette 3-Piece Kurti Set", "Maroon Heavy Dupatta Salwar Suit Set", "Emerald Green Silk Palazzo 3-Piece Set",
-            "Pastel Pink Organza Dupatta Suit", "Mustard Yellow Gota Patti 3-Piece Set", "Crimson Red Bridal Anarkali 3-Piece Set",
-            "Midnight Black Sequence 3-Piece Suit", "Peach Chiffon Dupatta Kurti Set", "Teal Blue Mirror Work 3-Piece Set",
-            "Lavender Embroidered Kurti Set", "Wine Red Silk Velvet 3-Piece Set", "Sunshine Yellow Festive 3-Piece Set",
-            "Sky Blue Straight Pant Suit Set", "Olive Green Floral 3-Piece Set", "Rose Gold Zari Weave 3-Piece Suit"
-        ], colors: ["Royal Blue", "Deep Maroon", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Crimson Red", "Midnight Black", "Peach Pink", "Teal Blue", "Lavender", "Wine Red", "Sunshine Yellow", "Sky Blue", "Olive Green", "Rose Gold"], imgs: [
-            "https://images.unsplash.com/photo-1601288496920-b6154fe3626a?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80"
+            "image copy 41.png"
         ]},
         { id: 'half-sarees', prefix: 'HSA', basePrice: 3999, names: [
             "Traditional South Indian Silk Half Saree", "Golden Red Bridal Langa Voni Set", "Royal Blue Pattu Half Saree",
@@ -82,8 +64,7 @@ function buildCatalogProducts() {
             "Wine Red Embroidered Langa Voni", "Peach Satin Half Saree", "Sunshine Yellow Temple Border Half Saree",
             "Sky Blue Georgette Half Saree", "Rose Pink Bridal Half Saree", "Olive Green Handloom Half Saree"
         ], colors: ["Multi/Gold", "Golden Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Gold", "Maroon", "Teal Blue", "Lavender", "Wine Red", "Peach Pink", "Sunshine Yellow", "Sky Blue", "Rose Pink", "Olive Green"], imgs: [
-            "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop&q=80"
+            "image copy 42.png"
         ]},
         { id: 'petticoats', prefix: 'PET', basePrice: 499, names: [
             "Pure Cotton White Saree Petticoat skirt", "Satin Silk Scarlet Red Saree Petticoat skirt", "Royal Blue Cotton Saree Petticoat",
@@ -92,7 +73,7 @@ function buildCatalogProducts() {
             "Lavender Cotton Drawstring Petticoat", "Teal Blue Heavy Flared Cotton Petticoat", "Wine Red Satin Silk Petticoat",
             "Sky Blue Breathable Cotton Petticoat", "Off-White Canvas Hem Cotton Petticoat", "Peach Satin Saree Underskirt"
         ], colors: ["Pure White", "Scarlet Red", "Royal Blue", "Emerald Green", "Nude Beige", "Midnight Black", "Golden Yellow", "Deep Maroon", "Pastel Pink", "Lavender", "Teal Blue", "Wine Red", "Sky Blue", "Off-White", "Peach Pink"], imgs: [
-            "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&auto=format&fit=crop&q=80"
+            "image copy 44.png"
         ]},
         { id: 'peplum-tops', prefix: 'PEP', basePrice: 1199, names: [
             "Yellow Indo-Western Peplum Crop Top", "Royal Blue Flared Peplum Top", "Emerald Green Embroidered Peplum Top",
@@ -101,7 +82,7 @@ function buildCatalogProducts() {
             "Lavender Layered Short Peplum", "Wine Red Belted Peplum Top", "Sunshine Yellow Summer Peplum",
             "Sky Blue Mirror Work Peplum", "Rose Pink Designer Fusion Peplum", "Olive Green Printed Peplum Top"
         ], colors: ["Bright Yellow", "Royal Blue", "Emerald Green", "Crimson Red", "Pastel Pink", "Midnight Black", "Mustard Gold", "Maroon", "Teal Blue", "Lavender", "Wine Red", "Sunshine Yellow", "Sky Blue", "Rose Pink", "Olive Green"], imgs: [
-            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80"
+            "image copy 43.png"
         ]},
         { id: 'lehenga-blouse', prefix: 'LEH', basePrice: 7999, names: [
             "Pastel Pink Designer Lehenga & Blouse Set", "Gold Embroidered Red Bridal Lehenga", "Royal Blue Heavy Sequin Lehenga Set",
@@ -110,8 +91,7 @@ function buildCatalogProducts() {
             "Teal Blue Mirror Work Lehenga Set", "Peach Organza Flared Lehenga Set", "Sky Blue Threadwork Lehenga Set",
             "Marigold Yellow Festive Lehenga", "Rose Gold Silk Velvet Lehenga", "Bottle Green Banarasi Lehenga Set"
         ], colors: ["Pastel Pink", "Golden Red", "Royal Blue", "Emerald Green", "Mustard Yellow", "Crimson Red", "Midnight Black", "Wine Red", "Lavender", "Teal Blue", "Peach Pink", "Sky Blue", "Marigold Yellow", "Rose Gold", "Bottle Green"], imgs: [
-            "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1597586124394-fbd6ef244026?w=600&auto=format&fit=crop&q=80"
+            "image copy 45.png"
         ]},
         { id: 'shapewear', prefix: 'SHP', basePrice: 899, names: [
             "Mermaid Fit Beige Saree Shapewear skirt", "Scarlet Red Seamless Saree Shapewear", "Royal Blue Compression Saree Shapewear",
@@ -120,7 +100,7 @@ function buildCatalogProducts() {
             "Lavender Seamless Compression Shapewear", "Teal Blue Saree Shapewear Skirt", "Wine Red Mermaid Fit Shapewear",
             "Sky Blue Compression Saree Skirt", "Off-White High-Waist Shapewear", "Rose Gold Satin Saree Shapewear"
         ], colors: ["Nude Beige", "Scarlet Red", "Royal Blue", "Midnight Black", "Emerald Green", "Nude Tan", "Golden Yellow", "Deep Maroon", "Pastel Pink", "Lavender", "Teal Blue", "Wine Red", "Sky Blue", "Off-White", "Rose Gold"], imgs: [
-            "https://images.unsplash.com/photo-1549064482-6779ba3292fe?w=600&auto=format&fit=crop&q=80"
+            "image copy 46.png"
         ]},
         { id: 'maggam-work-blouse-pieces', prefix: 'MAG', basePrice: 3499, names: [
             "Emerald Green Maggam Work Blouse Piece", "Royal Blue Peacock Maggam Work Piece", "Crimson Red Heavy Zardosi Maggam Piece",
@@ -129,7 +109,7 @@ function buildCatalogProducts() {
             "Marigold Yellow Traditional Maggam Piece", "Bottle Green Temple Design Maggam Piece", "Peach Silk Kundan Maggam Piece",
             "Sky Blue Sequin Maggam Blouse Piece", "Rose Gold Heavy Maggam Fabric", "Off-White Raw Silk Maggam Piece"
         ], colors: ["Emerald Green", "Royal Blue", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Bottle Green", "Peach Pink", "Sky Blue", "Rose Gold", "Off-White"], imgs: [
-            "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=600&auto=format&fit=crop&q=80"
+            "image copy 47.png"
         ]},
         { id: 'computer-work-blouse-pieces', prefix: 'COM', basePrice: 1499, names: [
             "Ruby Red Computer Embroidered Blouse Piece", "Royal Blue Machine Threadwork Blouse Piece", "Emerald Green Precision Computerized Piece",
@@ -138,7 +118,7 @@ function buildCatalogProducts() {
             "Wine Red Silk Machine Worked Blouse", "Peach Organza Computerized Blouse Piece", "Sky Blue Satin Computer Work Piece",
             "Bottle Green Computer Embroidered Piece", "Rose Gold Metallic Computerized Blouse", "Off-White Brocade Computer Work Piece"
         ], colors: ["Ruby Red", "Royal Blue", "Emerald Green", "Golden Yellow", "Midnight Black", "Pastel Pink", "Deep Maroon", "Teal Blue", "Lavender", "Wine Red", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold", "Off-White"], imgs: [
-            "https://images.unsplash.com/photo-1605497746444-ac9dbd53a474?w=600&auto=format&fit=crop&q=80"
+            "image copy 48.png"
         ]},
         { id: 'dupatta', prefix: 'DUP', basePrice: 999, names: [
             "Mustard Gold Banarasi Silk Zari Dupatta", "Royal Blue Heavy Silk Woven Dupatta", "Crimson Red Bridal Net Dupatta",
@@ -147,7 +127,7 @@ function buildCatalogProducts() {
             "Marigold Yellow Banarasi Zari Dupatta", "Peach Silk Floral Stole Dupatta", "Sky Blue Georgette Sequence Dupatta",
             "Bottle Green Brocade Dupatta", "Rose Gold Tissue Silk Dupatta", "Off-White Chanderi Cotton Dupatta"
         ], colors: ["Mustard Gold", "Royal Blue", "Crimson Red", "Emerald Green", "Pastel Pink", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold", "Off-White"], imgs: [
-            "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&auto=format&fit=crop&q=80"
+            "image copy 49.png"
         ]},
         { id: 'chunni', prefix: 'CHU', basePrice: 349, names: [
             "Multicolor Printed Chiffon Chunni Scarf", "Crimson Red Gota Border Chunni", "Royal Blue Bandhani Cotton Chunni",
@@ -156,7 +136,7 @@ function buildCatalogProducts() {
             "Lavender Pom-Pom Lace Chunni", "Peach Floral Digital Print Chunni", "Sky Blue Cotton Chunni Scarf",
             "Bottle Green Silk Blend Chunni", "Rose Pink Embroidered Chunni", "Off-White Dupion Silk Chunni"
         ], colors: ["Multicolor", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Pink", "Off-White"], imgs: [
-            "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&auto=format&fit=crop&q=80"
+            "image copy 51.png"
         ]},
         { id: 'cut-piece-fabric', prefix: 'FAB', basePrice: 599, names: [
             "Pure Raw Silk Blue Cut Piece Fabric", "Crimson Red Raw Silk Cut Piece", "Emerald Green Pure Cotton Cut Piece",
@@ -165,7 +145,7 @@ function buildCatalogProducts() {
             "Marigold Yellow Cotton Cut Piece", "Bottle Green Raw Silk Cut Piece", "Peach Silk Satin Cut Piece Fabric",
             "Sky Blue Rayon Cut Piece", "Rose Gold Zari Fabric Cut Piece", "Off-White Khadi Cotton Cut Piece"
         ], colors: ["Ocean Blue", "Crimson Red", "Emerald Green", "Mustard Gold", "Midnight Black", "Pastel Pink", "Deep Maroon", "Teal Blue", "Lavender", "Marigold Yellow", "Bottle Green", "Peach Pink", "Sky Blue", "Rose Gold", "Off-White"], imgs: [
-            "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80"
+            "image copy 52.png"
         ]},
         { id: 'dress-material', prefix: 'MAT', basePrice: 1299, names: [
             "Unstitched Cotton Salwar Dress Material", "Royal Blue Silk Unstitched Suit Pack", "Emerald Green Jaipuri Print Dress Material",
@@ -174,7 +154,7 @@ function buildCatalogProducts() {
             "Lavender Chikankari Dress Material", "Marigold Yellow Silk Dress Material", "Peach Chiffon Unstitched Suit Pack",
             "Sky Blue Printed Cotton Dress Material", "Bottle Green Embroidered Suit Material", "Rose Gold Brocade Salwar Dress Material"
         ], colors: ["Cream / Indigo Blue", "Royal Blue", "Emerald Green", "Crimson Red", "Mustard Yellow", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
-            "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=600&auto=format&fit=crop&q=80"
+            "image copy 53.png"
         ]},
         { id: 'lehenga-fabric', prefix: 'LFB', basePrice: 4999, names: [
             "Gold Embroidered Bridal Lehenga Fabric", "Royal Blue Velvet Lehenga Panel Fabric", "Emerald Green Raw Silk Lehenga Fabric",
@@ -183,7 +163,7 @@ function buildCatalogProducts() {
             "Lavender Organza Lehenga Fabric", "Marigold Yellow Threadwork Lehenga Panel", "Peach Silk Brocade Lehenga Fabric",
             "Sky Blue Embroidered Lehenga Panel", "Bottle Green Velvet Lehenga Fabric", "Rose Gold Metallic Lehenga Panel"
         ], colors: ["Golden Red", "Royal Blue", "Emerald Green", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
-            "https://images.unsplash.com/photo-1597586124394-fbd6ef244026?w=600&auto=format&fit=crop&q=80"
+            "image copy 55.png"
         ]},
         { id: 'nighty', prefix: 'NIT', basePrice: 899, names: [
             "Classic Maroon Floral Cotton Nighty", "Royal Blue Printed Pure Cotton Nighty", "Emerald Green Comfortable Daily Nighty",
@@ -192,7 +172,7 @@ function buildCatalogProducts() {
             "Lavender Floral Print Cotton Nighty", "Marigold Yellow Soft Cotton Nighty", "Peach Comfort Fit Nightdress",
             "Sky Blue Cotton Nighty Pack", "Bottle Green Printed Nightwear", "Rose Pink Satin Nighty Gown"
         ], colors: ["Maroon / Blue", "Royal Blue", "Emerald Green", "Pastel Pink", "Crimson Red", "Midnight Black", "Mustard Yellow", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Pink"], imgs: [
-            "https://images.unsplash.com/photo-1562572159-4ebcd318f4dd?w=600&auto=format&fit=crop&q=80"
+            "image copy 56.png"
         ]},
         { id: 'lace-hangings', prefix: 'LAC', basePrice: 299, names: [
             "Gold Zari Border Lace Trim Accessories", "Crimson Red Maggam Latkan Tassel Hangings", "Royal Blue Velvet Border Lace Trim",
@@ -201,7 +181,7 @@ function buildCatalogProducts() {
             "Lavender Floral Embroidered Lace Trim", "Marigold Yellow Pom-Pom Lace Trim", "Peach Silk Border Lace Trim",
             "Sky Blue Pearl Hanging Tassels", "Bottle Green Maggam Latkan Accessories", "Rose Gold Metallic Lace Trim Roll"
         ], colors: ["Metallic Gold", "Crimson Red", "Royal Blue", "Emerald Green", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=80"
+            "image copy 57.png"
         ]},
         { id: 'kids', prefix: 'KID', basePrice: 1899, names: [
             "Silk Pattu Langa Kids Lehenga Set", "Crimson Red Kids Festive Anarkali Frock", "Royal Blue Boys Traditional Kurta Set",
@@ -210,16 +190,16 @@ function buildCatalogProducts() {
             "Lavender Girls Flower Dress", "Marigold Yellow Kids Ethnic Suit", "Peach Kids Silk Frock",
             "Sky Blue Traditional Kids Wear", "Bottle Green Girls Pattu Langa", "Rose Pink Kids Dhoti Kurta Set"
         ], colors: ["Maroon & Golden Yellow", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Pink"], imgs: [
-            "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=600&auto=format&fit=crop&q=80"
+            "image copy 58.png"
         ]},
         { id: 'retail-collection', prefix: 'RET', basePrice: 1999, names: [
-            "Boutique Fashion Retail Kurti Display", "Retail Special Banarasi Silk Saree", "Retail Collection Georgette 3-Piece Suit",
+            "Boutique Fashion Retail Kurti Display", "Retail Special Banarasi Silk Saree", "Retail Collection Georgette Suit",
             "Retail Ready Maggam Blouse Piece", "Retail Designer Anarkali Frock", "Retail Wholesale Cotton Dress Material",
             "Retail Silk Petticoats Bulk Pack", "Retail Festive Kids Pattu Langa", "Retail Premium Shapewear Skirt",
             "Retail Designer Dupatta Collection", "Retail Computer Worked Blouse Pieces", "Retail Peplum Fusion Tops",
             "Retail Traditional Half Saree Set", "Retail Bridal Lehenga Fabric", "Retail Silk Cut Piece Roll"
         ], colors: ["Multicolor / Retail", "Royal Blue", "Emerald Green", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
-            "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80"
+            "image copy 11.png"
         ]}
     ];
 
@@ -265,28 +245,27 @@ const SEED_PRODUCTS = buildCatalogProducts();
 
 // Seed Categories detail meta (for banners and descriptions)
 const CATEGORY_META = {
-    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80" },
-    frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&auto=format&fit=crop&q=80" },
-    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?w=800&auto=format&fit=crop&q=80" },
-    kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=800&auto=format&fit=crop&q=80" },
-    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Grand Kurti sets with heavy dupattas", img: "https://images.unsplash.com/photo-1601288496920-b6154fe3626a?w=800&auto=format&fit=crop&q=80" },
-    "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&auto=format&fit=crop&q=80" },
-    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&auto=format&fit=crop&q=80" },
-    "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80" },
-    "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop&q=80" },
-    shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80" },
-    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=800&auto=format&fit=crop&q=80" },
-    "computer-work-blouse-pieces": { title: "Computer Embroidery Blouses", subtitle: "Precision machine worked heavy silk materials", img: "https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?w=800&auto=format&fit=crop&q=80" },
-    dupatta: { title: "Zari Dupattas", subtitle: "Silk, Net and chiffon matching stoles", img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&auto=format&fit=crop&q=80" },
-    chunni: { title: "Chunnis & Scarves", subtitle: "Vibrant ethnic styling additions", img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=800&auto=format&fit=crop&q=80" },
-    "cut-piece-fabric": { title: "Cut Piece Fabric", subtitle: "Premium raw cotton and silk measurements", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80" },
-    "dress-material": { title: "Unstitched Dress Materials", subtitle: "Create your own customized Punjabi suites", img: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=800&auto=format&fit=crop&q=80" },
-    "lehenga-fabric": { title: "Lehenga Fabrics", subtitle: "Bespoke fabrics for custom bridal designs", img: "https://images.unsplash.com/photo-1597586124394-fbd6ef244026?w=800&auto=format&fit=crop&q=80" },
-    nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=800&auto=format&fit=crop&q=80" },
-    "lace-hangings": { title: "Lace & Hangings", subtitle: "Maggam designer borders and hangings accessories", img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80" },
-    women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop&q=80" },
-    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=800&auto=format&fit=crop&q=80" },
-    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80" }
+    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 39.png" },
+    frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 40.png" },
+    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 40.png" },
+    kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 41.png" },
+    "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "image copy 42.png" },
+    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "image copy 44.png" },
+    "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "image copy 43.png" },
+    "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "image copy 45.png" },
+    shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "image copy 46.png" },
+    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "image copy 47.png" },
+    "computer-work-blouse-pieces": { title: "Computer Embroidery Blouses", subtitle: "Precision machine worked heavy silk materials", img: "image copy 48.png" },
+    dupatta: { title: "Zari Dupattas", subtitle: "Silk, Net and chiffon matching stoles", img: "image copy 49.png" },
+    chunni: { title: "Chunnis & Scarves", subtitle: "Vibrant ethnic styling additions", img: "image copy 51.png" },
+    "cut-piece-fabric": { title: "Cut Piece Fabric", subtitle: "Premium raw cotton and silk measurements", img: "image copy 52.png" },
+    "dress-material": { title: "Unstitched Dress Materials", subtitle: "Create your own customized Punjabi suites", img: "image copy 53.png" },
+    "lehenga-fabric": { title: "Lehenga Fabrics", subtitle: "Bespoke fabrics for custom bridal designs", img: "image copy 55.png" },
+    nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "image copy 56.png" },
+    "lace-hangings": { title: "Lace & Hangings", subtitle: "Maggam designer borders and hangings accessories", img: "image copy 57.png" },
+    women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 31.png" },
+    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 58.png" },
+    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 11.png" }
 };
 
 // Seed test reviews
@@ -558,7 +537,6 @@ function renderHomeContents() {
             { key: 'frocks', label: 'Frocks' },
             { key: 'blouses', label: 'Blouses' },
             { key: 'kurti', label: 'Kurtis' },
-            { key: '3-piece-sets', label: '3 Piece Sets' },
             { key: 'half-sarees', label: 'Half Sarees' },
             { key: 'petticoats', label: 'Petticoats' },
             { key: 'peplum-tops', label: 'Peplum Tops' },
