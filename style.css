@@ -4641,6 +4641,78 @@ a[href="#/checkout"] {
   .dash-tab-content {
     padding-bottom: 30px !important;
   }
+  /* Shopping Bag 5 Columns Mobile View Fit (image copy 80 & 81 fix) */
+  .cart-table-card {
+    overflow-x: visible !important;
+    padding: 10px 4px !important;
+  }
+  .cart-title-row {
+    display: grid !important;
+    grid-template-columns: 50px 1.4fr 58px 72px 28px !important;
+    gap: 4px !important;
+    font-size: 0.62rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+  .cart-item {
+    display: grid !important;
+    grid-template-columns: 50px 1.4fr 58px 72px 28px !important;
+    gap: 4px !important;
+    padding: 10px 0 !important;
+    align-items: center !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+  .cart-item-img {
+    width: 44px !important;
+    height: 56px !important;
+    margin: 0 auto !important;
+  }
+  .cart-item-details h4 {
+    font-size: 0.76rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 2px !important;
+  }
+  .cart-item-details p {
+    font-size: 0.65rem !important;
+    line-height: 1.15 !important;
+    color: #64748b !important;
+  }
+  .cart-item-price {
+    font-size: 0.78rem !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+  }
+  .cart-item .quantity-selector {
+    height: 26px !important;
+    padding: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+  }
+  .cart-item .qty-btn {
+    width: 18px !important;
+    height: 18px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .cart-item .qty-input {
+    width: 16px !important;
+    font-size: 0.72rem !important;
+    text-align: center !important;
+  }
+  .cart-item-remove {
+    text-align: center !important;
+  }
+  .cart-item-remove i {
+    width: 15px !important;
+    height: 15px !important;
+  }
 }
 
 

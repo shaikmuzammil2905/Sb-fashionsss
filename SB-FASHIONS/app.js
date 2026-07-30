@@ -245,7 +245,7 @@ const SEED_PRODUCTS = buildCatalogProducts();
 
 // Seed Categories detail meta (for banners and descriptions)
 const CATEGORY_META = {
-    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 39.png" },
+    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 86.png" },
     frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 40.png" },
     blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 72.png" },
     kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 41.png" },
@@ -254,7 +254,7 @@ const CATEGORY_META = {
     "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "image copy 43.png" },
     "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "image copy 45.png" },
     shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "image copy 46.png" },
-    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "image copy 47.png" },
+    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "image copy 82.png" },
     "computer-work-blouse-pieces": { title: "Computer Embroidery Blouses", subtitle: "Precision machine worked heavy silk materials", img: "image copy 48.png" },
     dupatta: { title: "Zari Dupattas", subtitle: "Silk, Net and chiffon matching stoles", img: "image copy 49.png" },
     chunni: { title: "Chunnis & Scarves", subtitle: "Vibrant ethnic styling additions", img: "image copy 51.png" },
@@ -265,7 +265,7 @@ const CATEGORY_META = {
     "lace-hangings": { title: "Lace & Hangings", subtitle: "Maggam designer borders and hangings accessories", img: "image copy 57.png" },
     women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 31.png" },
     kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 58.png" },
-    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 61.png" }
+    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 84.png" }
 };
 
 // Seed test reviews
