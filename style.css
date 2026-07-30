@@ -11,14 +11,14 @@
 /* --- DESIGN TOKENS --- */
 :root {
   /* Colors */
-  --color-primary: #e85a71;       /* Signature Logo Rose Pink */
-  --color-primary-dark: #c2185b;  /* Deep Rose Pink */
-  --color-primary-light: #fff0f3; /* Soft Blush Pink */
-  --color-pink-main: #e85a71;     /* Brand Pink */
-  --color-pink-soft: #fce4ec;     /* Soft Pink Accent */
-  --color-gold-btn: #d4af37;      /* Champagne Gold Button */
+  --color-primary: #D81B60;       /* Signature Vibrant Pink */
+  --color-primary-dark: #C2185B;  /* Deep Rose Pink */
+  --color-primary-light: #FFF0F5; /* Soft Blush Pink */
+  --color-pink-main: #D81B60;     /* Brand Pink Accent */
+  --color-pink-soft: #F8C8D8;     /* Soft Pink Accent Ring */
+  --color-gold-btn: #d4a017;      /* Warm Gold Button */
   --color-gold-hover: #b8860b;    /* Gold Hover */
-  --color-secondary: #d4af37;     /* Warm Gold / Champagne Accent */
+  --color-secondary: #d4a017;     /* Warm Gold Accent */
   --color-secondary-dark: #b8860b;/* Deep Accent Gold */
   --color-secondary-light: #fff8e7;/* Soft Cream / Gold highlight */
   --color-bg-base: #fdf8f9;        /* Luxurious rose-cream base */
@@ -378,7 +378,7 @@ header.scrolled {
 .logo-img:hover {
   transform: scale(1.08) rotate(2deg);
 }
-.logo-text, .logo-text span {
+.logo-text, .logo-text span, .footer-logo, .footer-logo span {
   font-family: var(--font-serif);
   font-size: 1.45rem;
   font-weight: 700;
@@ -3801,23 +3801,41 @@ footer {
   height: 78px;
   border-radius: 50%;
   overflow: hidden;
-  background: var(--color-pink-light);
-  border: 2.5px solid var(--color-pink-soft);
-  box-shadow: 0 4px 12px rgba(224, 75, 120, 0.15);
+  background: #FFF0F5;
+  border: 2.5px solid #F8C8D8;
+  box-shadow: 0 4px 12px rgba(216, 27, 96, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .category-card:hover .category-circle {
   transform: scale(1.08);
-  border-color: var(--color-pink-main);
+  border-color: #D81B60;
+  box-shadow: 0 6px 16px rgba(216, 27, 96, 0.25);
 }
 .category-circle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.category-circle-pink {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #FFF0F5;
+  border: 2.5px solid #D81B60;
+  box-shadow: 0 4px 12px rgba(216, 27, 96, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+.category-card:hover .category-circle-pink {
+  transform: scale(1.08);
 }
 .category-card span {
   font-size: 0.78rem;
@@ -3828,21 +3846,82 @@ footer {
   word-break: break-word;
   max-width: 90px;
 }
-/* View All Category Card */
-.category-viewall-card {
-  background: var(--color-pink-light);
-  border: 1px solid var(--color-pink-soft);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 6px;
-  width: 76px;
-  height: 76px;
-  margin-bottom: 8px;
-  color: var(--color-pink-main);
-  box-shadow: 0 4px 12px rgba(224, 75, 120, 0.08);
+
+/* Site-wide Lucide Icon & Button Visibility Fix (image copy 103) */
+i[data-lucide], svg.lucide {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Nav Action Icons (Wishlist, Cart, Profile, Menu) */
+.nav-action-btn {
+  color: #D81B60 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.nav-action-btn i, .nav-action-btn svg {
+  width: 22px !important;
+  height: 22px !important;
+  stroke: #D81B60 !important;
+  color: #D81B60 !important;
+  display: inline-block !important;
+}
+
+/* Badges (Wishlist & Cart count) */
+.badge-count, .mob-badge, .mobile-nav-badge {
+  background-color: #D81B60 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border: 1.5px solid #ffffff !important;
+}
+
+/* Search Bar & Pink Button */
+.top-search-input:focus {
+  border-color: #D81B60 !important;
+  box-shadow: 0 0 12px rgba(216, 27, 96, 0.2) !important;
+}
+.top-search-btn {
+  background-color: #D81B60 !important;
+  color: #ffffff !important;
+}
+.top-search-btn i, .top-search-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+  display: inline-block !important;
+}
+
+/* Hero Banner Slider Prev / Next Arrows */
+.hero-slider-prev, .hero-slider-next {
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.hero-slider-prev i, .hero-slider-prev svg,
+.hero-slider-next i, .hero-slider-next svg {
+  width: 22px !important;
+  height: 22px !important;
+  stroke: #333333 !important;
+  color: #333333 !important;
+  display: inline-block !important;
+}
+
+/* Mobile Bottom Navigation Bar Icons */
+.mobile-nav-item i, .mobile-nav-item svg {
+  width: 20px !important;
+  height: 20px !important;
+  stroke: currentColor !important;
+  display: inline-block !important;
+}
+.mobile-nav-item.active {
+  color: #D81B60 !important;
 }
 .category-viewall-card i {
   width: 24px;

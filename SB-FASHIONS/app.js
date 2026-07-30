@@ -48,6 +48,16 @@ function buildCatalogProducts() {
             "image copy 47.png",
             "image copy 48.png"
         ]},
+        { id: '3-piece-sets', prefix: 'TPS', basePrice: 2999, names: [
+            "Royal Silk 3 Piece Kurti Set", "Crimson Red Anarkali 3 Piece Suit", "Emerald Green Georgette 3 Piece Set",
+            "Pastel Pink Floral 3 Piece Kurti Set", "Mustard Yellow Silk Palazzo Suit", "Midnight Black Designer 3 Piece Set",
+            "Peach Organza Dupatta 3 Piece Set", "Wine Red Banarasi 3 Piece Suit", "Lavender Chikankari 3 Piece Set",
+            "Teal Green Printed 3 Piece Kurti Set", "Marigold Yellow Festive 3 Piece Suit", "Deep Maroon Heavy Zari 3 Piece Set",
+            "Sky Blue Linen 3 Piece Kurti Set", "Rose Gold Silk 3 Piece Suit", "Off-White Handloom 3 Piece Set"
+        ], colors: ["Royal Blue", "Crimson Red", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Peach Pink", "Wine Red", "Lavender", "Teal Green", "Marigold Yellow", "Deep Maroon", "Sky Blue", "Rose Gold", "Off-White"], imgs: [
+            "image copy 76.png",
+            "image copy 40.png"
+        ]},
         { id: 'kurti', prefix: 'KUR', basePrice: 899, names: [
             "Yellow Cotton A-Line Kurti Tunic", "Royal Blue Printed Georgette Kurti", "Emerald Green Straight Cut Kurti",
             "Pastel Pink Floral Rayon Tunic", "Crimson Red Anarkali Style Kurti", "Midnight Black Mirror Work Tunic",
@@ -248,6 +258,7 @@ const CATEGORY_META = {
     sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 86.png" },
     frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 40.png" },
     blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 72.png" },
+    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Designer Kurti, Dupatta & Palazzo combinations", img: "image copy 76.png" },
     kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 41.png" },
     "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "image copy 42.png" },
     petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "image copy 44.png" },
@@ -537,6 +548,7 @@ function renderHomeContents() {
             { key: 'frocks', label: 'Frocks' },
             { key: 'blouses', label: 'Blouses' },
             { key: 'kurti', label: 'Kurtis' },
+            { key: '3-piece-sets', label: '3 Piece Sets' },
             { key: 'half-sarees', label: 'Half Sarees' },
             { key: 'petticoats', label: 'Petticoats' },
             { key: 'peplum-tops', label: 'Peplum Tops' },
@@ -549,10 +561,7 @@ function renderHomeContents() {
             { key: 'cut-piece-fabric', label: 'Cut Piece Fabrics' },
             { key: 'dress-material', label: 'Dress Materials' },
             { key: 'lehenga-fabric', label: 'Lehenga Fabrics' },
-            { key: 'nighty', label: 'Nighties' },
-            { key: 'lace-hangings', label: 'Lace & Hangings' },
-            { key: 'kids', label: 'Kids Collection' },
-            { key: 'retail-collection', label: 'Retail Collection' }
+            { key: 'nighty', label: 'Nighties' }
         ];
 
         homeCategories.forEach(item => {
@@ -569,15 +578,15 @@ function renderHomeContents() {
             catSlider.appendChild(card);
         });
 
-        // 22nd Card: Shop Button
+        // 19th Card: View All Categories Card in Pink Branding (Image 102)
         const viewAllCard = document.createElement('a');
         viewAllCard.href = `#/category/women`;
-        viewAllCard.className = "category-card category-shop-card";
+        viewAllCard.className = "category-card category-viewall-pink-card";
         viewAllCard.innerHTML = `
-            <div class="category-circle" style="background: linear-gradient(135deg, #cda85c 0%, #b89246 100%); border-color: #cda85c;">
-                <i data-lucide="shopping-bag" style="color:#ffffff; width:28px; height:28px;"></i>
+            <div class="category-circle-pink">
+                <i data-lucide="layout-grid" style="color:#D81B60; width:26px; height:26px;"></i>
             </div>
-            <span style="color:#b89246; font-weight:700;">Shop Now &gt;</span>
+            <span style="color:#D81B60; font-weight:700;">View All Categories &gt;</span>
         `;
         catSlider.appendChild(viewAllCard);
     }
@@ -906,7 +915,14 @@ function renderCategoryPage(categoryKey) {
         document.getElementById('category-listing-count').textContent = list.length;
         
         if (list.length === 0) {
-            document.getElementById('category-empty-state').classList.remove('hidden');
+            const emptyState = document.getElementById('category-empty-state');
+            emptyState.innerHTML = `
+                <i data-lucide="package-search" style="width:64px;height:64px;color:#D81B60;"></i>
+                <h3 style="margin-top:15px;color:var(--color-text-main);font-size:1.3rem;">No items available in this category yet</h3>
+                <p style="margin-bottom:20px;color:var(--color-text-muted);">Explore our other hand-crafted traditional and designer collections.</p>
+                <a href="#/category/women" class="btn btn-primary" style="background:#D81B60;border-color:#D81B60;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;display:inline-block;text-decoration:none;">Browse All Products</a>
+            `;
+            emptyState.classList.remove('hidden');
         } else {
             document.getElementById('category-empty-state').classList.add('hidden');
             list.forEach(p => {
