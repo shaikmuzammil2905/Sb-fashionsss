@@ -1436,124 +1436,6 @@
         </button>
     </div>
 
-    <!-- Sticky Mobile Bottom Navigation Bar matching image copy 20.png -->
-    <nav class="mobile-bottom-navbar">
-        <a href="#/home" class="mobile-nav-item active" id="mob-nav-home">
-            <i data-lucide="home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#/category/women" class="mobile-nav-item" id="mob-nav-categories">
-            <i data-lucide="layout-grid"></i>
-            <span>Categories</span>
-        </a>
-        <a href="#/dashboard/wishlist" class="mobile-nav-item" id="mob-nav-wishlist">
-            <i data-lucide="heart"></i>
-            <span>Wishlist</span>
-        </a>
-        <a href="#/cart" class="mobile-nav-item" id="mob-nav-cart">
-            <div class="mob-nav-badge-wrap">
-                <i data-lucide="shopping-bag"></i>
-                <span class="mob-badge" id="mob-cart-badge-count">2</span>
-            </div>
-            <span>Cart</span>
-        </a>
-        <a href="#/dashboard/profile" class="mobile-nav-item" id="mob-nav-profile">
-            <i data-lucide="user"></i>
-            <span>Profile</span>
-        </a>
-    </nav>
-
-
-    <!-- ==========================================
-      6. TOAST NOTIFICATIONS DRAWER
-    ========================================== -->
-    <div id="toast-container"></div>
-
-
-    <!-- ==========================================
-      7. ADMIN ACTION MODALS
-    ========================================== -->
-    <div class="modal-overlay" id="admin-product-modal-overlay">
-        <div class="admin-modal">
-            <div class="modal-header">
-                <h3 id="admin-modal-title" style="color:var(--color-secondary);">Add New Product</h3>
-                <button style="color:#fff;" id="btn-close-product-modal"><i data-lucide="x"></i></button>
-            </div>
-            <form id="admin-product-crud-form">
-                <div class="modal-body" style="display:flex; flex-direction:column; gap:15px;">
-                    <input type="hidden" id="admin-field-index" value="">
-                    
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-input-wrapper">
-                            <label style="color:#aaa;">Product SKU</label>
-                            <input type="text" class="input-field" id="admin-field-sku" placeholder="SBF-SAR-011" style="background:#111;color:#fff;border-color:#333;" required>
-                        </div>
-                        <div class="form-input-wrapper">
-                            <label style="color:#aaa;">Product Category</label>
-                            <select class="input-field" id="admin-field-category" style="background:#111;color:#fff;border-color:#333;" required>
-                                <option value="sarees">Sarees</option>
-                                <option value="frocks">Frocks</option>
-                                <option value="blouses">Blouses</option>
-                                <option value="kurti">Kurti</option>
-                                <option value="3-piece-sets">3 Piece Sets</option>
-                                <option value="half-sarees">Half Sarees</option>
-                                <option value="petticoats">Petticoats</option>
-                                <option value="peplum-tops">Peplum Tops</option>
-                                <option value="lehenga-blouse">Lehenga & Blouse</option>
-                                <option value="shapewear">Shapewear</option>
-                                <option value="maggam-work-blouse-pieces">Maggam Work Blouse Pieces</option>
-                                <option value="computer-work-blouse-pieces">Computer Work Blouse Pieces</option>
-                                <option value="dupatta">Dupatta</option>
-                                <option value="chunni">Chunni</option>
-                                <option value="cut-piece-fabric">Cut Piece Fabric</option>
-                                <option value="dress-material">Dress Material</option>
-                                <option value="lehenga-fabric">Lehenga Fabric</option>
-                                <option value="nighty">Nighty</option>
-                                <option value="lace-hangings">Lace & Hangings</option>
-                                <option value="kids">Kids</option>
-                                <option value="retail-collection">Retail Collection</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-input-wrapper">
-                        <label style="color:#aaa;">Product Title</label>
-                        <input type="text" class="input-field" id="admin-field-title" placeholder="Designer Silk Saree" style="background:#111;color:#fff;border-color:#333;" required>
-                    </div>
-
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr;">
-                        <div class="form-input-wrapper">
-                            <label style="color:#aaa;">Regular Price (₹)</label>
-                            <input type="number" class="input-field" id="admin-field-price-old" placeholder="8999" style="background:#111;color:#fff;border-color:#333;" required>
-                        </div>
-                        <div class="form-input-wrapper">
-                            <label style="color:#aaa;">Offer Price (₹)</label>
-                            <input type="number" class="input-field" id="admin-field-price-new" placeholder="5499" style="background:#111;color:#fff;border-color:#333;" required>
-                        </div>
-                        <div class="form-input-wrapper">
-                            <label style="color:#aaa;">Stock Quantity</label>
-                            <input type="number" class="input-field" id="admin-field-stock" placeholder="15" style="background:#111;color:#fff;border-color:#333;" required>
-                        </div>
-                    </div>
-
-                    <div class="form-input-wrapper">
-                        <label style="color:#aaa;">Product Image Link URL</label>
-                        <input type="url" class="input-field" id="admin-field-image" placeholder="https://images.unsplash.com/..." style="background:#111;color:#fff;border-color:#333;" required>
-                    </div>
-
-                    <div class="form-input-wrapper">
-                        <label style="color:#aaa;">Product Description</label>
-                        <textarea class="input-field" id="admin-field-desc" rows="3" placeholder="Describe the fabrics, weaves, stitching borders..." style="background:#111;color:#fff;border-color:#333;" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="btn-cancel-product-modal" style="color:#fff;border-color:#333;background:#333;">Cancel</button>
-                    <button type="submit" class="btn btn-gold" id="btn-save-product-action">Save Product Details</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!-- Sticky Mobile Bottom Navigation Bar -->
     <nav class="mobile-bottom-navbar" id="mobile-bottom-nav">
         <a href="#/home" class="mobile-nav-item active" id="mob-nav-home">
@@ -1561,8 +1443,8 @@
             <span>Home</span>
         </a>
         <a href="#/category/women" class="mobile-nav-item" id="mob-nav-categories">
-            <i data-lucide="grid"></i>
-            <span>Categories</span>
+            <i data-lucide="shopping-bag"></i>
+            <span>Shop</span>
         </a>
         <a href="#/dashboard/wishlist" class="mobile-nav-item" id="mob-nav-wishlist">
             <i data-lucide="heart"></i>

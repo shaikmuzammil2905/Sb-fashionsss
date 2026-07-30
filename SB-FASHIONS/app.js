@@ -569,15 +569,15 @@ function renderHomeContents() {
             catSlider.appendChild(card);
         });
 
-        // 22nd Card: View All Categories
+        // 22nd Card: Shop Button
         const viewAllCard = document.createElement('a');
         viewAllCard.href = `#/category/women`;
-        viewAllCard.className = "category-card";
+        viewAllCard.className = "category-card category-shop-card";
         viewAllCard.innerHTML = `
-            <div class="category-viewall-card">
-                <i data-lucide="layout-grid"></i>
+            <div class="category-circle" style="background: linear-gradient(135deg, #cda85c 0%, #b89246 100%); border-color: #cda85c;">
+                <i data-lucide="shopping-bag" style="color:#ffffff; width:28px; height:28px;"></i>
             </div>
-            <span style="color:var(--color-pink-main);font-weight:700;">View All Categories &gt;</span>
+            <span style="color:#b89246; font-weight:700;">Shop Now &gt;</span>
         `;
         catSlider.appendChild(viewAllCard);
     }
@@ -1282,18 +1282,24 @@ function renderCartPage() {
             <div class="cart-item-img">
                 <img src="${item.image}" alt="${item.name}">
             </div>
-            <div class="cart-item-details">
-                <h4>${item.name}</h4>
-                <p>Size: ${item.size} | Color: ${item.color} | SKU: ${item.sku}</p>
-            </div>
-            <div class="cart-item-price">₹${item.price.toLocaleString()}</div>
-            <div class="quantity-selector" style="height:35px;">
-                <button class="qty-btn" onclick="updateCartQty(${idx}, -1)"><i data-lucide="minus" style="width:12px;"></i></button>
-                <span class="qty-input" style="width:25px;font-size:0.85rem;">${item.qty}</span>
-                <button class="qty-btn" onclick="updateCartQty(${idx}, 1)"><i data-lucide="plus" style="width:12px;"></i></button>
-            </div>
-            <div class="cart-item-remove" onclick="removeCartItem(${idx})">
-                <i data-lucide="trash-2" style="width:18px;"></i>
+            <div class="cart-item-info">
+                <div class="cart-item-header">
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-title">${item.name}</h4>
+                        <p class="cart-item-meta">Size: ${item.size} | Color: ${item.color} | SKU: ${item.sku}</p>
+                    </div>
+                    <div class="cart-item-price">₹${item.price.toLocaleString()}</div>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn" onclick="updateCartQty(${idx}, -1)"><i data-lucide="minus"></i></button>
+                        <span class="qty-input">${item.qty}</span>
+                        <button class="qty-btn" onclick="updateCartQty(${idx}, 1)"><i data-lucide="plus"></i></button>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeCartItem(${idx})" title="Remove Item">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                </div>
             </div>
         `;
         list.appendChild(row);
