@@ -3747,43 +3747,35 @@ footer {
   background-color: var(--color-pink-main, #e85a71);
 }
 
-/* 3. CIRCULAR CATEGORY GRID (Image 96 fit all categories grid) */
+/* 3. CIRCULAR CATEGORY GRID (Image 102 fit all 20 categories grid) */
 .category-grid-section {
-  padding: 15px 10px 30px;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+  padding: 15px 10px 25px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  visibility: visible !important;
 }
 .circular-category-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px 10px;
-  justify-items: center;
-  align-items: start;
-  width: 100%;
-  box-sizing: border-box;
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 20px 12px !important;
+  justify-items: center !important;
+  align-items: start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  visibility: visible !important;
 }
 @media (max-width: 992px) {
   .circular-category-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px 8px;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px 10px !important;
   }
 }
 @media (max-width: 576px) {
   .circular-category-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px 4px;
-  }
-  .category-card {
-    width: 100% !important;
-    max-width: 82px !important;
-  }
-  .category-circle {
-    width: 62px !important;
-    height: 62px !important;
-  }
-  .category-card span {
-    font-size: 0.72rem !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 14px 6px !important;
   }
 }
 .category-card {
