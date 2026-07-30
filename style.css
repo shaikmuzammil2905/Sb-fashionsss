@@ -67,12 +67,14 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+html, body {
   font-family: var(--font-sans);
   background-color: var(--color-bg-base);
   color: var(--color-text-main);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 a {
@@ -3625,13 +3627,15 @@ footer {
   box-shadow: 0 12px 35px rgba(216, 27, 96, 0.35) !important;
 }
 .hero-pink-banner.hero-slide {
-  display: none;
+  display: none !important;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
-.hero-pink-banner.hero-slide.active {
+.hero-pink-banner.hero-slide.active,
+.hero-pink-banner-wrapper .hero-slide:first-child {
   display: flex !important;
   opacity: 1 !important;
+  visibility: visible !important;
 }
 .hero-slider-prev, .hero-slider-next {
   position: absolute !important;
