@@ -699,12 +699,13 @@ function renderHomeContents() {
 
 // Typing mode count-up animation for trusted numbers & statistics
 function triggerStatisticsCountUp() {
-    const stats = document.querySelectorAll('.count-up-stat');
+    const stats = document.querySelectorAll('.count-up-stat, .stat-num');
     stats.forEach(el => {
-        const targetVal = parseFloat(el.getAttribute('data-val') || '0');
-        const decimals = parseInt(el.getAttribute('data-decimals') || '0');
+        const targetVal = parseFloat(el.getAttribute('data-val') || el.textContent.replace(/[^0-9.]/g, '') || '0');
+        if (!targetVal) return;
+        const decimals = parseInt(el.getAttribute('data-decimals') || (targetVal % 1 !== 0 ? '1' : '0'));
         const prefix = el.getAttribute('data-prefix') || '';
-        const suffix = el.getAttribute('data-suffix') || '';
+        const suffix = el.getAttribute('data-suffix') || (el.textContent.includes('+') ? '+' : el.textContent.includes('★') ? ' ★' : '');
         const duration = 1800; // ms
         const startTime = performance.now();
 

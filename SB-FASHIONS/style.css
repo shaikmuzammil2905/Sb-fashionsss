@@ -3847,7 +3847,7 @@ footer {
   max-width: 90px;
 }
 
-/* Site-wide Lucide Icon & Button Visibility Fix (image copy 103) */
+/* Site-wide Lucide Icon & Button Visibility Fix (image copy 103 & 104) */
 i[data-lucide], svg.lucide {
   display: inline-block !important;
   vertical-align: middle !important;
@@ -3862,21 +3862,40 @@ i[data-lucide], svg.lucide {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  position: relative !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
 }
 .nav-action-btn i, .nav-action-btn svg {
   width: 22px !important;
   height: 22px !important;
   stroke: #D81B60 !important;
   color: #D81B60 !important;
+  fill: none !important;
+  stroke-width: 2px !important;
   display: inline-block !important;
 }
 
 /* Badges (Wishlist & Cart count) */
 .badge-count, .mob-badge, .mobile-nav-badge {
+  position: absolute !important;
+  top: -2px !important;
+  right: -2px !important;
   background-color: #D81B60 !important;
   color: #ffffff !important;
-  font-weight: 700 !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   border: 1.5px solid #ffffff !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
+  z-index: 5 !important;
 }
 
 /* Search Bar & Pink Button */
@@ -3919,6 +3938,100 @@ i[data-lucide], svg.lucide {
   height: 20px !important;
   stroke: currentColor !important;
   display: inline-block !important;
+}
+
+/* Mobile Header Layout Exact Match (image copy 104) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 6px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .mobile-menu-toggle {
+    display: flex !important;
+    margin-right: 4px !important;
+  }
+  .logo-container {
+    padding: 2px 4px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-right: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+  .logo-img {
+    height: 28px !important;
+    width: auto !important;
+  }
+  .logo-text, .logo-text span {
+    font-size: 1.15rem !important;
+    letter-spacing: 0.8px !important;
+    color: #d4a017 !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+/* Soft Pink Layout Background Section Below Hero */
+.home-pink-layout-section {
+  background: linear-gradient(180deg, #fff0f5 0%, #fff7f9 60%, #ffffff 100%) !important;
+  padding: 16px 0 20px !important;
+  margin-bottom: 15px !important;
+  border-radius: 0 0 24px 24px !important;
+  border-bottom: 1px solid #f8c8d8 !important;
+}
+
+/* Space Reduction Site-Wide */
+.header-search-row {
+  padding: 4px 0 2px 0 !important;
+  margin-bottom: 0 !important;
+}
+.hero-pink-banner-wrapper {
+  margin-bottom: 10px !important;
+}
+.hero-pink-banner {
+  padding: 24px 30px !important;
+  min-height: 270px !important;
+}
+.category-grid-section {
+  padding: 10px 10px 18px !important;
+}
+.promo-buy2get1-container {
+  margin-bottom: 16px !important;
+}
+.new-arrivals-section {
+  margin-bottom: 18px !important;
+}
+.section-title-wrapper {
+  margin-bottom: 14px !important;
+}
+.section-header-flex {
+  margin-bottom: 14px !important;
+}
+.product-grid {
+  gap: 16px 12px !important;
+}
+.testimonials-section {
+  padding: 25px 0 !important;
+  margin-bottom: 18px !important;
+}
+.newsletter-section {
+  padding: 20px 0 !important;
+  margin-bottom: 18px !important;
+}
+.store-details-section-clean {
+  padding: 20px 0 !important;
+  margin-bottom: 18px !important;
+}
+footer {
+  padding: 30px 0 15px !important;
 }
 .mobile-nav-item.active {
   color: #D81B60 !important;
