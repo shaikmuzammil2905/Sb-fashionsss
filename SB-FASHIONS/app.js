@@ -247,7 +247,7 @@ const SEED_PRODUCTS = buildCatalogProducts();
 const CATEGORY_META = {
     sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 39.png" },
     frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 40.png" },
-    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 40.png" },
+    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 72.png" },
     kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 41.png" },
     "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "image copy 42.png" },
     petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "image copy 44.png" },
