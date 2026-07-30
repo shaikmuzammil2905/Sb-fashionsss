@@ -253,7 +253,7 @@ function buildCatalogProducts() {
 
 const SEED_PRODUCTS = buildCatalogProducts();
 
-// Seed Categories detail meta (for banners and descriptions)
+// Seed Categories detail meta (for banners and descriptions with exact image mappings 107-125)
 const CATEGORY_META = {
     sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 107.png" },
     frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 108.png" },
@@ -274,7 +274,6 @@ const CATEGORY_META = {
     "lehenga-fabric": { title: "Lehenga Fabrics", subtitle: "Bespoke fabrics for custom bridal designs", img: "image copy 123.png" },
     nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "image copy 124.png" },
     "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 125.png" },
-    "lace-hangings": { title: "Lace & Hangings", subtitle: "Maggam designer borders and hangings accessories", img: "image copy 57.png" },
     women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 107.png" },
     kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 58.png" }
 };
@@ -416,9 +415,8 @@ function handleRouting() {
             break;
             
         case 'category':
-        case 'products':
             switchView('category');
-            renderCategoryPage(parameter || 'women');
+            renderCategoryPage(parameter);
             setTimeout(initWordRevealAnimations, 100);
             break;
             
@@ -454,12 +452,19 @@ function handleRouting() {
             break;
             
         case 'profile':
-        case 'dashboard':
-            if (!activeSession) {
-                activeSession = { name: "Guest Customer", email: "customer@sbfashions.com" };
-            }
+            const profileSub = parameter === 'dashboard' ? 'profile' : (parameter || 'profile');
             switchView('dashboard');
-            renderCustomerDashboard(parameter || subParam || 'profile');
+            renderCustomerDashboard(profileSub);
+            break;
+            
+        case 'products':
+            switchView('category');
+            renderCategoryPage(parameter || 'women');
+            break;
+            
+        case 'dashboard':
+            switchView('dashboard');
+            renderCustomerDashboard(parameter || 'profile');
             break;
             
         case 'admin':
@@ -554,35 +559,35 @@ function renderHomeContents() {
         catSlider.innerHTML = '';
         
         const homeCategories = [
-            { key: 'sarees', label: 'Sarees' },
-            { key: 'frocks', label: 'Frocks' },
-            { key: 'blouses', label: 'Blouses' },
-            { key: 'kurti', label: 'Kurtis' },
-            { key: '3-piece-sets', label: '3 Piece Sets' },
-            { key: 'half-sarees', label: 'Half Sarees' },
-            { key: 'petticoats', label: 'Petticoats' },
-            { key: 'peplum-tops', label: 'Peplum Tops' },
-            { key: 'lehenga-blouse', label: 'Lehenga & Blouse' },
-            { key: 'shapewear', label: 'Shapewear' },
-            { key: 'maggam-work-blouse-pieces', label: 'Maggam Work Blouse Pieces' },
-            { key: 'computer-work-blouse-pieces', label: 'Computer Work Blouse Pieces' },
-            { key: 'dupatta', label: 'Dupattas' },
-            { key: 'chunni', label: 'Chunnis' },
-            { key: 'cut-piece-fabric', label: 'Cut Piece Fabrics' },
-            { key: 'dress-material', label: 'Dress Materials' },
-            { key: 'lehenga-fabric', label: 'Lehenga Fabrics' },
-            { key: 'nighty', label: 'Nighties' },
-            { key: 'retail-collection', label: 'Retail Collection' }
+            { key: 'sarees', label: 'Sarees', img: 'image copy 107.png' },
+            { key: 'frocks', label: 'Frocks', img: 'image copy 108.png' },
+            { key: 'blouses', label: 'Blouses', img: 'image copy 109.png' },
+            { key: 'kurti', label: 'Kurtis', img: 'image copy 110.png' },
+            { key: '3-piece-sets', label: '3 Piece Sets', img: 'image copy 111.png' },
+            { key: 'half-sarees', label: 'Half Sarees', img: 'image copy 112.png' },
+            { key: 'petticoats', label: 'Petticoats', img: 'image copy 113.png' },
+            { key: 'peplum-tops', label: 'Peplum Tops', img: 'image copy 114.png' },
+            { key: 'lehenga-blouse', label: 'Lehenga & Blouse', img: 'image copy 115.png' },
+            { key: 'shapewear', label: 'Shapewear', img: 'image copy 116.png' },
+            { key: 'maggam-work-blouse-pieces', label: 'Maggam Work Blouse Pieces', img: 'image copy 117.png' },
+            { key: 'computer-work-blouse-pieces', label: 'Computer Work Blouse Pieces', img: 'image copy 118.png' },
+            { key: 'dupatta', label: 'Dupattas', img: 'image copy 119.png' },
+            { key: 'chunni', label: 'Chunnis', img: 'image copy 120.png' },
+            { key: 'cut-piece-fabric', label: 'Cut Piece Fabrics', img: 'image copy 121.png' },
+            { key: 'dress-material', label: 'Dress Materials', img: 'image copy 122.png' },
+            { key: 'lehenga-fabric', label: 'Lehenga Fabrics', img: 'image copy 123.png' },
+            { key: 'nighty', label: 'Nighties', img: 'image copy 124.png' },
+            { key: 'retail-collection', label: 'Retail Collection', img: 'image copy 125.png' }
         ];
 
         homeCategories.forEach(item => {
-            const cat = CATEGORY_META[item.key] || { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300' };
+            const imgSrc = item.img || CATEGORY_META[item.key]?.img || 'image copy 107.png';
             const card = document.createElement('a');
             card.href = `#/category/${item.key}`;
             card.className = "category-card";
             card.innerHTML = `
                 <div class="category-circle">
-                    <img src="${cat.img}" alt="${item.label}">
+                    <img src="${imgSrc}" alt="${item.label}" onerror="this.src='image copy 107.png'">
                 </div>
                 <span>${item.label}</span>
             `;
@@ -595,7 +600,7 @@ function renderHomeContents() {
         viewAllCard.className = "category-card category-viewall-pink-card";
         viewAllCard.innerHTML = `
             <div class="category-circle-pink">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D81B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D81B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
             </div>
             <span style="color:#D81B60; font-weight:700;">View All Categories &gt;</span>
         `;
@@ -892,8 +897,14 @@ function renderCategoryPage(categoryKey) {
         
         // Filter by category
         let list = products.filter(p => {
-            if (keyClean === 'women' || keyClean === 'all' || keyClean === 'women-collection') {
-                return p.category !== 'kids'; // broad women collection
+            if (keyClean === 'women' || keyClean === 'all' || keyClean === 'women-collection' || keyClean === 'shop') {
+                return p.category !== 'kids' && p.category !== 'retail-collection'; // broad women collection only
+            }
+            if (keyClean === 'kids') {
+                return p.category === 'kids'; // strictly kids collection only
+            }
+            if (keyClean === 'retail-collection') {
+                return p.category === 'retail-collection'; // strictly retail collection only
             }
             const catLower = p.category.toLowerCase();
             return catLower === keyClean || catLower === rawKey || keyClean.includes(catLower) || catLower.includes(keyClean);
