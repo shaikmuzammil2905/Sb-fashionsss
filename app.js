@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '6.0'; // Bump this when seed products/images change
+const SEED_VERSION = '8.0'; // Bumped version to reset local storage products
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -312,13 +312,22 @@ class StoreState {
     }
 }
 
-// Initialise Database state — reset products if version is outdated
+// Initialise Database state — reset products if version is outdated or empty
 const storedVersion = localStorage.getItem('sbf_seed_version');
-if (storedVersion !== SEED_VERSION) {
+let rawProducts = null;
+try {
+    rawProducts = StoreState.get(STATE_KEYS.PRODUCTS, null);
+} catch (e) {
+    rawProducts = null;
+}
+
+if (storedVersion !== SEED_VERSION || !Array.isArray(rawProducts) || rawProducts.length < 50) {
     localStorage.removeItem(STATE_KEYS.PRODUCTS);
     localStorage.setItem('sbf_seed_version', SEED_VERSION);
+    rawProducts = buildCatalogProducts();
+    StoreState.set(STATE_KEYS.PRODUCTS, rawProducts);
 }
-let products = StoreState.get(STATE_KEYS.PRODUCTS, SEED_PRODUCTS);
+let products = rawProducts;
 let orders = StoreState.get(STATE_KEYS.ORDERS, []);
 let cart = StoreState.get(STATE_KEYS.CART, []);
 let wishlist = StoreState.get(STATE_KEYS.WISHLIST, []);
