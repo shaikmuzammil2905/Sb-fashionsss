@@ -4510,15 +4510,17 @@ a[href="#/checkout"] {
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
-  overflow: hidden !important;
-  clip-path: inset(4px 0 0 0) !important;
+  overflow: visible !important;
+  clip-path: none !important;
 }
 .hero-models-img {
   mix-blend-mode: multiply !important;
   border-radius: 16px !important;
-  object-fit: cover !important;
-  max-height: 360px !important;
-  margin-top: -3px !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+  max-height: 380px !important;
+  margin-top: 0 !important;
+  clip-path: none !important;
   filter: drop-shadow(0 8px 20px rgba(180, 40, 80, 0.12)) !important;
 }
 
@@ -4577,7 +4579,7 @@ a[href="#/checkout"] {
   }
   .hero-pink-visual {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 320px !important;
     margin: 0 auto !important;
   }
   .hero-models-frame {
@@ -4585,14 +4587,17 @@ a[href="#/checkout"] {
     border-radius: 12px !important;
     border: none !important;
     background: transparent !important;
-    clip-path: inset(3px 0 0 0) !important;
+    overflow: visible !important;
+    clip-path: none !important;
   }
   .hero-models-img {
     height: auto !important;
-    max-height: 240px !important;
+    max-height: 280px !important;
     object-fit: contain !important;
+    object-position: center top !important;
     mix-blend-mode: multiply !important;
-    margin-top: -2px !important;
+    margin-top: 0 !important;
+    clip-path: none !important;
   }
   .hero-slider-prev, .hero-slider-next {
     width: 34px !important;
@@ -4772,6 +4777,107 @@ a[href="#/checkout"] {
     width: 13px !important;
     height: 13px !important;
   }
+}
+
+/* Cart Summary Card Exact Match (image copy 94 fix) */
+.cart-summary-card {
+  background-color: #ffffff !important;
+  border: 1px solid #f1f5f9 !important;
+  border-radius: 20px !important;
+  padding: 24px 20px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  box-sizing: border-box !important;
+}
+
+.cart-summary-card h3 {
+  font-family: var(--font-serif) !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+}
+
+.summary-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 14px !important;
+  color: #475569 !important;
+}
+
+.summary-row.total {
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #e85a71 !important;
+  border-top: 1px solid #f1f5f9 !important;
+  padding-top: 16px !important;
+  margin-top: 16px !important;
+}
+
+.coupon-form {
+  display: flex !important;
+  margin: 22px 0 16px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  padding: 4px !important;
+  background: #ffffff !important;
+}
+
+.coupon-input {
+  flex-grow: 1 !important;
+  border: none !important;
+  outline: none !important;
+  padding: 8px 12px !important;
+  font-size: 0.85rem !important;
+  color: #334155 !important;
+}
+
+.coupon-btn {
+  background: linear-gradient(135deg, #e85a71 0%, #c2185b 100%) !important;
+  color: #ffffff !important;
+  padding: 8px 20px !important;
+  border-radius: 8px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 3px 10px rgba(232, 90, 113, 0.3) !important;
+}
+
+.cart-summary-benefits {
+  background-color: #fff5f7 !important;
+  border: 1px solid #ffe4ec !important;
+  border-radius: 14px !important;
+  padding: 18px 16px !important;
+  margin: 22px 0 !important;
+}
+
+.cart-summary-benefits h4 {
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  color: #1e293b !important;
+  text-align: center !important;
+}
+
+.cart-summary-benefits ul {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  color: #475569 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.cart-summary-benefits li {
+  font-size: 0.82rem !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 
