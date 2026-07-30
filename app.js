@@ -910,7 +910,7 @@ function renderCategoryPage(categoryKey) {
     const sortSelect = document.getElementById('sort-select');
     
     if (minInput) minInput.value = 0;
-    if (maxInput) maxInput.value = 50000;
+    if (maxInput) maxInput.value = 100000;
     if (stockChk) stockChk.checked = false;
     
     function applyFilters() {
@@ -921,16 +921,21 @@ function renderCategoryPage(categoryKey) {
         
         // Filter by category
         let list = products.filter(p => {
+            const catLower = (p.category || '').toLowerCase();
+            
             if (keyClean === 'women' || keyClean === 'all' || keyClean === 'women-collection' || keyClean === 'shop') {
-                return p.category !== 'kids' && p.category !== 'retail-collection'; // broad women collection only
+                return catLower !== 'kids' && catLower !== 'retail-collection'; // broad women collection only
             }
             if (keyClean === 'kids') {
-                return p.category === 'kids'; // strictly kids collection only
+                return catLower === 'kids'; // strictly kids collection only
             }
             if (keyClean === 'retail-collection') {
-                return p.category === 'retail-collection'; // strictly retail collection only
+                return catLower === 'retail-collection'; // strictly retail collection only
             }
-            const catLower = p.category.toLowerCase();
+            if (keyClean === 'sarees' || rawKey === 'sarees') {
+                return catLower === 'sarees' || catLower === 'saree';
+            }
+            
             return catLower === keyClean || catLower === rawKey || keyClean.includes(catLower) || catLower.includes(keyClean);
         });
         

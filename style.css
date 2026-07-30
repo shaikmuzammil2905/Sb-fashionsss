@@ -370,23 +370,74 @@ header.scrolled {
   box-shadow: 0 6px 20px rgba(212,160,23,0.25);
   transform: translateY(-1px);
 }
-.logo-img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-  transition: transform var(--transition-normal);
+.logo-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
 }
-.logo-img:hover {
-  transform: scale(1.08) rotate(2deg);
+.logo-emblem-wrap {
+  width: 48px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  border: 2px solid #d4a017 !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.25) !important;
+  flex-shrink: 0 !important;
+}
+.logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
 }
 .logo-text, .logo-text span, .footer-logo, .footer-logo span {
-  font-family: var(--font-serif);
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-family: var(--font-serif) !important;
+  font-size: 1.7rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
   color: #d4a017 !important;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.12) !important;
+}
+@media (max-width: 576px) {
+  .logo-emblem-wrap {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .logo-text, .logo-text span {
+    font-size: 1.35rem !important;
+    letter-spacing: 1.2px !important;
+  }
+}
+
+/* Category Header Banner & Spacing Reduction */
+.category-page-header {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 160px !important;
+  max-height: 220px !important;
+  border-radius: var(--radius-lg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 25px 35px !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12) !important;
+}
+.mobile-filter-toggle-bar {
+  margin-bottom: 10px !important;
+  padding: 0 !important;
+}
+.category-layout {
+  gap: 20px !important;
+  margin-top: 10px !important;
 }
 
 /* Features Animated Bar */
