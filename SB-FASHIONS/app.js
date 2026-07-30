@@ -279,6 +279,16 @@ const CATEGORY_META = {
     "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 84.png" }
 };
 
+// Aliases for category URL slug matching
+CATEGORY_META["kurtis"] = CATEGORY_META["kurti"];
+CATEGORY_META["dupattas"] = CATEGORY_META["dupatta"];
+CATEGORY_META["chunnis"] = CATEGORY_META["chunni"];
+CATEGORY_META["nighties"] = CATEGORY_META["nighty"];
+CATEGORY_META["lehenga-and-blouse"] = CATEGORY_META["lehenga-blouse"];
+CATEGORY_META["dress-materials"] = CATEGORY_META["dress-material"];
+CATEGORY_META["cut-piece-fabrics"] = CATEGORY_META["cut-piece-fabric"];
+CATEGORY_META["lehenga-fabrics"] = CATEGORY_META["lehenga-fabric"];
+
 // Seed test reviews
 const SEED_REVIEWS = [
     { name: "Lakshmi Priya", rating: 5, date: "24-Jul-2026", comment: "The Maggam work blouse is extremely beautiful. Very detailed finish. Fully satisfied!" },
@@ -842,8 +852,18 @@ window.addEventListener('load', initMobileDrawerEvents);
 
 // --- 6. CATEGORY VIEW CONTROLLER ---
 function renderCategoryPage(categoryKey) {
-    const keyClean = (categoryKey || 'women').toLowerCase();
-    const meta = CATEGORY_META[keyClean] || {
+    const rawKey = (categoryKey || 'women').toLowerCase();
+    const keyClean = rawKey
+        .replace(/^kurtis$/, 'kurti')
+        .replace(/^dupattas$/, 'dupatta')
+        .replace(/^chunnis$/, 'chunni')
+        .replace(/^nighties$/, 'nighty')
+        .replace(/^lehenga-and-blouse$/, 'lehenga-blouse')
+        .replace(/^dress-materials$/, 'dress-material')
+        .replace(/^cut-piece-fabrics$/, 'cut-piece-fabric')
+        .replace(/^lehenga-fabrics$/, 'lehenga-fabric');
+
+    const meta = CATEGORY_META[keyClean] || CATEGORY_META[rawKey] || {
         title: keyClean.replace(/-/g, ' ').toUpperCase(),
         subtitle: "Exclusive curated collection by SB Fashions",
         img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200"
@@ -874,7 +894,8 @@ function renderCategoryPage(categoryKey) {
             if (keyClean === 'women' || keyClean === 'all' || keyClean === 'women-collection') {
                 return p.category !== 'kids'; // broad women collection
             }
-            return p.category.toLowerCase() === keyClean || p.category.toLowerCase().includes(keyClean);
+            const catLower = p.category.toLowerCase();
+            return catLower === keyClean || catLower === rawKey || keyClean.includes(catLower) || catLower.includes(keyClean);
         });
         
         // Filter by price

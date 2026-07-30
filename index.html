@@ -116,18 +116,18 @@
             <!-- Action Buttons -->
             <div class="nav-actions">
                 <a href="#/dashboard/wishlist" class="nav-action-btn" title="Wishlist">
-                    <i data-lucide="heart"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D81B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
                     <span class="badge-count" id="wishlist-badge-count">0</span>
                 </a>
                 
                 <a href="#/cart" class="nav-action-btn" id="header-cart-btn" title="Cart">
-                    <i data-lucide="shopping-bag"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D81B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                     <span class="badge-count" id="cart-badge-count">0</span>
                 </a>
 
                 <div class="nav-item">
                     <button class="nav-action-btn" id="profile-menu-toggle" title="My Account">
-                        <i data-lucide="user"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D81B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </button>
                     <!-- Small profile dropdown -->
                     <div class="mega-menu" style="width: 200px; right: 0; left: auto; transform: translateY(10px); padding: 15px; grid-template-columns: 1fr;" id="profile-dropdown-menu">
@@ -147,7 +147,7 @@
             <div class="top-search-bar-wrap">
                 <input type="text" placeholder="Search for sarees, frocks, kurtis and more..." class="top-search-input" id="header-search-input" autocomplete="off">
                 <button class="top-search-btn" id="header-search-toggle" title="Search">
-                    <i data-lucide="search"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </button>
                 <div class="search-live-dropdown" id="search-live-dropdown"></div>
             </div>
@@ -1443,25 +1443,29 @@
     <!-- Sticky Mobile Bottom Navigation Bar -->
     <nav class="mobile-bottom-navbar" id="mobile-bottom-nav">
         <a href="#/home" class="mobile-nav-item active" id="mob-nav-home">
-            <i data-lucide="home"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mob-icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             <span>Home</span>
         </a>
         <a href="#/category/women" class="mobile-nav-item" id="mob-nav-categories">
-            <i data-lucide="shopping-bag"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mob-icon"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
             <span>Shop</span>
         </a>
         <a href="#/dashboard/wishlist" class="mobile-nav-item" id="mob-nav-wishlist">
-            <i data-lucide="heart"></i>
+            <div class="mob-nav-icon-wrap" style="position:relative;display:inline-flex;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mob-icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span class="mobile-nav-badge" id="mob-wishlist-badge">0</span>
+            </div>
             <span>Wishlist</span>
-            <span class="mobile-nav-badge" id="mob-wishlist-badge">0</span>
         </a>
         <a href="#/cart" class="mobile-nav-item" id="mob-nav-cart">
-            <i data-lucide="shopping-bag"></i>
+            <div class="mob-nav-icon-wrap" style="position:relative;display:inline-flex;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mob-icon"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <span class="mobile-nav-badge" id="mob-cart-badge-count">0</span>
+            </div>
             <span>Cart</span>
-            <span class="mobile-nav-badge" id="mob-cart-badge-count">0</span>
         </a>
         <a href="#/dashboard" class="mobile-nav-item" id="mob-nav-profile">
-            <i data-lucide="user"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mob-icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             <span>Profile</span>
         </a>
     </nav>
