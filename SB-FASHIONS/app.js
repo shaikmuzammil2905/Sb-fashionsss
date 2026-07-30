@@ -623,6 +623,30 @@ function renderHomeContents() {
         });
     }
 
+    // Setup Hero prev/next navigation arrow buttons
+    const prevBtn = document.getElementById('hero-slider-prev');
+    const nextBtn = document.getElementById('hero-slider-next');
+    if (prevBtn) {
+        prevBtn.onclick = (e) => {
+            e.preventDefault();
+            const slidesList = document.querySelectorAll('.hero-slide');
+            if (slidesList.length > 0) {
+                heroIndex = (heroIndex - 1 + slidesList.length) % slidesList.length;
+                updateHeroSlider();
+            }
+        };
+    }
+    if (nextBtn) {
+        nextBtn.onclick = (e) => {
+            e.preventDefault();
+            const slidesList = document.querySelectorAll('.hero-slide');
+            if (slidesList.length > 0) {
+                heroIndex = (heroIndex + 1) % slidesList.length;
+                updateHeroSlider();
+            }
+        };
+    }
+
     if (heroInterval) clearInterval(heroInterval);
     heroInterval = setInterval(() => {
         const slidesList = document.querySelectorAll('.hero-slide');
@@ -630,7 +654,7 @@ function renderHomeContents() {
             heroIndex = (heroIndex + 1) % slidesList.length;
             updateHeroSlider();
         }
-    }, 5000);
+    }, 4000);
 
     // Seeding trending section
     const trendingGrid = document.getElementById('home-trending-products');

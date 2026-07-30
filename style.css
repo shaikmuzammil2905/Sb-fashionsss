@@ -3628,14 +3628,14 @@ footer {
 }
 .hero-pink-banner.hero-slide {
   display: none !important;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  opacity: 0 !important;
+  transition: opacity 0.4s ease-in-out !important;
 }
-.hero-pink-banner.hero-slide.active,
-.hero-pink-banner-wrapper .hero-slide:first-child {
+.hero-pink-banner.hero-slide.active {
   display: flex !important;
   opacity: 1 !important;
   visibility: visible !important;
+}
 }
 .hero-slider-prev, .hero-slider-next {
   position: absolute !important;
