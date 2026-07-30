@@ -3612,16 +3612,17 @@ footer {
 .hero-pink-banner {
   position: relative;
   width: 100%;
-  background: linear-gradient(135deg, #fff2f5 0%, #fde4eb 45%, #f9d2e1 100%);
-  padding: 45px 40px;
+  background: linear-gradient(135deg, #e04b78 0%, #D81B60 50%, #c2185b 100%) !important;
+  color: #ffffff !important;
+  padding: 40px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 360px;
+  min-height: 320px;
   overflow: hidden;
   border-radius: 0 0 24px 24px;
   box-sizing: border-box;
-  box-shadow: 0 10px 35px rgba(232, 90, 113, 0.14);
+  box-shadow: 0 10px 30px rgba(216, 27, 96, 0.25) !important;
 }
 .hero-pink-banner.hero-slide {
   display: none;
@@ -3647,7 +3648,7 @@ footer {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-  color: var(--color-pink-main, #e85a71);
+  color: #D81B60;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 .hero-slider-prev:hover, .hero-slider-next:hover {
@@ -3664,7 +3665,8 @@ footer {
 .hero-pink-title {
   font-family: var(--font-serif);
   font-size: 2.7rem;
-  color: #6b0538;
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   line-height: 1.18;
   margin-bottom: 14px;
   font-weight: 800;
@@ -3672,7 +3674,7 @@ footer {
 }
 .hero-pink-subtitle {
   font-size: 1.15rem;
-  color: #941852;
+  color: #ffe4ec !important;
   margin-bottom: 24px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -3680,22 +3682,23 @@ footer {
 .hero-pink-btn {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(135deg, #e85a71 0%, #c2185b 100%);
-  color: #ffffff;
+  background: #ffffff !important;
+  color: #D81B60 !important;
   border: none;
   padding: 12px 30px;
   border-radius: 30px;
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-weight: 800;
+  font-size: 0.95rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  box-shadow: 0 6px 20px rgba(232, 90, 113, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
   transition: all 0.3s ease;
 }
 .hero-pink-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(232, 90, 113, 0.45);
-  color: #ffffff;
+  background: #fff5f7 !important;
+  color: #c2185b !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.28) !important;
 }
 .hero-pink-visual {
   width: 45%;

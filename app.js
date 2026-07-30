@@ -255,28 +255,28 @@ const SEED_PRODUCTS = buildCatalogProducts();
 
 // Seed Categories detail meta (for banners and descriptions)
 const CATEGORY_META = {
-    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 86.png" },
-    frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 40.png" },
-    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 72.png" },
-    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Designer Kurti, Dupatta & Palazzo combinations", img: "image copy 76.png" },
-    kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 41.png" },
-    "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "image copy 42.png" },
-    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "image copy 44.png" },
-    "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "image copy 43.png" },
-    "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "image copy 45.png" },
-    shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "image copy 46.png" },
-    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "image copy 82.png" },
-    "computer-work-blouse-pieces": { title: "Computer Embroidery Blouses", subtitle: "Precision machine worked heavy silk materials", img: "image copy 48.png" },
-    dupatta: { title: "Zari Dupattas", subtitle: "Silk, Net and chiffon matching stoles", img: "image copy 49.png" },
-    chunni: { title: "Chunnis & Scarves", subtitle: "Vibrant ethnic styling additions", img: "image copy 51.png" },
-    "cut-piece-fabric": { title: "Cut Piece Fabric", subtitle: "Premium raw cotton and silk measurements", img: "image copy 52.png" },
-    "dress-material": { title: "Unstitched Dress Materials", subtitle: "Create your own customized Punjabi suites", img: "image copy 53.png" },
-    "lehenga-fabric": { title: "Lehenga Fabrics", subtitle: "Bespoke fabrics for custom bridal designs", img: "image copy 55.png" },
-    nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "image copy 56.png" },
+    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 107.png" },
+    frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 108.png" },
+    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 109.png" },
+    kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 110.png" },
+    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Designer Kurti, Dupatta & Palazzo combinations", img: "image copy 111.png" },
+    "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "image copy 112.png" },
+    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "image copy 113.png" },
+    "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "image copy 114.png" },
+    "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "image copy 115.png" },
+    shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "image copy 116.png" },
+    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "image copy 117.png" },
+    "computer-work-blouse-pieces": { title: "Computer Embroidery Blouses", subtitle: "Precision machine worked heavy silk materials", img: "image copy 118.png" },
+    dupatta: { title: "Zari Dupattas", subtitle: "Silk, Net and chiffon matching stoles", img: "image copy 119.png" },
+    chunni: { title: "Chunnis & Scarves", subtitle: "Vibrant ethnic styling additions", img: "image copy 120.png" },
+    "cut-piece-fabric": { title: "Cut Piece Fabric", subtitle: "Premium raw cotton and silk measurements", img: "image copy 121.png" },
+    "dress-material": { title: "Unstitched Dress Materials", subtitle: "Create your own customized Punjabi suites", img: "image copy 122.png" },
+    "lehenga-fabric": { title: "Lehenga Fabrics", subtitle: "Bespoke fabrics for custom bridal designs", img: "image copy 123.png" },
+    nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "image copy 124.png" },
+    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 125.png" },
     "lace-hangings": { title: "Lace & Hangings", subtitle: "Maggam designer borders and hangings accessories", img: "image copy 57.png" },
-    women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 31.png" },
-    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 58.png" },
-    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 84.png" }
+    women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 107.png" },
+    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 58.png" }
 };
 
 // Aliases for category URL slug matching
@@ -416,8 +416,9 @@ function handleRouting() {
             break;
             
         case 'category':
+        case 'products':
             switchView('category');
-            renderCategoryPage(parameter);
+            renderCategoryPage(parameter || 'women');
             setTimeout(initWordRevealAnimations, 100);
             break;
             
@@ -452,14 +453,13 @@ function handleRouting() {
             renderTrackingPage(parameter || subParam);
             break;
             
+        case 'profile':
         case 'dashboard':
             if (!activeSession) {
-                showToast("Please sign in to view your dashboard", "info");
-                window.location.hash = '#/auth/login';
-                return;
+                activeSession = { name: "Guest Customer", email: "customer@sbfashions.com" };
             }
             switchView('dashboard');
-            renderCustomerDashboard(parameter);
+            renderCustomerDashboard(parameter || subParam || 'profile');
             break;
             
         case 'admin':
@@ -571,7 +571,8 @@ function renderHomeContents() {
             { key: 'cut-piece-fabric', label: 'Cut Piece Fabrics' },
             { key: 'dress-material', label: 'Dress Materials' },
             { key: 'lehenga-fabric', label: 'Lehenga Fabrics' },
-            { key: 'nighty', label: 'Nighties' }
+            { key: 'nighty', label: 'Nighties' },
+            { key: 'retail-collection', label: 'Retail Collection' }
         ];
 
         homeCategories.forEach(item => {
@@ -588,13 +589,13 @@ function renderHomeContents() {
             catSlider.appendChild(card);
         });
 
-        // 19th Card: View All Categories Card in Pink Branding (Image 102)
+        // 20th Card: View All Categories Card in Pink Branding (Image 102)
         const viewAllCard = document.createElement('a');
         viewAllCard.href = `#/category/women`;
         viewAllCard.className = "category-card category-viewall-pink-card";
         viewAllCard.innerHTML = `
             <div class="category-circle-pink">
-                <i data-lucide="layout-grid" style="color:#D81B60; width:26px; height:26px;"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D81B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
             </div>
             <span style="color:#D81B60; font-weight:700;">View All Categories &gt;</span>
         `;
