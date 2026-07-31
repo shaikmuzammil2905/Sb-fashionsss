@@ -405,15 +405,30 @@ function switchView(targetViewId) {
 }
 
 function handleRouting() {
-    const hash = window.location.hash || '#/home';
-    const parts = hash.split('/');
+    let rawPath = '';
+    const hash = window.location.hash || '';
+    const pathname = window.location.pathname || '';
     
+    if (hash && hash.startsWith('#/')) {
+        rawPath = hash.replace(/^#/, '');
+    } else if (pathname && pathname !== '/' && pathname !== '/index.html' && pathname !== '') {
+        rawPath = pathname;
+    } else {
+        rawPath = '/home';
+    }
+    
+    if (!rawPath.startsWith('/')) {
+        rawPath = '/' + rawPath;
+    }
+    
+    const parts = rawPath.split('/');
     const primaryRoute = parts[1] || 'home';
     const parameter = parts[2] || '';
     const subParam = parts[3] || '';
     
     // Header class on scroll
-    document.getElementById('main-header').classList.remove('scrolled');
+    const headerEl = document.getElementById('main-header');
+    if (headerEl) headerEl.classList.remove('scrolled');
     
     switch (primaryRoute) {
         case 'home':
@@ -506,7 +521,8 @@ function handleRouting() {
     // Toggle active link states
     document.querySelectorAll('#main-nav-menu a').forEach(link => {
         link.parentElement.classList.remove('active');
-        if (link.getAttribute('href') === hash) {
+        const href = link.getAttribute('href');
+        if (href === hash || href === rawPath || href === `#${rawPath}`) {
             link.parentElement.classList.add('active');
         }
     });
@@ -516,6 +532,7 @@ function handleRouting() {
 }
 
 window.addEventListener('hashchange', handleRouting);
+window.addEventListener('popstate', handleRouting);
 window.addEventListener('load', () => {
     // Shimmer simulation & Loader dismiss
     setTimeout(() => {
@@ -586,6 +603,8 @@ function renderHomeContents() {
             { key: 'dress-material', label: 'Dress Materials', img: 'image copy 122.png' },
             { key: 'lehenga-fabric', label: 'Lehenga Fabrics', img: 'image copy 123.png' },
             { key: 'nighty', label: 'Nighties', img: 'image copy 124.png' },
+            { key: 'lace-hangings', label: 'Lace & Hangings', img: 'image copy 57.png' },
+            { key: 'kids', label: 'Kids Collection', img: 'image copy 58.png' },
             { key: 'retail-collection', label: 'Retail Collection', img: 'image copy 125.png' }
         ];
 
@@ -825,7 +844,7 @@ function createProductCardElement(p) {
             </a>
         </div>
         <div class="product-card-info">
-            <a href="#/product/${p.id}"><h3 class="product-card-title-multi">${p.name}</h3></a>
+            <a href="#/product/${p.id}" style="text-decoration:none;"><h3 class="product-card-title-multi">${p.name}</h3></a>
             <div class="product-card-rating">
                 <i data-lucide="star" style="fill:#f59e0b;stroke:none;width:12px;height:12px;"></i>
                 <i data-lucide="star" style="fill:#f59e0b;stroke:none;width:12px;height:12px;"></i>
@@ -839,9 +858,14 @@ function createProductCardElement(p) {
                 <span class="price-current">₹${p.price.toLocaleString()}</span>
                 ${discPercent > 0 ? `<span class="price-discount-pill">${discPercent}% OFF</span>` : ''}
             </div>
-            <button class="btn-card-addtocart add-to-cart-direct" data-id="${p.id}">
-                <i data-lucide="shopping-bag"></i> Add to Cart
-            </button>
+            <div class="product-card-actions">
+                <button class="btn-card-addtocart add-to-cart-direct" data-id="${p.id}" title="Add to Cart">
+                    <i data-lucide="shopping-bag"></i> Add to Cart
+                </button>
+                <button class="btn-card-buynow buy-now-direct" data-id="${p.id}" title="Buy Now">
+                    <i data-lucide="zap"></i> Buy Now
+                </button>
+            </div>
         </div>
     `;
     return card;
@@ -928,7 +952,7 @@ function renderCategoryPage(categoryKey) {
         const onlyStock = stockChk?.checked || false;
         const selectedSort = sortSelect?.value || 'newest';
         
-        // Filter by category
+        // Filter by category strictly
         let list = products.filter(p => {
             const catLower = (p.category || '').toLowerCase();
             
@@ -945,7 +969,7 @@ function renderCategoryPage(categoryKey) {
                 return catLower === 'sarees' || catLower === 'saree';
             }
             
-            return catLower === keyClean || catLower === rawKey || keyClean.includes(catLower) || catLower.includes(keyClean);
+            return catLower === keyClean || catLower === rawKey;
         });
         
         // Filter by price
@@ -1176,14 +1200,14 @@ function renderProductDetailPage(prodId) {
     const cartBtn = document.getElementById('btn-detail-add-to-cart');
     cartBtn.onclick = () => {
         const qty = parseInt(document.getElementById('detail-qty-val').value) || 1;
-        addToCart(p.id, qty, activeDetailSize, activeDetailColor);
+        addToCart(p.id, qty, activeDetailSize, activeDetailColor, false);
     };
     
     const buyBtn = document.getElementById('btn-detail-buy-now');
     buyBtn.onclick = () => {
         const qty = parseInt(document.getElementById('detail-qty-val').value) || 1;
-        addToCart(p.id, qty, activeDetailSize, activeDetailColor, false); // add silently
-        window.location.hash = '#/checkout';
+        addToCart(p.id, qty, activeDetailSize, activeDetailColor, false);
+        window.location.hash = '#/cart';
     };
 
     const wishBtn = document.getElementById('btn-detail-wishlist');
@@ -1294,7 +1318,7 @@ document.getElementById('btn-qty-plus').onclick = () => {
 
 
 // --- 8. CART VIEW CONTROLLER ---
-function addToCart(productId, qty, size, color, redirect = true) {
+function addToCart(productId, qty, size, color, redirect = false) {
     const p = products.find(item => item.id === productId);
     if (!p) return;
     
@@ -1319,7 +1343,6 @@ function addToCart(productId, qty, size, color, redirect = true) {
     showToast(`Added ${qty} x ${p.name} to Shopping Bag!`, "success");
     
     if (redirect) {
-        // Redirect directly to cart
         window.location.hash = '#/cart';
     }
 }
@@ -1359,24 +1382,31 @@ function renderCartPage() {
     
     list.innerHTML = '';
     let subtotal = 0;
+    let totalSavings = 0;
     
     cart.forEach((item, idx) => {
         const totalItemPrice = item.price * item.qty;
         subtotal += totalItemPrice;
+        if (item.priceOld && item.priceOld > item.price) {
+            totalSavings += (item.priceOld - item.price) * item.qty;
+        }
         
         const row = document.createElement('div');
         row.className = "cart-item";
         row.innerHTML = `
             <div class="cart-item-img">
-                <img src="${item.image}" alt="${item.name}">
+                <a href="#/product/${item.id}"><img src="${item.image}" alt="${item.name}"></a>
             </div>
             <div class="cart-item-info">
                 <div class="cart-item-header">
                     <div class="cart-item-details">
-                        <h4 class="cart-item-title">${item.name}</h4>
+                        <a href="#/product/${item.id}" style="text-decoration:none;"><h4 class="cart-item-title">${item.name}</h4></a>
                         <p class="cart-item-meta">Size: ${item.size} | Color: ${item.color} | SKU: ${item.sku}</p>
                     </div>
-                    <div class="cart-item-price">₹${item.price.toLocaleString()}</div>
+                    <div class="cart-item-price">
+                        ${item.priceOld ? `<span style="text-decoration:line-through;color:#888;font-size:0.85rem;margin-right:6px;">₹${(item.priceOld * item.qty).toLocaleString()}</span>` : ''}
+                        ₹${totalItemPrice.toLocaleString()}
+                    </div>
                 </div>
                 <div class="cart-item-actions">
                     <div class="quantity-selector">
@@ -1394,14 +1424,25 @@ function renderCartPage() {
     });
     
     // Calculations
-    const discount = activeCouponCode !== "" ? Math.round(subtotal * (1 - activeCouponMultiplier)) : 0;
+    const couponDiscount = activeCouponCode !== "" ? Math.round(subtotal * (1 - activeCouponMultiplier)) : 0;
+    const totalDiscount = totalSavings + couponDiscount;
     const shipping = subtotal > 1999 ? 0 : 150;
-    const total = subtotal - discount + shipping;
+    const total = subtotal - couponDiscount + shipping;
     
-    document.getElementById('cart-summary-subtotal').textContent = `₹${subtotal.toLocaleString()}`;
-    document.getElementById('cart-summary-coupon').textContent = `-₹${discount.toLocaleString()}`;
-    document.getElementById('cart-summary-shipping').textContent = shipping === 0 ? "FREE" : `₹${shipping}`;
-    document.getElementById('cart-summary-total').textContent = `₹${total.toLocaleString()}`;
+    const subtotalEl = document.getElementById('cart-summary-subtotal');
+    if (subtotalEl) subtotalEl.textContent = `₹${subtotal.toLocaleString()}`;
+
+    const savingsEl = document.getElementById('cart-summary-savings');
+    if (savingsEl) savingsEl.textContent = `-₹${totalDiscount.toLocaleString()}`;
+    
+    const couponEl = document.getElementById('cart-summary-coupon');
+    if (couponEl) couponEl.textContent = `-₹${couponDiscount.toLocaleString()}`;
+    
+    const shippingEl = document.getElementById('cart-summary-shipping');
+    if (shippingEl) shippingEl.textContent = shipping === 0 ? "FREE" : `₹${shipping}`;
+    
+    const totalEl = document.getElementById('cart-summary-total');
+    if (totalEl) totalEl.textContent = `₹${total.toLocaleString()}`;
     
     // Cross sells in cart
     const crossGrid = document.getElementById('cart-cross-sells');
@@ -1663,6 +1704,7 @@ document.addEventListener('click', (e) => {
         e.preventDefault();
         const id = parseInt(btn.getAttribute('data-id'));
         toggleWishlist(id, btn);
+        return;
     }
     
     // Add to cart buttons
@@ -1670,7 +1712,28 @@ document.addEventListener('click', (e) => {
     if (directAdd) {
         e.preventDefault();
         const id = parseInt(directAdd.getAttribute('data-id'));
-        addToCart(id, 1, "Free Size", "Standard");
+        addToCart(id, 1, "Free Size", "Standard", false);
+        return;
+    }
+
+    // Buy now direct buttons
+    const directBuy = e.target.closest('.buy-now-direct');
+    if (directBuy) {
+        e.preventDefault();
+        const id = parseInt(directBuy.getAttribute('data-id'));
+        addToCart(id, 1, "Free Size", "Standard", false);
+        window.location.hash = '#/cart';
+        return;
+    }
+
+    // Link routing handler
+    const link = e.target.closest('a');
+    if (link) {
+        const href = link.getAttribute('href');
+        if (href && (href.startsWith('/category/') || href.startsWith('/product/') || href === '/cart' || href === '/home')) {
+            e.preventDefault();
+            window.location.hash = '#' + href;
+        }
     }
 });
 
