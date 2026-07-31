@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '11.0'; // Bumped version to reset local storage products across all clients
+const SEED_VERSION = '12.0'; // Bumped version to reset local storage products across all clients
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -20,13 +20,13 @@ const STATE_KEYS = {
 function buildCatalogProducts() {
     const categories = [
         { id: 'sarees', prefix: 'SAR', basePrice: 4999, names: [
-            "Bridal Crimson Kanchipuram Silk Saree", "Royal Blue Banarasi Silk Saree", "Emerald Green Organza Printed Saree",
-            "Pastel Pink Designer Chiffon Saree", "Mustard Gold Zari Weave Saree", "Midnight Black Velvet Border Saree",
+            "Bridal Red Banarasi Silk Saree with Gold Zari", "Royal Ivory Kalamkari Printed Silk Saree", "Aqua Blue Floral Organza Printed Saree",
+            "Deep Rose Striped Linen Silk Saree", "Emerald Green Cotton Silk Saree with Border", "Midnight Black Velvet Border Saree",
             "Peach Organza Floral Printed Saree", "Wine Red Handloom Uppada Silk Saree", "Lavender Tissue Silk Saree",
             "Teal Green Gadwal Silk Saree", "Marigold Yellow Paithani Saree", "Maroon Bridal Zardosi Saree",
             "Sky Blue Soft Linen Saree", "Rose Gold Tussar Silk Saree", "Emerald Gold Jacquard Silk Saree"
-        ], colors: ["Crimson Red / Gold", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Gold", "Midnight Black", "Peach Pink", "Wine Red", "Lavender", "Teal Green", "Marigold Yellow", "Deep Maroon", "Sky Blue", "Rose Gold", "Emerald Gold"], imgs: [
-            "image copy 39.png", "image copy 107.png", "image copy 3.png", "image copy 10.png"
+        ], colors: ["Bridal Red / Gold", "Ivory / Kalamkari", "Aqua Blue", "Rose Pink", "Emerald Green", "Midnight Black", "Peach Pink", "Wine Red", "Lavender", "Teal Green", "Marigold Yellow", "Deep Maroon", "Sky Blue", "Rose Gold", "Emerald Gold"], imgs: [
+            "image copy 134.png", "image copy 133.png", "image copy 135.png", "image copy 136.png", "image copy 137.png"
         ]},
         { id: 'frocks', prefix: 'FRO', basePrice: 2499, names: [
             "Crimson Red Embroidered Anarkali Frock", "Emerald Green Georgette Gown Frock", "Pastel Pink Flared Party Frock",
@@ -38,15 +38,17 @@ function buildCatalogProducts() {
             "image copy 40.png", "image copy 108.png", "image copy 4.png"
         ]},
         { id: 'blouses', prefix: 'BLU', basePrice: 1299, names: [
-            "Golden Brocade Readymade Saree Blouse", "Black Velvet Designer Saree Blouse", "Crimson Red Padded Stitched Blouse",
-            "Royal Blue Raw Silk Embroidered Blouse", "Emerald Green Deep Neck Silk Blouse", "Pastel Pink Boat Neck Net Blouse",
+            "Navy Blue Kalamkari Kantha Embroidered Blouse", "Bridal Red Full Sleeve Zardosi Blouse", "Brick Red Backless Tie-Up Cotton Blouse",
+            "Navy Deep V-Back Sleeveless Silk Blouse", "Bridal Red Sequin Heavy Puff Sleeve Blouse", "Pastel Pink Boat Neck Net Blouse",
             "Mustard Yellow Mirror Work Blouse", "Maroon High Neck Zari Blouse", "Silver Metallic Stretchable Saree Blouse",
             "Wine Red Heavy Sequence Stitched Blouse", "Navy Blue Elbow Sleeve Silk Blouse", "Peach Organza Puff Sleeve Blouse",
             "Bottle Green Dori Back Silk Blouse", "Off-White Sleeveless Brocade Blouse", "Rose Pink Kundan Neckline Stitched Blouse"
-        ], colors: ["Metallic Gold", "Midnight Black", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Deep Maroon", "Metallic Silver", "Wine Red", "Navy Blue", "Peach Pink", "Bottle Green", "Off-White", "Rose Pink"], imgs: [
-            "image copy 40.png",
-            "image copy 47.png",
-            "image copy 48.png"
+        ], colors: ["Navy Blue / Multi", "Bridal Red / Gold", "Brick Red", "Navy Blue", "Bridal Red", "Pastel Pink", "Mustard Yellow", "Deep Maroon", "Metallic Silver", "Wine Red", "Navy Blue", "Peach Pink", "Bottle Green", "Off-White", "Rose Pink"], imgs: [
+            "image copy 138.png",
+            "image copy 139.png",
+            "image copy 140.png",
+            "image copy 141.png",
+            "image copy 142.png"
         ]},
         { id: '3-piece-sets', prefix: 'TPS', basePrice: 2999, names: [
             "Royal Silk 3 Piece Kurti Set", "Crimson Red Anarkali 3 Piece Suit", "Emerald Green Georgette 3 Piece Set",
@@ -194,22 +196,22 @@ function buildCatalogProducts() {
             "image copy 57.png"
         ]},
         { id: 'kids', prefix: 'KID', basePrice: 1899, names: [
-            "Silk Pattu Langa Kids Lehenga Set", "Crimson Red Kids Festive Anarkali Frock", "Royal Blue Boys Traditional Kurta Set",
-            "Emerald Green Girls Lehenga Choli", "Pastel Pink Kids Party Frock", "Mustard Yellow Kids Pattu Langa Set",
-            "Midnight Black Kids Velvet Sherwani", "Wine Red Girls Silk Lehenga Set", "Teal Blue Kids Kurti Pyjama Set",
-            "Lavender Girls Flower Dress", "Marigold Yellow Kids Ethnic Suit", "Peach Kids Silk Frock",
-            "Sky Blue Traditional Kids Wear", "Bottle Green Girls Pattu Langa", "Rose Pink Kids Dhoti Kurta Set"
-        ], colors: ["Maroon & Golden Yellow", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Pink"], imgs: [
-            "image copy 58.png"
+            "White & Teal Gradient Kids Sports Set (Boy+Girl)", "Silk Pattu Langa Kids Lehenga Set", "Crimson Red Kids Festive Anarkali Frock",
+            "Royal Blue Boys Traditional Kurta Set", "Emerald Green Girls Lehenga Choli", "Pastel Pink Kids Party Frock",
+            "Mustard Yellow Kids Pattu Langa Set", "Midnight Black Kids Velvet Sherwani", "Wine Red Girls Silk Lehenga Set",
+            "Teal Blue Kids Kurti Pyjama Set", "Lavender Girls Flower Dress", "Marigold Yellow Kids Ethnic Suit",
+            "Peach Kids Silk Frock", "Sky Blue Traditional Kids Wear", "Rose Pink Kids Dhoti Kurta Set"
+        ], colors: ["White / Teal", "Maroon & Golden Yellow", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Rose Pink"], imgs: [
+            "image copy 143.png", "image copy 58.png"
         ]},
         { id: 'retail-collection', prefix: 'RET', basePrice: 1999, names: [
-            "Boutique Fashion Retail Kurti Display", "Retail Special Banarasi Silk Saree", "Retail Collection Georgette Suit",
+            "Multicolor Floral Printed Retail Fashion Rack Display", "Retail Special Banarasi Silk Saree", "Retail Collection Georgette Suit",
             "Retail Ready Maggam Blouse Piece", "Retail Designer Anarkali Frock", "Retail Wholesale Cotton Dress Material",
             "Retail Silk Petticoats Bulk Pack", "Retail Festive Kids Pattu Langa", "Retail Premium Shapewear Skirt",
             "Retail Designer Dupatta Collection", "Retail Computer Worked Blouse Pieces", "Retail Peplum Fusion Tops",
             "Retail Traditional Half Saree Set", "Retail Bridal Lehenga Fabric", "Retail Silk Cut Piece Roll"
         ], colors: ["Multicolor / Retail", "Royal Blue", "Emerald Green", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
-            "image copy 61.png"
+            "image copy 144.png", "image copy 61.png"
         ]}
     ];
 
@@ -255,9 +257,9 @@ const SEED_PRODUCTS = buildCatalogProducts();
 
 // Seed Categories detail meta (for banners and descriptions with exact image mappings 107-125)
 const CATEGORY_META = {
-    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 107.png" },
+    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 134.png" },
     frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 108.png" },
-    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 109.png" },
+    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 138.png" },
     kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 110.png" },
     "3-piece-sets": { title: "3 Piece Sets", subtitle: "Designer Kurti, Dupatta & Palazzo combinations", img: "image copy 111.png" },
     "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "image copy 112.png" },
@@ -275,7 +277,7 @@ const CATEGORY_META = {
     nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "image copy 124.png" },
     "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 125.png" },
     women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 107.png" },
-    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 58.png" }
+    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 143.png" }
 };
 
 // Aliases for category URL slug matching
@@ -541,7 +543,7 @@ window.addEventListener('load', () => {
             loader.classList.add('fade-out');
             setTimeout(() => loader.style.display = 'none', 600);
         }
-    }, 1500);
+    }, 400);
     
     syncState();
     handleRouting();
@@ -604,7 +606,7 @@ function renderHomeContents() {
             { key: 'lehenga-fabric', label: 'Lehenga Fabrics', img: 'image copy 123.png' },
             { key: 'nighty', label: 'Nighties', img: 'image copy 124.png' },
             { key: 'lace-hangings', label: 'Lace & Hangings', img: 'image copy 57.png' },
-            { key: 'kids', label: 'Kids Collection', img: 'image copy 58.png' },
+            { key: 'kids', label: 'Kids Collection', img: 'image copy 143.png' },
             { key: 'retail-collection', label: 'Retail Collection', img: 'image copy 125.png' }
         ];
 
