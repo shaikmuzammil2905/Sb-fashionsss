@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '25.0'; // Updated version to force catalog re-seed across clients
+const SEED_VERSION = '20.0'; // Updated version to force catalog re-seed across clients
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -29,7 +29,7 @@ function buildCatalogProducts() {
            pricesOld: [12499, 8999, 9999, 5499, 7499, 13999, 9599, 6999, 6299, 7999, 10999, 6999, 9999, 8499, 8999],
            colors: ["Royal Red & Gold Zari", "Deep Maroon & Gold Zari", "Royal Blue & Silver Zari", "Pastel Mint & Floral", "Rose Pink & Sequins", "Bridal Crimson", "Ivory & Kalamkari", "Aqua Blue", "Deep Rose", "Emerald Green", "Midnight Black", "Peach Pink", "Wine Red", "Lavender", "Teal Green"],
            imgs: [
-            "assets/products/featured/image copy 134.png", "assets/products/sarees/image copy 133.png", "assets/products/sarees/image copy 135.png", "assets/products/sarees/image copy 136.png", "assets/products/sarees/image copy 137.png"
+            "image copy 134.png", "image copy 133.png", "image copy 135.png", "image copy 136.png", "image copy 137.png"
         ]},
         { id: 'blouses', prefix: 'BLU', basePrice: 1199, names: [
             "Navy Blue Embroidered Kantha Blouse", "Bridal Red Full Sleeve Zardosi Blouse", "Party Wear Backless Cotton Silk Blouse",
@@ -41,7 +41,7 @@ function buildCatalogProducts() {
            pricesOld: [2999, 3999, 2499, 3499, 2999, 3299, 3899, 2399, 2799, 3499, 2599, 3699, 2899, 3199, 3399],
            colors: ["Navy Blue & Gold Threadwork", "Crimson Red & Zardosi", "Brick Red & Tie-Up Back", "Gold Metallic & Puff Sleeves", "Peach Pink Brocade", "Navy Blue", "Bridal Red", "Pastel Pink", "Mustard Yellow", "Deep Maroon", "Metallic Silver", "Wine Red", "Peach Pink", "Bottle Green", "Rose Pink"],
            imgs: [
-            "assets/products/blouses/image copy 138.png", "assets/products/blouses/image copy 139.png", "assets/products/blouses/image copy 140.png", "assets/products/blouses/image copy 141.png", "assets/products/blouses/image copy 142.png"
+            "image copy 138.png", "image copy 139.png", "image copy 140.png", "image copy 141.png", "image copy 142.png"
         ]},
         { id: 'kids', prefix: 'KID', basePrice: 1499, names: [
             "Gradient Silk Pattu Langa Kids Dress Set", "Traditional Pattu Langa Kids Lehenga Set", "Festive Crimson Red Kids Anarkali Frock",
@@ -53,7 +53,7 @@ function buildCatalogProducts() {
            pricesOld: [3299, 3999, 3699, 2999, 4399, 2799, 3499, 4799, 3999, 2899, 3199, 3499, 2699, 3299, 3599],
            colors: ["Teal & Cream White", "Maroon & Golden Yellow", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Rose Pink"],
            imgs: [
-            "assets/products/kids/image copy 143.png"
+            "image copy 143.png"
         ]},
         { id: 'retail-collection', prefix: 'RET', basePrice: 4999, names: [
             "Multicolor Floral Boutique Retail Fashion Pack", "Retail Special Banarasi Silk Saree", "Retail Collection Georgette Suit",
@@ -65,7 +65,7 @@ function buildCatalogProducts() {
            pricesOld: [10999, 11999, 8999, 7499, 9499, 6599, 5499, 8499, 4899, 6199, 6999, 5899, 10499, 12999, 7199],
            colors: ["Multicolor Boutique Array", "Royal Blue & Gold", "Emerald Green", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"],
            imgs: [
-            "assets/products/retail/image copy 144.png"
+            "image copy 144.png"
         ]},
         { id: 'frocks', prefix: 'FRO', basePrice: 2499, names: [
             "Crimson Red Embroidered Anarkali Frock", "Emerald Green Georgette Gown Frock", "Pastel Pink Flared Party Frock",
@@ -73,112 +73,112 @@ function buildCatalogProducts() {
         ], prices: [2499, 2799, 2299, 1999, 2399, 2899],
            pricesOld: [5499, 5999, 4999, 4399, 5199, 6299],
            colors: ["Crimson Red", "Emerald Green", "Pastel Pink", "Royal Blue", "Mustard Yellow", "Midnight Black"],
-           imgs: ["assets/products/featured/image copy 134.png", "assets/products/sarees/image copy 135.png"]
+           imgs: ["image copy 108.png", "image copy 134.png"]
         },
         { id: 'kurti', prefix: 'KUR', basePrice: 899, names: [
             "Yellow Cotton A-Line Kurti Tunic", "Royal Blue Printed Georgette Kurti", "Emerald Green Straight Cut Kurti"
         ], prices: [899, 1199, 999],
            pricesOld: [1999, 2599, 2199],
            colors: ["Bright Yellow", "Royal Blue", "Emerald Green"],
-           imgs: ["assets/products/blouses/image copy 138.png"]
+           imgs: ["image copy 110.png"]
         },
         { id: '3-piece-sets', prefix: 'TPS', basePrice: 2999, names: [
             "Royal Silk 3 Piece Kurti Set", "Crimson Red Anarkali 3 Piece Suit"
         ], prices: [2999, 3499],
            pricesOld: [6599, 7699],
            colors: ["Royal Blue", "Crimson Red"],
-           imgs: ["assets/products/blouses/image copy 139.png", "assets/products/blouses/image copy 140.png"]
+           imgs: ["image copy 111.png", "image copy 76.png"]
         },
         { id: 'half-sarees', prefix: 'HSA', basePrice: 3999, names: [
             "Traditional South Indian Silk Half Saree", "Golden Red Bridal Langa Voni Set"
         ], prices: [3999, 4599],
            pricesOld: [8799, 9999],
            colors: ["Multi/Gold", "Golden Red"],
-           imgs: ["assets/products/sarees/image copy 136.png"]
+           imgs: ["image copy 112.png"]
         },
         { id: 'petticoats', prefix: 'PET', basePrice: 499, names: [
             "Pure Cotton White Saree Petticoat skirt", "Satin Silk Scarlet Red Saree Petticoat skirt"
         ], prices: [499, 699],
            pricesOld: [1099, 1499],
            colors: ["Pure White", "Scarlet Red"],
-           imgs: ["assets/products/blouses/image copy 141.png"]
+           imgs: ["image copy 113.png"]
         },
         { id: 'peplum-tops', prefix: 'PEP', basePrice: 1199, names: [
             "Yellow Indo-Western Peplum Crop Top", "Royal Blue Flared Peplum Top"
         ], prices: [1199, 1399],
            pricesOld: [2599, 2999],
            colors: ["Bright Yellow", "Royal Blue"],
-           imgs: ["assets/products/blouses/image copy 142.png"]
+           imgs: ["image copy 114.png"]
         },
         { id: 'lehenga-blouse', prefix: 'LEH', basePrice: 7999, names: [
             "Pastel Pink Designer Lehenga & Blouse Set", "Gold Embroidered Red Bridal Lehenga"
         ], prices: [7999, 9999],
            pricesOld: [17599, 21999],
            colors: ["Pastel Pink", "Golden Red"],
-           imgs: ["assets/products/sarees/image copy 137.png"]
+           imgs: ["image copy 115.png"]
         },
         { id: 'shapewear', prefix: 'SHP', basePrice: 899, names: [
             "Mermaid Fit Beige Saree Shapewear skirt", "Scarlet Red Seamless Saree Shapewear"
         ], prices: [899, 999],
            pricesOld: [1999, 2199],
            colors: ["Nude Beige", "Scarlet Red"],
-           imgs: ["assets/products/blouses/image copy 138.png"]
+           imgs: ["image copy 116.png"]
         },
         { id: 'maggam-work-blouse-pieces', prefix: 'MAG', basePrice: 3499, names: [
             "Emerald Green Maggam Work Blouse Piece", "Royal Blue Peacock Maggam Work Piece"
         ], prices: [3499, 3999],
            pricesOld: [7699, 8799],
            colors: ["Emerald Green", "Royal Blue"],
-           imgs: ["assets/products/blouses/image copy 139.png"]
+           imgs: ["image copy 117.png"]
         },
         { id: 'computer-work-blouse-pieces', prefix: 'COM', basePrice: 1499, names: [
             "Ruby Red Computer Embroidered Blouse Piece", "Royal Blue Machine Threadwork Blouse Piece"
         ], prices: [1499, 1699],
            pricesOld: [3299, 3699],
            colors: ["Ruby Red", "Royal Blue"],
-           imgs: ["assets/products/blouses/image copy 140.png"]
+           imgs: ["image copy 118.png"]
         },
         { id: 'dupatta', prefix: 'DUP', basePrice: 999, names: [
             "Mustard Gold Banarasi Silk Zari Dupatta", "Royal Blue Heavy Silk Woven Dupatta"
         ], prices: [999, 1199],
            pricesOld: [2199, 2599],
            colors: ["Mustard Gold", "Royal Blue"],
-           imgs: ["assets/products/blouses/image copy 141.png"]
+           imgs: ["image copy 119.png"]
         },
         { id: 'chunni', prefix: 'CHU', basePrice: 349, names: [
             "Multicolor Printed Chiffon Chunni Scarf", "Crimson Red Gota Border Chunni"
         ], prices: [349, 449],
            pricesOld: [799, 999],
            colors: ["Multicolor", "Crimson Red"],
-           imgs: ["assets/products/blouses/image copy 142.png"]
+           imgs: ["image copy 120.png"]
         },
         { id: 'cut-piece-fabric', prefix: 'FAB', basePrice: 599, names: [
             "Pure Raw Silk Blue Cut Piece Fabric", "Crimson Red Raw Silk Cut Piece"
         ], prices: [599, 799],
            pricesOld: [1299, 1699],
            colors: ["Ocean Blue", "Crimson Red"],
-           imgs: ["assets/products/blouses/image copy 138.png"]
+           imgs: ["image copy 121.png"]
         },
         { id: 'dress-material', prefix: 'MAT', basePrice: 1299, names: [
             "Unstitched Cotton Salwar Dress Material", "Royal Blue Silk Unstitched Suit Pack"
         ], prices: [1299, 1599],
            pricesOld: [2899, 3499],
            colors: ["Cream / Indigo Blue", "Royal Blue"],
-           imgs: ["assets/products/blouses/image copy 139.png"]
+           imgs: ["image copy 122.png"]
         },
         { id: 'lehenga-fabric', prefix: 'LFB', basePrice: 4999, names: [
             "Gold Embroidered Bridal Lehenga Fabric", "Royal Blue Velvet Lehenga Panel Fabric"
         ], prices: [4999, 5999],
            pricesOld: [10999, 12999],
            colors: ["Golden Red", "Royal Blue"],
-           imgs: ["assets/products/sarees/image copy 137.png"]
+           imgs: ["image copy 123.png"]
         },
         { id: 'nighty', prefix: 'NIT', basePrice: 899, names: [
             "Classic Maroon Floral Cotton Nighty", "Royal Blue Printed Pure Cotton Nighty"
         ], prices: [899, 999],
            pricesOld: [1999, 2199],
            colors: ["Maroon / Blue", "Royal Blue"],
-           imgs: ["assets/products/blouses/image copy 140.png"]
+           imgs: ["image copy 124.png"]
         }
     ];
 
@@ -224,27 +224,27 @@ const SEED_PRODUCTS = buildCatalogProducts();
 
 // Seed Categories detail meta (for banners and descriptions with exact image mappings)
 const CATEGORY_META = {
-    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "assets/products/sarees/image copy 133.png" },
-    frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "assets/products/featured/image copy 134.png" },
-    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "assets/products/blouses/image copy 138.png" },
-    kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "assets/products/blouses/image copy 139.png" },
-    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Designer Kurti, Dupatta & Palazzo combinations", img: "assets/products/blouses/image copy 140.png" },
-    "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "assets/products/sarees/image copy 136.png" },
-    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "assets/products/blouses/image copy 141.png" },
-    "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "assets/products/blouses/image copy 142.png" },
-    "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "assets/products/sarees/image copy 137.png" },
-    shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "assets/products/blouses/image copy 138.png" },
-    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "assets/products/blouses/image copy 139.png" },
-    "computer-work-blouse-pieces": { title: "Computer Embroidery Blouses", subtitle: "Precision machine worked heavy silk materials", img: "assets/products/blouses/image copy 140.png" },
-    dupatta: { title: "Zari Dupattas", subtitle: "Silk, Net and chiffon matching stoles", img: "assets/products/blouses/image copy 141.png" },
-    chunni: { title: "Chunnis & Scarves", subtitle: "Vibrant ethnic styling additions", img: "assets/products/blouses/image copy 142.png" },
-    "cut-piece-fabric": { title: "Cut Piece Fabric", subtitle: "Premium raw cotton and silk measurements", img: "assets/products/blouses/image copy 138.png" },
-    "dress-material": { title: "Unstitched Dress Materials", subtitle: "Create your own customized Punjabi suites", img: "assets/products/blouses/image copy 139.png" },
-    "lehenga-fabric": { title: "Lehenga Fabrics", subtitle: "Bespoke fabrics for custom bridal designs", img: "assets/products/sarees/image copy 137.png" },
-    nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "assets/products/blouses/image copy 140.png" },
-    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "assets/products/retail/image copy 144.png" },
-    women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "assets/products/featured/image copy 134.png" },
-    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "assets/products/kids/image copy 143.png" }
+    sarees: { title: "Exclusive Sarees", subtitle: "Banarasi, Kanchipuram & Designer Organza pieces", img: "image copy 134.png" },
+    frocks: { title: "Elegant Frocks", subtitle: "Anarkali, Georgette & western cuts", img: "image copy 108.png" },
+    blouses: { title: "Readymade Blouses", subtitle: "Stitched designer blouses ready to wear", img: "image copy 138.png" },
+    kurti: { title: "Kurti Tops", subtitle: "Comfortable daily wear and printed Tunics", img: "image copy 110.png" },
+    "3-piece-sets": { title: "3 Piece Sets", subtitle: "Designer Kurti, Dupatta & Palazzo combinations", img: "image copy 111.png" },
+    "half-sarees": { title: "Traditional Half Sarees", subtitle: "South Indian traditional langa voni sets", img: "image copy 112.png" },
+    petticoats: { title: "Saree Petticoats", subtitle: "High-grade cotton and satin underskirts", img: "image copy 113.png" },
+    "peplum-tops": { title: "Peplum Tops", subtitle: "Indo-western fusion short tops", img: "image copy 114.png" },
+    "lehenga-blouse": { title: "Lehenga & Blouse Sets", subtitle: "Premium bridal and festive Lehenga Cholis", img: "image copy 115.png" },
+    shapewear: { title: "Saree Shapewear", subtitle: "Premium mermaid silhouette side-slit shapewear", img: "image copy 116.png" },
+    "maggam-work-blouse-pieces": { title: "Maggam Work Blouses", subtitle: "Stunning hand-crafted Zardozi blouse materials", img: "image copy 117.png" },
+    "computer-work-blouse-pieces": { title: "Computer Embroidery Blouses", subtitle: "Precision machine worked heavy silk materials", img: "image copy 118.png" },
+    dupatta: { title: "Zari Dupattas", subtitle: "Silk, Net and chiffon matching stoles", img: "image copy 119.png" },
+    chunni: { title: "Chunnis & Scarves", subtitle: "Vibrant ethnic styling additions", img: "image copy 120.png" },
+    "cut-piece-fabric": { title: "Cut Piece Fabric", subtitle: "Premium raw cotton and silk measurements", img: "image copy 121.png" },
+    "dress-material": { title: "Unstitched Dress Materials", subtitle: "Create your own customized Punjabi suites", img: "image copy 122.png" },
+    "lehenga-fabric": { title: "Lehenga Fabrics", subtitle: "Bespoke fabrics for custom bridal designs", img: "image copy 123.png" },
+    nighty: { title: "Comfort Nighties", subtitle: "Premium quality cotton night wear", img: "image copy 124.png" },
+    "retail-collection": { title: "Retail Collections", subtitle: "In-store fashion favorites ready for shipment", img: "image copy 144.png" },
+    women: { title: "Women's Fashion Hub", subtitle: "Complete traditional, designer, and boutique collection", img: "image copy 134.png" },
+    kids: { title: "Kids Ethnic Wear", subtitle: "Festive lehengas, kurtas, and traditional dresses for children", img: "image copy 143.png" }
 };
 
 // Aliases for category URL slug matching
@@ -933,14 +933,15 @@ function openQuickViewModal(prodId) {
     // Quickview button actions
     document.getElementById('quickview-btn-addtocart').onclick = () => {
         const qty = parseInt(document.getElementById('quickview-qty-val').value) || 1;
-        addToCart(p.id, qty, selectedSize, p.color || 'Standard', true);
+        addToCart(p.id, qty, selectedSize, p.color || 'Standard', false);
         closeQuickViewModal();
     };
     
     document.getElementById('quickview-btn-buynow').onclick = () => {
         const qty = parseInt(document.getElementById('quickview-qty-val').value) || 1;
-        buyNowDirect(p.id, qty, selectedSize, p.color || 'Standard');
+        addToCart(p.id, qty, selectedSize, p.color || 'Standard', false);
         closeQuickViewModal();
+        window.location.hash = '#/cart';
     };
     
     const wishBtn = document.getElementById('quickview-btn-wishlist');
@@ -1295,13 +1296,14 @@ function renderProductDetailPage(prodId) {
     const cartBtn = document.getElementById('btn-detail-add-to-cart');
     cartBtn.onclick = () => {
         const qty = parseInt(document.getElementById('detail-qty-val').value) || 1;
-        addToCart(p.id, qty, activeDetailSize, activeDetailColor, true);
+        addToCart(p.id, qty, activeDetailSize, activeDetailColor, false);
     };
     
     const buyBtn = document.getElementById('btn-detail-buy-now');
     buyBtn.onclick = () => {
         const qty = parseInt(document.getElementById('detail-qty-val').value) || 1;
-        buyNowDirect(p.id, qty, activeDetailSize, activeDetailColor);
+        addToCart(p.id, qty, activeDetailSize, activeDetailColor, false);
+        window.location.hash = '#/cart';
     };
 
     const wishBtn = document.getElementById('btn-detail-wishlist');
@@ -1411,8 +1413,8 @@ document.getElementById('btn-qty-plus').onclick = () => {
 };
 
 
-// --- 8. CART & ORDER FLOW CONTROLLERS ---
-function addToCart(productId, qty = 1, size = 'Free Size', color = 'Standard', redirect = true) {
+// --- 8. CART VIEW CONTROLLER ---
+function addToCart(productId, qty, size, color, redirect = false) {
     const p = products.find(item => item.id === productId);
     if (!p) return;
     
@@ -1434,34 +1436,11 @@ function addToCart(productId, qty = 1, size = 'Free Size', color = 'Standard', r
     }
     
     syncState();
-    showToast(`Added ${qty} x ${p.name} to Shopping Cart!`, "success");
+    showToast(`Added ${qty} x ${p.name} to Shopping Bag!`, "success");
     
     if (redirect) {
         window.location.hash = '#/cart';
     }
-}
-
-function buyNowDirect(productId, qty = 1, size = 'Free Size', color = 'Standard') {
-    const p = products.find(item => item.id === productId);
-    if (!p) return;
-    
-    const orderIdCode = `SBF-${Math.floor(100000 + Math.random() * 900000)}`;
-    const newOrder = {
-        id: orderIdCode,
-        orderId: orderIdCode,
-        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
-        status: 'Confirmed',
-        items: [{ id: p.id, name: p.name, price: p.price, qty: qty, size: size, color: color, image: p.image }],
-        total: p.price * qty,
-        paymentMethod: 'Instant Buy Now'
-    };
-    
-    if (!Array.isArray(orders)) orders = [];
-    orders.unshift(newOrder);
-    syncState();
-    showToast(`Order Placed! Order ID: ${orderIdCode}`, "success");
-    
-    window.location.hash = '#/dashboard/orders';
 }
 
 function updateCartQty(idx, delta) {
@@ -1768,29 +1747,14 @@ function renderCustomerDashboard(subTab) {
         }
         
         orders.forEach(o => {
-            const item = (o.items && o.items.length > 0) ? o.items[0] : null;
-            const itemImg = item ? item.image : 'assets/products/featured/image copy 134.png';
-            const itemName = item ? item.name : 'Custom Fashion Order';
-            const itemQty = item ? item.qty : 1;
-            const orderCode = o.id || o.orderId || 'SBF-100201';
-
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>
-                    <div style="display:flex;align-items:center;gap:12px;">
-                        <img src="${itemImg}" alt="${itemName}" style="width:52px;height:52px;object-fit:cover;border-radius:8px;box-shadow:var(--shadow-sm);">
-                        <div>
-                            <strong style="display:block;font-size:0.88rem;color:var(--color-text-main);">${itemName}</strong>
-                            <span style="font-size:0.78rem;color:var(--color-text-muted);">Qty: ${itemQty}</span>
-                        </div>
-                    </div>
-                </td>
-                <td><strong style="color:var(--color-primary);font-size:0.85rem;">${orderCode}</strong></td>
+                <td><strong>${o.orderId}</strong></td>
                 <td>${o.date}</td>
-                <td><strong>₹${(o.total || 0).toLocaleString()}</strong></td>
-                <td><span class="stock-status-badge in-stock">${o.status || 'Confirmed'}</span></td>
+                <td>₹${o.total.toLocaleString()}</td>
+                <td><span class="stock-status-badge in-stock">${o.status}</span></td>
                 <td>
-                    <a href="#/tracking/${orderCode}" class="btn btn-primary" style="padding:6px 14px; font-size:0.75rem; letter-spacing:0.5px;">Track Order</a>
+                    <a href="#/tracking/${o.orderId}" class="btn btn-primary" style="padding:6px 12px; font-size:0.7rem; letter-spacing:0.5px;">Track Order</a>
                 </td>
             `;
             tbody.appendChild(tr);
@@ -1844,7 +1808,7 @@ document.addEventListener('click', (e) => {
     if (directAdd) {
         e.preventDefault();
         const id = parseInt(directAdd.getAttribute('data-id'));
-        addToCart(id, 1, "Free Size", "Standard", true);
+        addToCart(id, 1, "Free Size", "Standard", false);
         return;
     }
 
@@ -1853,7 +1817,8 @@ document.addEventListener('click', (e) => {
     if (directBuy) {
         e.preventDefault();
         const id = parseInt(directBuy.getAttribute('data-id'));
-        buyNowDirect(id, 1, "Free Size", "Standard");
+        addToCart(id, 1, "Free Size", "Standard", false);
+        window.location.hash = '#/cart';
         return;
     }
 

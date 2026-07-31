@@ -345,7 +345,7 @@
                     <span class="product-badge new-arrival" style="position:absolute; top:20px; left:20px; z-index:5;">FEATURED PRODUCT</span>
                     <div class="featured-spotlight-media" style="position:relative; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-md); background:#fff;">
                         <a href="#/product/1">
-                            <img src="assets/products/featured/image copy 134.png" alt="Royal Heritage Banarasi Silk Saree" loading="lazy" style="width:100%; height:420px; object-fit:cover; transition:transform 0.5s ease;" class="hover-zoom-img">
+                            <img src="image copy 134.png" alt="Royal Heritage Banarasi Silk Saree" loading="lazy" style="width:100%; height:420px; object-fit:cover; transition:transform 0.5s ease;" class="hover-zoom-img">
                         </a>
                     </div>
                     <div class="featured-spotlight-info">
@@ -372,8 +372,19 @@
                 </div>
             </div>
 
-            <!-- Best Sellers Section -->
-            <div class="container" style="padding-bottom:20px;">
+            <!-- New Arrivals Section matching image copy 20.png -->
+            <div class="container new-arrivals-section">
+                <div class="section-header-flex">
+                    <h2 class="section-main-heading">New Arrivals</h2>
+                    <a href="#/category/women" class="view-all-link">View All &gt;</a>
+                </div>
+                <div class="product-grid new-arrivals-grid" id="home-trending-products">
+                    <!-- Product Cards populated via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Best Sellers Carousel -->
+            <div class="container" style="padding-bottom:40px;">
                 <div class="section-title-wrapper">
                     <span class="section-pretitle">Highly Demanded</span>
                     <h2 class="section-title">Best Sellers</h2>
@@ -383,28 +394,24 @@
                 </div>
             </div>
 
-            <!-- Animated Count-up Statistics Banner in Best Sellers -->
-            <div class="stats-banner-wrapper" style="background: linear-gradient(135deg, #D81B60 0%, #C2185B 100%); color: #ffffff; padding: 28px 0; margin: 30px 0; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.25);">
-                <div class="container stats-bar-grid" style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 15px; text-align:center;">
+            <!-- Animated Statistics / Trusted Numbers Grid (Typing mode count-up image copy 134 fix) -->
+            <div class="stats-banner-wrapper" style="background: linear-gradient(135deg, #D81B60 0%, #C2185B 100%); color: #ffffff; padding: 24px 0; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.25);">
+                <div class="container stats-bar-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align:center;">
                     <div class="stat-item">
-                        <span style="color:#ffffff !important; display:block; font-size:2.2rem; font-weight:800; font-family:var(--font-serif);" class="count-up-stat stat-num" data-val="5000" data-suffix="+">5,000+</span>
-                        <span class="stat-lbl" style="font-weight:700; font-size:0.75rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; display:block;">HAPPY CUSTOMERS</span>
+                        <span style="color:#ffffff !important; display:block; font-size:2.6rem; font-weight:800; font-family:var(--font-serif); text-shadow:0 2px 8px rgba(0,0,0,0.15);" id="stat-orders" class="count-up-stat stat-num" data-val="12500" data-suffix="+">12,500+</span>
+                        <span class="stat-lbl" style="font-weight:700; font-size:0.85rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:1px; margin-top:6px; display:block;">ORDERS DELIVERED</span>
                     </div>
                     <div class="stat-item">
-                        <span style="color:#ffffff !important; display:block; font-size:2.2rem; font-weight:800; font-family:var(--font-serif);" class="count-up-stat stat-num" data-val="2500" data-suffix="+">2,500+</span>
-                        <span class="stat-lbl" style="font-weight:700; font-size:0.75rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; display:block;">ORDERS DELIVERED</span>
+                        <span style="color:#ffffff !important; display:block; font-size:2.6rem; font-weight:800; font-family:var(--font-serif); text-shadow:0 2px 8px rgba(0,0,0,0.15);" id="stat-designs" class="count-up-stat stat-num" data-val="450" data-suffix="+">450+</span>
+                        <span class="stat-lbl" style="font-weight:700; font-size:0.85rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:1px; margin-top:6px; display:block;">EXCLUSIVE DESIGNS</span>
                     </div>
                     <div class="stat-item">
-                        <span style="color:#ffffff !important; display:block; font-size:2.2rem; font-weight:800; font-family:var(--font-serif);" class="count-up-stat stat-num" data-val="500" data-suffix="+">500+</span>
-                        <span class="stat-lbl" style="font-weight:700; font-size:0.75rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; display:block;">PREMIUM PRODUCTS</span>
+                        <span style="color:#ffffff !important; display:block; font-size:2.6rem; font-weight:800; font-family:var(--font-serif); text-shadow:0 2px 8px rgba(0,0,0,0.15);" id="stat-customers" class="count-up-stat stat-num" data-val="9800" data-suffix="+">9,800+</span>
+                        <span class="stat-lbl" style="font-weight:700; font-size:0.85rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:1px; margin-top:6px; display:block;">HAPPY CUSTOMERS</span>
                     </div>
                     <div class="stat-item">
-                        <span style="color:#ffffff !important; display:block; font-size:2.2rem; font-weight:800; font-family:var(--font-serif);" class="count-up-stat stat-num" data-val="100" data-suffix="+">100+</span>
-                        <span class="stat-lbl" style="font-weight:700; font-size:0.75rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; display:block;">NEW DESIGNS / MONTH</span>
-                    </div>
-                    <div class="stat-item">
-                        <span style="color:#ffffff !important; display:block; font-size:2.2rem; font-weight:800; font-family:var(--font-serif);" class="count-up-stat stat-num" data-val="4.9" data-decimals="1" data-suffix="★">4.9★</span>
-                        <span class="stat-lbl" style="font-weight:700; font-size:0.75rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; display:block;">CUSTOMER RATING</span>
+                        <span style="color:#ffffff !important; display:block; font-size:2.6rem; font-weight:800; font-family:var(--font-serif); text-shadow:0 2px 8px rgba(0,0,0,0.15);" id="stat-rating" class="count-up-stat stat-num" data-val="4.9" data-decimals="1" data-suffix=" ★">4.9 ★</span>
+                        <span class="stat-lbl" style="font-weight:700; font-size:0.85rem; color:rgba(255,255,255,0.95); text-transform:uppercase; letter-spacing:1px; margin-top:6px; display:block;">CUSTOMER RATING</span>
                     </div>
                 </div>
             </div>
