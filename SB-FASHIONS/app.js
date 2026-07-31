@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '20.0'; // Updated version to force catalog re-seed across clients
+const SEED_VERSION = '25.0'; // Restored full product catalog version across all clients
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -16,7 +16,7 @@ const STATE_KEYS = {
     ANNOUNCEMENT: 'sbf_announcement'
 };
 
-// Master catalog builder ensuring exact image assignments and complete metadata
+// Master catalog builder ensuring AT LEAST 15 distinct products per category with exact user images
 function buildCatalogProducts() {
     const categories = [
         { id: 'sarees', prefix: 'SAR', basePrice: 3999, names: [
@@ -53,7 +53,7 @@ function buildCatalogProducts() {
            pricesOld: [3299, 3999, 3699, 2999, 4399, 2799, 3499, 4799, 3999, 2899, 3199, 3499, 2699, 3299, 3599],
            colors: ["Teal & Cream White", "Maroon & Golden Yellow", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Rose Pink"],
            imgs: [
-            "image copy 143.png"
+            "image copy 143.png", "image copy 58.png"
         ]},
         { id: 'retail-collection', prefix: 'RET', basePrice: 4999, names: [
             "Multicolor Floral Boutique Retail Fashion Pack", "Retail Special Banarasi Silk Saree", "Retail Collection Georgette Suit",
@@ -65,121 +65,152 @@ function buildCatalogProducts() {
            pricesOld: [10999, 11999, 8999, 7499, 9499, 6599, 5499, 8499, 4899, 6199, 6999, 5899, 10499, 12999, 7199],
            colors: ["Multicolor Boutique Array", "Royal Blue & Gold", "Emerald Green", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"],
            imgs: [
-            "image copy 144.png"
+            "image copy 144.png", "image copy 61.png"
         ]},
         { id: 'frocks', prefix: 'FRO', basePrice: 2499, names: [
             "Crimson Red Embroidered Anarkali Frock", "Emerald Green Georgette Gown Frock", "Pastel Pink Flared Party Frock",
-            "Royal Blue Printed Maxi Frock", "Mustard Yellow Gota Patti Frock", "Midnight Black Sequence Evening Frock"
-        ], prices: [2499, 2799, 2299, 1999, 2399, 2899],
-           pricesOld: [5499, 5999, 4999, 4399, 5199, 6299],
-           colors: ["Crimson Red", "Emerald Green", "Pastel Pink", "Royal Blue", "Mustard Yellow", "Midnight Black"],
-           imgs: ["image copy 108.png", "image copy 134.png"]
-        },
+            "Royal Blue Printed Maxi Frock", "Mustard Yellow Gota Patti Frock", "Midnight Black Sequence Evening Frock",
+            "Peach Silk Flair Anarkali Frock", "Wine Maroon Threadwork Frock", "Lavender Layered Net Frock",
+            "Teal Blue Mirror Work Frock", "Sunshine Yellow Summer Frock", "Maroon Velvet Festival Frock",
+            "Sky Blue Georgette Tiered Frock", "Rose Pink Indo-Western Frock", "Olive Green Belted Maxi Frock"
+        ], colors: ["Crimson Red", "Emerald Green", "Pastel Pink", "Royal Blue", "Mustard Yellow", "Midnight Black", "Peach Pink", "Wine Maroon", "Lavender", "Teal Blue", "Sunshine Yellow", "Deep Maroon", "Sky Blue", "Rose Pink", "Olive Green"], imgs: [
+            "image copy 108.png", "image copy 134.png"
+        ]},
         { id: 'kurti', prefix: 'KUR', basePrice: 899, names: [
-            "Yellow Cotton A-Line Kurti Tunic", "Royal Blue Printed Georgette Kurti", "Emerald Green Straight Cut Kurti"
-        ], prices: [899, 1199, 999],
-           pricesOld: [1999, 2599, 2199],
-           colors: ["Bright Yellow", "Royal Blue", "Emerald Green"],
-           imgs: ["image copy 110.png"]
-        },
+            "Yellow Cotton A-Line Kurti Tunic", "Royal Blue Printed Georgette Kurti", "Emerald Green Straight Cut Kurti",
+            "Pastel Pink Floral Rayon Tunic", "Crimson Red Anarkali Style Kurti", "Midnight Black Mirror Work Tunic",
+            "Mustard Gold Block Print Kurti", "Wine Red Embroidered Kurti", "Lavender Chikankari Tunic",
+            "Teal Blue Flared Tunic Kurti", "Coral Orange Cotton Kurti", "Olive Green Belted Kurti",
+            "Sky Blue Soft Rayon Kurti", "Rose Gold Sequence Kurti", "White Handloom Khadi Kurti"
+        ], colors: ["Bright Yellow", "Royal Blue", "Emerald Green", "Pastel Pink", "Crimson Red", "Midnight Black", "Mustard Gold", "Wine Red", "Lavender", "Teal Blue", "Coral Orange", "Olive Green", "Sky Blue", "Rose Gold", "Pure White"], imgs: [
+            "image copy 110.png"
+        ]},
         { id: '3-piece-sets', prefix: 'TPS', basePrice: 2999, names: [
-            "Royal Silk 3 Piece Kurti Set", "Crimson Red Anarkali 3 Piece Suit"
-        ], prices: [2999, 3499],
-           pricesOld: [6599, 7699],
-           colors: ["Royal Blue", "Crimson Red"],
-           imgs: ["image copy 111.png", "image copy 76.png"]
-        },
+            "Royal Silk 3 Piece Kurti Set", "Crimson Red Anarkali 3 Piece Suit", "Emerald Green Georgette 3 Piece Set",
+            "Pastel Pink Floral 3 Piece Kurti Set", "Mustard Yellow Silk Palazzo Suit", "Midnight Black Designer 3 Piece Set",
+            "Peach Organza Dupatta 3 Piece Set", "Wine Red Banarasi 3 Piece Suit", "Lavender Chikankari 3 Piece Set",
+            "Teal Green Printed 3 Piece Kurti Set", "Marigold Yellow Festive 3 Piece Suit", "Deep Maroon Heavy Zari 3 Piece Set",
+            "Sky Blue Linen 3 Piece Kurti Set", "Rose Gold Silk 3 Piece Suit", "Off-White Handloom 3 Piece Set"
+        ], colors: ["Royal Blue", "Crimson Red", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Peach Pink", "Wine Red", "Lavender", "Teal Green", "Marigold Yellow", "Deep Maroon", "Sky Blue", "Rose Gold", "Off-White"], imgs: [
+            "image copy 111.png", "image copy 76.png"
+        ]},
         { id: 'half-sarees', prefix: 'HSA', basePrice: 3999, names: [
-            "Traditional South Indian Silk Half Saree", "Golden Red Bridal Langa Voni Set"
-        ], prices: [3999, 4599],
-           pricesOld: [8799, 9999],
-           colors: ["Multi/Gold", "Golden Red"],
-           imgs: ["image copy 112.png"]
-        },
+            "Traditional South Indian Silk Half Saree", "Golden Red Bridal Langa Voni Set", "Royal Blue Pattu Half Saree",
+            "Emerald Green Designer Half Saree", "Pastel Pink Net Langa Voni", "Mustard Gold Zari Half Saree",
+            "Maroon Velvet Border Half Saree", "Teal Blue Banarasi Half Saree", "Lavender Floral Silk Half Saree",
+            "Wine Red Embroidered Langa Voni", "Peach Satin Half Saree", "Sunshine Yellow Temple Border Half Saree",
+            "Sky Blue Georgette Half Saree", "Rose Pink Bridal Half Saree", "Olive Green Handloom Half Saree"
+        ], colors: ["Multi/Gold", "Golden Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Gold", "Maroon", "Teal Blue", "Lavender", "Wine Red", "Peach Pink", "Sunshine Yellow", "Sky Blue", "Rose Pink", "Olive Green"], imgs: [
+            "image copy 112.png"
+        ]},
         { id: 'petticoats', prefix: 'PET', basePrice: 499, names: [
-            "Pure Cotton White Saree Petticoat skirt", "Satin Silk Scarlet Red Saree Petticoat skirt"
-        ], prices: [499, 699],
-           pricesOld: [1099, 1499],
-           colors: ["Pure White", "Scarlet Red"],
-           imgs: ["image copy 113.png"]
-        },
+            "Pure Cotton White Saree Petticoat skirt", "Satin Silk Scarlet Red Saree Petticoat skirt", "Royal Blue Cotton Saree Petticoat",
+            "Emerald Green Cotton Petticoat", "Nude Beige Satin Saree Petticoat", "Midnight Black Cotton Petticoat",
+            "Golden Yellow Satin Petticoat", "Deep Maroon 6-Panel Cotton Petticoat", "Pastel Pink Satin Underskirt Petticoat",
+            "Lavender Cotton Drawstring Petticoat", "Teal Blue Heavy Flared Cotton Petticoat", "Wine Red Satin Silk Petticoat",
+            "Sky Blue Breathable Cotton Petticoat", "Off-White Canvas Hem Cotton Petticoat", "Peach Satin Saree Underskirt"
+        ], colors: ["Pure White", "Scarlet Red", "Royal Blue", "Emerald Green", "Nude Beige", "Midnight Black", "Golden Yellow", "Deep Maroon", "Pastel Pink", "Lavender", "Teal Blue", "Wine Red", "Sky Blue", "Off-White", "Peach Pink"], imgs: [
+            "image copy 113.png"
+        ]},
         { id: 'peplum-tops', prefix: 'PEP', basePrice: 1199, names: [
-            "Yellow Indo-Western Peplum Crop Top", "Royal Blue Flared Peplum Top"
-        ], prices: [1199, 1399],
-           pricesOld: [2599, 2999],
-           colors: ["Bright Yellow", "Royal Blue"],
-           imgs: ["image copy 114.png"]
-        },
+            "Yellow Indo-Western Peplum Crop Top", "Royal Blue Flared Peplum Top", "Emerald Green Embroidered Peplum Top",
+            "Crimson Red Sequence Short Peplum", "Pastel Pink Floral Printed Peplum", "Midnight Black Velvet Peplum Top",
+            "Mustard Gold Zari Work Peplum", "Maroon Threadwork Indo-Western Peplum", "Teal Blue Georgette Peplum Top",
+            "Lavender Layered Short Peplum", "Wine Red Belted Peplum Top", "Sunshine Yellow Summer Peplum",
+            "Sky Blue Mirror Work Peplum", "Rose Pink Designer Fusion Peplum", "Olive Green Printed Peplum Top"
+        ], colors: ["Bright Yellow", "Royal Blue", "Emerald Green", "Crimson Red", "Pastel Pink", "Midnight Black", "Mustard Gold", "Maroon", "Teal Blue", "Lavender", "Wine Red", "Sunshine Yellow", "Sky Blue", "Rose Pink", "Olive Green"], imgs: [
+            "image copy 114.png"
+        ]},
         { id: 'lehenga-blouse', prefix: 'LEH', basePrice: 7999, names: [
-            "Pastel Pink Designer Lehenga & Blouse Set", "Gold Embroidered Red Bridal Lehenga"
-        ], prices: [7999, 9999],
-           pricesOld: [17599, 21999],
-           colors: ["Pastel Pink", "Golden Red"],
-           imgs: ["image copy 115.png"]
-        },
+            "Pastel Pink Designer Lehenga & Blouse Set", "Gold Embroidered Red Bridal Lehenga", "Royal Blue Heavy Sequin Lehenga Set",
+            "Emerald Green Velvet Bridal Lehenga", "Mustard Yellow Sangeet Lehenga Choli", "Crimson Red Zardosi Lehenga Set",
+            "Midnight Black Gothic Designer Lehenga", "Wine Red Silk Bridal Lehenga Set", "Lavender Net Floral Lehenga Choli",
+            "Teal Blue Mirror Work Lehenga Set", "Peach Organza Flared Lehenga Set", "Sky Blue Threadwork Lehenga Set",
+            "Marigold Yellow Festive Lehenga", "Rose Gold Silk Velvet Lehenga", "Bottle Green Banarasi Lehenga Set"
+        ], colors: ["Pastel Pink", "Golden Red", "Royal Blue", "Emerald Green", "Mustard Yellow", "Crimson Red", "Midnight Black", "Wine Red", "Lavender", "Teal Blue", "Peach Pink", "Sky Blue", "Marigold Yellow", "Rose Gold", "Bottle Green"], imgs: [
+            "image copy 115.png"
+        ]},
         { id: 'shapewear', prefix: 'SHP', basePrice: 899, names: [
-            "Mermaid Fit Beige Saree Shapewear skirt", "Scarlet Red Seamless Saree Shapewear"
-        ], prices: [899, 999],
-           pricesOld: [1999, 2199],
-           colors: ["Nude Beige", "Scarlet Red"],
-           imgs: ["image copy 116.png"]
-        },
+            "Mermaid Fit Beige Saree Shapewear skirt", "Scarlet Red Seamless Saree Shapewear", "Royal Blue Compression Saree Shapewear",
+            "Midnight Black Mermaid Silhouette Shapewear", "Emerald Green Saree Shapewear Skirt", "Nude Tan Smooth Compression Shapewear",
+            "Golden Yellow Mermaid Shapewear", "Maroon Side-Slit Saree Shapewear", "Pastel Pink Comfort Shapewear Skirt",
+            "Lavender Seamless Compression Shapewear", "Teal Blue Saree Shapewear Skirt", "Wine Red Mermaid Fit Shapewear",
+            "Sky Blue Compression Saree Skirt", "Off-White High-Waist Shapewear", "Rose Gold Satin Saree Shapewear"
+        ], colors: ["Nude Beige", "Scarlet Red", "Royal Blue", "Midnight Black", "Emerald Green", "Nude Tan", "Golden Yellow", "Deep Maroon", "Pastel Pink", "Lavender", "Teal Blue", "Wine Red", "Sky Blue", "Off-White", "Rose Gold"], imgs: [
+            "image copy 116.png"
+        ]},
         { id: 'maggam-work-blouse-pieces', prefix: 'MAG', basePrice: 3499, names: [
-            "Emerald Green Maggam Work Blouse Piece", "Royal Blue Peacock Maggam Work Piece"
-        ], prices: [3499, 3999],
-           pricesOld: [7699, 8799],
-           colors: ["Emerald Green", "Royal Blue"],
-           imgs: ["image copy 117.png"]
-        },
+            "Emerald Green Maggam Work Blouse Piece", "Royal Blue Peacock Maggam Work Piece", "Crimson Red Heavy Zardosi Maggam Piece",
+            "Mustard Gold Bridal Maggam Blouse Piece", "Midnight Black Hand Embroidered Maggam Piece", "Pastel Pink Floral Stone Maggam Piece",
+            "Wine Red Grand Bridal Maggam Material", "Teal Blue Mirror & Zari Maggam Piece", "Lavender Designer Cutwork Maggam Piece",
+            "Marigold Yellow Traditional Maggam Piece", "Bottle Green Temple Design Maggam Piece", "Peach Silk Kundan Maggam Piece",
+            "Sky Blue Sequin Maggam Blouse Piece", "Rose Gold Heavy Maggam Fabric", "Off-White Raw Silk Maggam Piece"
+        ], colors: ["Emerald Green", "Royal Blue", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Bottle Green", "Peach Pink", "Sky Blue", "Rose Gold", "Off-White"], imgs: [
+            "image copy 117.png"
+        ]},
         { id: 'computer-work-blouse-pieces', prefix: 'COM', basePrice: 1499, names: [
-            "Ruby Red Computer Embroidered Blouse Piece", "Royal Blue Machine Threadwork Blouse Piece"
-        ], prices: [1499, 1699],
-           pricesOld: [3299, 3699],
-           colors: ["Ruby Red", "Royal Blue"],
-           imgs: ["image copy 118.png"]
-        },
+            "Ruby Red Computer Embroidered Blouse Piece", "Royal Blue Machine Threadwork Blouse Piece", "Emerald Green Precision Computerized Piece",
+            "Golden Yellow Zari Computer Work Piece", "Midnight Black Velvet Machine Worked Piece", "Pastel Pink Multi-Needle Computer Piece",
+            "Maroon Bridal Machine Embroidery Piece", "Teal Blue Geometric Computerized Piece", "Lavender Floral Computer Work Piece",
+            "Wine Red Silk Machine Worked Blouse", "Peach Organza Computerized Blouse Piece", "Sky Blue Satin Computer Work Piece",
+            "Bottle Green Computer Embroidered Piece", "Rose Gold Metallic Computerized Blouse", "Off-White Brocade Computer Work Piece"
+        ], colors: ["Ruby Red", "Royal Blue", "Emerald Green", "Golden Yellow", "Midnight Black", "Pastel Pink", "Deep Maroon", "Teal Blue", "Lavender", "Wine Red", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold", "Off-White"], imgs: [
+            "image copy 118.png"
+        ]},
         { id: 'dupatta', prefix: 'DUP', basePrice: 999, names: [
-            "Mustard Gold Banarasi Silk Zari Dupatta", "Royal Blue Heavy Silk Woven Dupatta"
-        ], prices: [999, 1199],
-           pricesOld: [2199, 2599],
-           colors: ["Mustard Gold", "Royal Blue"],
-           imgs: ["image copy 119.png"]
-        },
+            "Mustard Gold Banarasi Silk Zari Dupatta", "Royal Blue Heavy Silk Woven Dupatta", "Crimson Red Bridal Net Dupatta",
+            "Emerald Green Organza Printed Dupatta", "Pastel Pink Phulkari Embroidery Dupatta", "Midnight Black Velvet Zari Dupatta",
+            "Wine Red Bandhani Silk Dupatta", "Teal Blue Chiffon Border Dupatta", "Lavender Gota Patti Net Dupatta",
+            "Marigold Yellow Banarasi Zari Dupatta", "Peach Silk Floral Stole Dupatta", "Sky Blue Georgette Sequence Dupatta",
+            "Bottle Green Brocade Dupatta", "Rose Gold Tissue Silk Dupatta", "Off-White Chanderi Cotton Dupatta"
+        ], colors: ["Mustard Gold", "Royal Blue", "Crimson Red", "Emerald Green", "Pastel Pink", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold", "Off-White"], imgs: [
+            "image copy 119.png"
+        ]},
         { id: 'chunni', prefix: 'CHU', basePrice: 349, names: [
-            "Multicolor Printed Chiffon Chunni Scarf", "Crimson Red Gota Border Chunni"
-        ], prices: [349, 449],
-           pricesOld: [799, 999],
-           colors: ["Multicolor", "Crimson Red"],
-           imgs: ["image copy 120.png"]
-        },
+            "Multicolor Printed Chiffon Chunni Scarf", "Crimson Red Gota Border Chunni", "Royal Blue Bandhani Cotton Chunni",
+            "Emerald Green Net Chunni", "Pastel Pink Printed Silk Chunni Scarf", "Mustard Yellow Crushed Chiffon Chunni",
+            "Midnight Black Sequence Border Chunni", "Wine Red Heavy Border Chunni", "Teal Blue Lightweight Scarf Chunni",
+            "Lavender Pom-Pom Lace Chunni", "Peach Floral Digital Print Chunni", "Sky Blue Cotton Chunni Scarf",
+            "Bottle Green Silk Blend Chunni", "Rose Pink Embroidered Chunni", "Off-White Dupion Silk Chunni"
+        ], colors: ["Multicolor", "Crimson Red", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Yellow", "Midnight Black", "Wine Red", "Teal Blue", "Lavender", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Pink", "Off-White"], imgs: [
+            "image copy 120.png"
+        ]},
         { id: 'cut-piece-fabric', prefix: 'FAB', basePrice: 599, names: [
-            "Pure Raw Silk Blue Cut Piece Fabric", "Crimson Red Raw Silk Cut Piece"
-        ], prices: [599, 799],
-           pricesOld: [1299, 1699],
-           colors: ["Ocean Blue", "Crimson Red"],
-           imgs: ["image copy 121.png"]
-        },
+            "Pure Raw Silk Blue Cut Piece Fabric", "Crimson Red Raw Silk Cut Piece", "Emerald Green Pure Cotton Cut Piece",
+            "Mustard Gold Brocade Fabric Cut Piece", "Midnight Black Velvet Cut Piece Fabric", "Pastel Pink Net Fabric Cut Piece",
+            "Maroon Organza Cut Piece Fabric", "Teal Blue Chiffon Cut Piece Fabric", "Lavender Linen Fabric Cut Piece",
+            "Marigold Yellow Cotton Cut Piece", "Bottle Green Raw Silk Cut Piece", "Peach Silk Satin Cut Piece Fabric",
+            "Sky Blue Rayon Cut Piece", "Rose Gold Zari Fabric Cut Piece", "Off-White Khadi Cotton Cut Piece"
+        ], colors: ["Ocean Blue", "Crimson Red", "Emerald Green", "Mustard Gold", "Midnight Black", "Pastel Pink", "Deep Maroon", "Teal Blue", "Lavender", "Marigold Yellow", "Bottle Green", "Peach Pink", "Sky Blue", "Rose Gold", "Off-White"], imgs: [
+            "image copy 121.png"
+        ]},
         { id: 'dress-material', prefix: 'MAT', basePrice: 1299, names: [
-            "Unstitched Cotton Salwar Dress Material", "Royal Blue Silk Unstitched Suit Pack"
-        ], prices: [1299, 1599],
-           pricesOld: [2899, 3499],
-           colors: ["Cream / Indigo Blue", "Royal Blue"],
-           imgs: ["image copy 122.png"]
-        },
+            "Unstitched Cotton Salwar Dress Material", "Royal Blue Silk Unstitched Suit Pack", "Emerald Green Jaipuri Print Dress Material",
+            "Crimson Red Chanderi Unstitched Dress Material", "Mustard Yellow Gota Patti Dress Material", "Midnight Black Velvet Suit Material",
+            "Pastel Pink Organza Unstitched Suit Pack", "Wine Red Bandhani Salwar Dress Material", "Teal Blue Cotton Printed Suit Pack",
+            "Lavender Chikankari Dress Material", "Marigold Yellow Silk Dress Material", "Peach Chiffon Unstitched Suit Pack",
+            "Sky Blue Printed Cotton Dress Material", "Bottle Green Embroidered Suit Material", "Rose Gold Brocade Salwar Dress Material"
+        ], colors: ["Cream / Indigo Blue", "Royal Blue", "Emerald Green", "Crimson Red", "Mustard Yellow", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
+            "image copy 122.png"
+        ]},
         { id: 'lehenga-fabric', prefix: 'LFB', basePrice: 4999, names: [
-            "Gold Embroidered Bridal Lehenga Fabric", "Royal Blue Velvet Lehenga Panel Fabric"
-        ], prices: [4999, 5999],
-           pricesOld: [10999, 12999],
-           colors: ["Golden Red", "Royal Blue"],
-           imgs: ["image copy 123.png"]
-        },
+            "Gold Embroidered Bridal Lehenga Fabric", "Royal Blue Velvet Lehenga Panel Fabric", "Emerald Green Raw Silk Lehenga Fabric",
+            "Crimson Red Heavy Zardosi Lehenga Panel", "Mustard Gold Banarasi Lehenga Fabric", "Midnight Black Sequence Lehenga Panel",
+            "Pastel Pink Net Floral Lehenga Fabric", "Wine Red Satin Silk Lehenga Material", "Teal Blue Mirror Work Lehenga Panel",
+            "Lavender Organza Lehenga Fabric", "Marigold Yellow Threadwork Lehenga Panel", "Peach Silk Brocade Lehenga Fabric",
+            "Sky Blue Embroidered Lehenga Panel", "Bottle Green Velvet Lehenga Fabric", "Rose Gold Metallic Lehenga Panel"
+        ], colors: ["Golden Red", "Royal Blue", "Emerald Green", "Crimson Red", "Mustard Gold", "Midnight Black", "Pastel Pink", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Gold"], imgs: [
+            "image copy 123.png"
+        ]},
         { id: 'nighty', prefix: 'NIT', basePrice: 899, names: [
-            "Classic Maroon Floral Cotton Nighty", "Royal Blue Printed Pure Cotton Nighty"
-        ], prices: [899, 999],
-           pricesOld: [1999, 2199],
-           colors: ["Maroon / Blue", "Royal Blue"],
-           imgs: ["image copy 124.png"]
-        }
+            "Classic Maroon Floral Cotton Nighty", "Royal Blue Printed Pure Cotton Nighty", "Emerald Green Comfortable Daily Nighty",
+            "Pastel Pink Soft Cotton Nightdress", "Crimson Red Zip Front Cotton Nighty", "Midnight Black Printed Lounge Nighty",
+            "Mustard Yellow Breathable Cotton Nighty", "Wine Red Premium Hosiery Nighty", "Teal Blue Sleeveless Summer Nighty",
+            "Lavender Floral Print Cotton Nighty", "Marigold Yellow Soft Cotton Nighty", "Peach Comfort Fit Nightdress",
+            "Sky Blue Cotton Nighty Pack", "Bottle Green Printed Nightwear", "Rose Pink Satin Nighty Gown"
+        ], colors: ["Maroon / Blue", "Royal Blue", "Emerald Green", "Pastel Pink", "Crimson Red", "Midnight Black", "Mustard Yellow", "Wine Red", "Teal Blue", "Lavender", "Marigold Yellow", "Peach Pink", "Sky Blue", "Bottle Green", "Rose Pink"], imgs: [
+            "image copy 124.png"
+        ]}
     ];
 
     const result = [];
@@ -188,7 +219,7 @@ function buildCatalogProducts() {
     categories.forEach(cat => {
         cat.names.forEach((name, i) => {
             const price = cat.prices ? cat.prices[i] : cat.basePrice + (i * 250);
-            const priceOld = cat.pricesOld ? cat.pricesOld[i] : Math.round(price * 2.2);
+            const priceOld = cat.pricesOld ? cat.pricesOld[i] : Math.round(price * 1.6);
             const imgIndex = i % cat.imgs.length;
             const imgUrl = cat.imgs[imgIndex];
             
@@ -199,19 +230,19 @@ function buildCatalogProducts() {
                 category: cat.id,
                 price: price,
                 priceOld: priceOld,
-                rating: parseFloat((4.7 + (i % 3) * 0.1).toFixed(1)),
-                reviewsCount: 24 + i * 5,
-                description: `Exquisite premium boutique ${name} curated by Sowbhagya. Features authentic fabric weaves, artisan craftsmanship, and immaculate finishing for celebrations.`,
-                fabric: cat.id === 'sarees' ? "Pure Silk & Zari Weaves" : (cat.id === 'blouses' ? "Silk Brocade & Embroidery" : "Boutique Quality Weaves"),
-                work: "Handcrafted Artisan Embroidery & Stitching",
+                rating: parseFloat((4.4 + (i % 6) * 0.1).toFixed(1)),
+                reviewsCount: 12 + i * 3,
+                description: `High quality boutique ${name}. Authentic fabric and superior crafting curated by Sowbhagya.`,
+                fabric: "Premium Quality Weaves",
+                work: "Artisan Handcrafted & Stitched",
                 color: cat.colors[i % cat.colors.length],
                 sizes: cat.id === 'sarees' || cat.id === 'petticoats' || cat.id === 'dupatta' || cat.id === 'chunni' ? ["Free Size"] : (cat.id === 'kids' ? ["2-3Y", "4-5Y", "6-7Y", "8-9Y", "10-12Y"] : ["S", "M", "L", "XL", "XXL"]),
                 image: imgUrl,
-                gallery: cat.imgs.length > 1 ? cat.imgs : [imgUrl],
-                stock: 20 + i * 3,
-                featured: (cat.id === 'sarees' && i === 0) || i < 2,
-                bestSeller: i % 2 === 0,
-                retail: cat.id === 'retail-collection' || i % 2 === 0
+                gallery: [imgUrl],
+                stock: 15 + i * 2,
+                featured: i < 3,
+                bestSeller: i % 4 === 0,
+                retail: cat.id === 'retail-collection' || i % 3 === 0
             });
             globalId++;
         });
