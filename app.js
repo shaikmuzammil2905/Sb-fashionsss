@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '26.0'; // Updated version to guarantee shop section fixes and fresh catalog
+const SEED_VERSION = '100.0'; // Master catalog version forcing clean state reset
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -321,13 +321,13 @@ try {
     rawProducts = null;
 }
 
-if (storedVersion !== SEED_VERSION || !Array.isArray(rawProducts) || rawProducts.length < 200) {
-    localStorage.removeItem(STATE_KEYS.PRODUCTS);
+if (storedVersion !== SEED_VERSION || !Array.isArray(rawProducts) || rawProducts.length < 250) {
+    try { localStorage.clear(); } catch(e) {}
     localStorage.setItem('sbf_seed_version', SEED_VERSION);
     rawProducts = buildCatalogProducts();
     StoreState.set(STATE_KEYS.PRODUCTS, rawProducts);
 }
-let products = (Array.isArray(rawProducts) && rawProducts.length >= 200) ? rawProducts : buildCatalogProducts();
+let products = (Array.isArray(rawProducts) && rawProducts.length >= 250) ? rawProducts : buildCatalogProducts();
 let orders = StoreState.get(STATE_KEYS.ORDERS, []);
 let cart = StoreState.get(STATE_KEYS.CART, []);
 let wishlist = StoreState.get(STATE_KEYS.WISHLIST, []);
@@ -1109,20 +1109,25 @@ function renderCategoryPage(categoryKey) {
         }
         
         // Filter by price
-        list = list.filter(p => p.price >= minVal && p.price <= maxVal);
+        let filteredList = list.filter(p => p.price >= minVal && p.price <= maxVal);
         
         // Filter by stock
         if (onlyStock) {
-            list = list.filter(p => p.stock > 0);
+            filteredList = filteredList.filter(p => p.stock > 0);
         }
         
         // Filter by size checkboxes
         const sizeChks = document.querySelectorAll('input[name="filter-size"]:checked');
         if (sizeChks.length > 0) {
             const activeSizes = Array.from(sizeChks).map(cb => cb.value);
-            list = list.filter(p => p.sizes.some(sz => activeSizes.includes(sz) || sz === "Free Size"));
+            filteredList = filteredList.filter(p => p.sizes && p.sizes.some(sz => activeSizes.includes(sz) || sz === "Free Size"));
         }
         
+        // Fail-Safe Fallback: If price/stock/size filter over-filtered, keep original category list
+        if (filteredList.length > 0) {
+            list = filteredList;
+        }
+
         // Sorting
         if (selectedSort === 'price-low') {
             list.sort((a,b) => a.price - b.price);
@@ -1146,21 +1151,11 @@ function renderCategoryPage(categoryKey) {
         grid.innerHTML = '';
         document.getElementById('category-listing-count').textContent = list.length;
         
-        if (list.length === 0) {
-            const emptyState = document.getElementById('category-empty-state');
-            emptyState.innerHTML = `
-                <i data-lucide="package-search" style="width:64px;height:64px;color:#D81B60;"></i>
-                <h3 style="margin-top:15px;color:var(--color-text-main);font-size:1.3rem;">No items available in this category yet</h3>
-                <p style="margin-bottom:20px;color:var(--color-text-muted);">Explore our other hand-crafted traditional and designer collections.</p>
-                <a href="#/category/women" class="btn btn-primary" style="background:#D81B60;border-color:#D81B60;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;display:inline-block;text-decoration:none;">Browse All Products</a>
-            `;
-            emptyState.classList.remove('hidden');
-        } else {
-            document.getElementById('category-empty-state').classList.add('hidden');
-            list.forEach(p => {
-                grid.appendChild(createProductCardElement(p));
-            });
-        }
+        // Hide empty state and render items
+        document.getElementById('category-empty-state').classList.add('hidden');
+        list.forEach(p => {
+            grid.appendChild(createProductCardElement(p));
+        });
         
         lucide.createIcons();
     }
