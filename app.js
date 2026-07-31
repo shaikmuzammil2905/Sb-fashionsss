@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '8.0'; // Bumped version to reset local storage products
+const SEED_VERSION = '11.0'; // Bumped version to reset local storage products across all clients
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -26,7 +26,7 @@ function buildCatalogProducts() {
             "Teal Green Gadwal Silk Saree", "Marigold Yellow Paithani Saree", "Maroon Bridal Zardosi Saree",
             "Sky Blue Soft Linen Saree", "Rose Gold Tussar Silk Saree", "Emerald Gold Jacquard Silk Saree"
         ], colors: ["Crimson Red / Gold", "Royal Blue", "Emerald Green", "Pastel Pink", "Mustard Gold", "Midnight Black", "Peach Pink", "Wine Red", "Lavender", "Teal Green", "Marigold Yellow", "Deep Maroon", "Sky Blue", "Rose Gold", "Emerald Gold"], imgs: [
-            "image copy 39.png"
+            "image copy 39.png", "image copy 107.png", "image copy 3.png", "image copy 10.png"
         ]},
         { id: 'frocks', prefix: 'FRO', basePrice: 2499, names: [
             "Crimson Red Embroidered Anarkali Frock", "Emerald Green Georgette Gown Frock", "Pastel Pink Flared Party Frock",
@@ -35,7 +35,7 @@ function buildCatalogProducts() {
             "Teal Blue Mirror Work Frock", "Sunshine Yellow Summer Frock", "Maroon Velvet Festival Frock",
             "Sky Blue Georgette Tiered Frock", "Rose Pink Indo-Western Frock", "Olive Green Belted Maxi Frock"
         ], colors: ["Crimson Red", "Emerald Green", "Pastel Pink", "Royal Blue", "Mustard Yellow", "Midnight Black", "Peach Pink", "Wine Maroon", "Lavender", "Teal Blue", "Sunshine Yellow", "Deep Maroon", "Sky Blue", "Rose Pink", "Olive Green"], imgs: [
-            "image copy 40.png"
+            "image copy 40.png", "image copy 108.png", "image copy 4.png"
         ]},
         { id: 'blouses', prefix: 'BLU', basePrice: 1299, names: [
             "Golden Brocade Readymade Saree Blouse", "Black Velvet Designer Saree Blouse", "Crimson Red Padded Stitched Blouse",
@@ -312,7 +312,7 @@ class StoreState {
     }
 }
 
-// Initialise Database state — reset products if version is outdated or empty
+// Initialise Database state — reset products if version is outdated, invalid or empty
 const storedVersion = localStorage.getItem('sbf_seed_version');
 let rawProducts = null;
 try {
@@ -321,13 +321,13 @@ try {
     rawProducts = null;
 }
 
-if (storedVersion !== SEED_VERSION || !Array.isArray(rawProducts) || rawProducts.length < 50) {
+if (storedVersion !== SEED_VERSION || !Array.isArray(rawProducts) || rawProducts.length < 200) {
     localStorage.removeItem(STATE_KEYS.PRODUCTS);
     localStorage.setItem('sbf_seed_version', SEED_VERSION);
     rawProducts = buildCatalogProducts();
     StoreState.set(STATE_KEYS.PRODUCTS, rawProducts);
 }
-let products = rawProducts;
+let products = (Array.isArray(rawProducts) && rawProducts.length >= 200) ? rawProducts : buildCatalogProducts();
 let orders = StoreState.get(STATE_KEYS.ORDERS, []);
 let cart = StoreState.get(STATE_KEYS.CART, []);
 let wishlist = StoreState.get(STATE_KEYS.WISHLIST, []);
@@ -952,6 +952,12 @@ function renderCategoryPage(categoryKey) {
         const onlyStock = stockChk?.checked || false;
         const selectedSort = sortSelect?.value || 'newest';
         
+        // Self-heal products catalog if empty
+        if (!products || !Array.isArray(products) || products.length === 0) {
+            products = buildCatalogProducts();
+            StoreState.set(STATE_KEYS.PRODUCTS, products);
+        }
+
         // Filter by category strictly
         let list = products.filter(p => {
             const catLower = (p.category || '').toLowerCase();
@@ -959,17 +965,17 @@ function renderCategoryPage(categoryKey) {
             if (keyClean === 'women' || keyClean === 'all' || keyClean === 'women-collection' || keyClean === 'shop') {
                 return catLower !== 'kids' && catLower !== 'retail-collection'; // broad women collection only
             }
-            if (keyClean === 'kids') {
+            if (keyClean === 'kids' || rawKey === 'kids' || keyClean === 'kids-collection') {
                 return catLower === 'kids'; // strictly kids collection only
             }
-            if (keyClean === 'retail-collection') {
+            if (keyClean === 'retail-collection' || rawKey === 'retail-collection') {
                 return catLower === 'retail-collection'; // strictly retail collection only
             }
-            if (keyClean === 'sarees' || rawKey === 'sarees') {
-                return catLower === 'sarees' || catLower === 'saree';
-            }
             
-            return catLower === keyClean || catLower === rawKey;
+            const targetSingular = keyClean.replace(/s$/, '');
+            const targetPlural = targetSingular + 's';
+            
+            return catLower === keyClean || catLower === rawKey || catLower === targetSingular || catLower === targetPlural;
         });
         
         // Filter by price
