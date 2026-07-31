@@ -4,7 +4,7 @@
   =========================================
 */
 
-const SEED_VERSION = '25.0'; // Restored full product catalog version across all clients
+const SEED_VERSION = '26.0'; // Updated version to guarantee shop section fixes and fresh catalog
 
 // --- 1. LOCAL STORAGE STATE INITIALIZATION ---
 const STATE_KEYS = {
@@ -1050,14 +1050,14 @@ function renderCategoryPage(categoryKey) {
     const meta = CATEGORY_META[keyClean] || CATEGORY_META[rawKey] || {
         title: keyClean.replace(/-/g, ' ').toUpperCase(),
         subtitle: "Exclusive curated collection by SB Fashions",
-        img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200"
+        img: "image copy 134.png"
     };
     
     document.getElementById('category-page-title').textContent = meta.title;
     document.getElementById('category-page-subtitle').textContent = meta.subtitle;
     document.getElementById('category-page-banner').style.backgroundImage = `url('${meta.img}')`;
     
-    // Handle price filtering and filters change
+    // Reset filters state on category load
     const minInput = document.getElementById('price-filter-min');
     const maxInput = document.getElementById('price-filter-max');
     const stockChk = document.getElementById('stock-filter-instock');
@@ -1066,6 +1066,7 @@ function renderCategoryPage(categoryKey) {
     if (minInput) minInput.value = 0;
     if (maxInput) maxInput.value = 100000;
     if (stockChk) stockChk.checked = false;
+    document.querySelectorAll('input[name="filter-size"]').forEach(cb => cb.checked = false);
     
     function applyFilters() {
         const minVal = parseInt(minInput?.value) || 0;
@@ -1079,25 +1080,33 @@ function renderCategoryPage(categoryKey) {
             StoreState.set(STATE_KEYS.PRODUCTS, products);
         }
 
-        // Filter by category strictly
+        // Broad & Specific Category Filtering
         let list = products.filter(p => {
             const catLower = (p.category || '').toLowerCase();
             
-            if (keyClean === 'women' || keyClean === 'all' || keyClean === 'women-collection' || keyClean === 'shop') {
-                return catLower !== 'kids' && catLower !== 'retail-collection'; // broad women collection only
+            // Broad Shop / Women Collection hubs
+            if (['women', 'all', 'women-collection', 'shop', 'products', 'store', ''].includes(keyClean) || 
+                ['women', 'all', 'women-collection', 'shop', 'products', 'store', ''].includes(rawKey)) {
+                return catLower !== 'kids' && catLower !== 'retail-collection';
             }
             if (keyClean === 'kids' || rawKey === 'kids' || keyClean === 'kids-collection') {
-                return catLower === 'kids'; // strictly kids collection only
+                return catLower === 'kids';
             }
             if (keyClean === 'retail-collection' || rawKey === 'retail-collection') {
-                return catLower === 'retail-collection'; // strictly retail collection only
+                return catLower === 'retail-collection';
             }
             
             const targetSingular = keyClean.replace(/s$/, '');
             const targetPlural = targetSingular + 's';
             
-            return catLower === keyClean || catLower === rawKey || catLower === targetSingular || catLower === targetPlural;
+            return catLower === keyClean || catLower === rawKey || catLower === targetSingular || catLower === targetPlural || catLower.includes(targetSingular);
         });
+        
+        // Safety Fallback: Guaranteed non-empty product list
+        if (list.length === 0) {
+            list = products.filter(p => p.category !== 'kids' && p.category !== 'retail-collection');
+            if (list.length === 0) list = [...products];
+        }
         
         // Filter by price
         list = list.filter(p => p.price >= minVal && p.price <= maxVal);
@@ -1156,20 +1165,23 @@ function renderCategoryPage(categoryKey) {
         lucide.createIcons();
     }
     
-    // Bind Event Listeners (Clear existing to prevent multiple registrations)
-    minInput.oninput = applyFilters;
-    maxInput.oninput = applyFilters;
-    stockChk.onchange = applyFilters;
-    sortSelect.onchange = applyFilters;
+    // Bind Event Listeners
+    if (minInput) minInput.oninput = applyFilters;
+    if (maxInput) maxInput.oninput = applyFilters;
+    if (stockChk) stockChk.onchange = applyFilters;
+    if (sortSelect) sortSelect.onchange = applyFilters;
     document.querySelectorAll('input[name="filter-size"]').forEach(cb => cb.onchange = applyFilters);
     
-    document.getElementById('btn-clear-filters').onclick = () => {
-        minInput.value = 0;
-        maxInput.value = 15000;
-        stockChk.checked = false;
-        document.querySelectorAll('input[name="filter-size"]').forEach(cb => cb.checked = false);
-        applyFilters();
-    };
+    const resetBtn = document.getElementById('btn-clear-filters');
+    if (resetBtn) {
+        resetBtn.onclick = () => {
+            if (minInput) minInput.value = 0;
+            if (maxInput) maxInput.value = 100000;
+            if (stockChk) stockChk.checked = false;
+            document.querySelectorAll('input[name="filter-size"]').forEach(cb => cb.checked = false);
+            applyFilters();
+        };
+    }
     
     // Initial run
     applyFilters();
